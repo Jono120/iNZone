@@ -1,0 +1,11 @@
+D:\Development\KioskClientApp\Inzone\Kiosk\1.0.0\CommonLibrary\bin\Debug\CommonLibrary.dll
+D:\Development\KioskClientApp\Inzone\Kiosk\1.0.0\CommonLibrary\bin\Debug\CommonLibrary.pdb
+D:\Development\KioskClientApp\Inzone\Kiosk\1.0.0\CommonLibrary\bin\Debug\Olympic.AutoDataLayer.dll
+D:\Development\KioskClientApp\Inzone\Kiosk\1.0.0\CommonLibrary\obj\Debug\ResolveAssemblyReference.cache
+D:\Development\KioskClientApp\Inzone\Kiosk\1.0.0\CommonLibrary\obj\Debug\CommonLibrary.dll
+D:\Development\KioskClientApp\Inzone\Kiosk\1.0.0\CommonLibrary\obj\Debug\CommonLibrary.pdb
+W:\BusinessData\WorkingProjects\InZone\SourceCode\CommonLibrary\bin\Debug\CommonLibrary.dll
+W:\BusinessData\WorkingProjects\InZone\SourceCode\CommonLibrary\bin\Debug\CommonLibrary.pdb
+W:\BusinessData\WorkingProjects\InZone\SourceCode\CommonLibrary\obj\Debug\ResolveAssemblyReference.cache
+W:\BusinessData\WorkingProjects\InZone\SourceCode\CommonLibrary\obj\Debug\CommonLibrary.dll
+W:\BusinessData\WorkingProjects\InZone\SourceCode\CommonLibrary\obj\Debug\CommonLibrary.pdb

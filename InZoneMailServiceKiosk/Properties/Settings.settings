@@ -1,0 +1,46 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="InZoneMailService.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="MailoutCheckFrequency" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">15</Value>
+    </Setting>
+    <Setting Name="TimeBetweenSends" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">3</Value>
+    </Setting>
+    <Setting Name="SMTPHost" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">172.16.30.1</Value>
+    </Setting>
+    <Setting Name="SMTPTimeout" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">5</Value>
+    </Setting>
+    <Setting Name="SMTPPort" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">25</Value>
+    </Setting>
+    <Setting Name="SenderAddress" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">noreplyKiosk@inzone.co.nz</Value>
+    </Setting>
+    <Setting Name="SenderName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Inzone Careers Kiosk</Value>
+    </Setting>
+    <Setting Name="InzoneMirrorConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=INZONE_GLENN;Initial Catalog=KioskMaster;Persist Security Info=True;User ID=sa;Password=typh00n;MultipleActiveResultSets=True;Application Name="InZone Mail Service"&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=INZONE_GLENN;Initial Catalog=KioskMaster;Persist Security Info=True;User ID=sa;Password=typh00n;MultipleActiveResultSets=True;Application Name="InZone Mail Service"</Value>
+    </Setting>
+    <Setting Name="DefaultSubject" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Information from Inzone and @CUSTOMER@</Value>
+    </Setting>
+    <Setting Name="KioskMasterConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=172.16.30.1;Initial Catalog=KioskMaster;User ID=sa;Password=ypg834y&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=172.16.30.1;Initial Catalog=KioskMaster;User ID=sa;Password=ypg834y</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

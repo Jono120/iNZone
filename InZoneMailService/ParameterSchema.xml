@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<parameters>
+	<parameter name="EmailTemplate">C:\\Inetpub\\InZone_Main_Website\\mail_template\\inzone_email.html</parameter>
+</parameters>
+

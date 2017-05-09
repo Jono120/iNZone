@@ -1,0 +1,84 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="RegisterParticipant.aspx.cs" Inherits="_Default" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+	<title>Untitled Page</title>
+</head>
+<body>
+	<form id="form1" runat="server">
+		<div>
+			<table border="0" cellpadding="5" cellspacing="0" width="100%">
+				<tr>
+					<td style="width: 128px">
+						Firstname</td>
+					<td>
+						<asp:TextBox ID="txtFirstname" runat="server" Width="302px"></asp:TextBox></td>
+				</tr>
+				<tr>
+					<td style="width: 128px">
+						Lastname</td>
+					<td>
+						<asp:TextBox ID="txtLastname" runat="server" Width="302px"></asp:TextBox></td>
+				</tr>
+				<tr>
+					<td style="width: 128px">
+						Email</td>
+					<td>
+						<asp:TextBox ID="txtEmail" runat="server" Width="302px"></asp:TextBox></td>
+				</tr>
+				<tr>
+					<td style="width: 128px">
+						Address1</td>
+					<td>
+						<asp:TextBox ID="txtAddress1" runat="server" Width="302px"></asp:TextBox></td>
+				</tr>
+				<tr>
+					<td style="width: 128px">
+						Address2</td>
+					<td>
+						<asp:TextBox ID="txtAddress2" runat="server" Width="302px"></asp:TextBox></td>
+				</tr>
+				<tr>
+					<td style="width: 128px">
+						Suburb</td>
+					<td>
+						<asp:TextBox ID="txtSuburb" runat="server" Width="302px"></asp:TextBox></td>
+				</tr>
+				<tr>
+					<td style="width: 128px">
+						Town</td>
+					<td>
+						<asp:TextBox ID="txtTown" runat="server" Width="302px"></asp:TextBox></td>
+				</tr>
+				<tr>
+					<td style="width: 128px">
+						Association (School)</td>
+					<td>
+						<asp:TextBox ID="txtAssociation" runat="server" Width="302px"></asp:TextBox></td>
+				</tr>
+				<tr>
+					<td style="width: 128px">
+						Age</td>
+					<td>
+						<asp:TextBox ID="txtAge" runat="server" Width="74px"></asp:TextBox></td>
+				</tr>
+				<tr>
+					<td style="width: 128px">
+						Gender</td>
+					<td>
+						<asp:TextBox ID="txtGender" runat="server" Width="131px"></asp:TextBox></td>
+				</tr>
+				<tr>
+					<td style="width: 128px">
+						Contact Phone</td>
+					<td>
+						<asp:TextBox ID="txtContactPhone" runat="server" Width="302px"></asp:TextBox></td>
+				</tr>
+			</table>
+		</div>
+		<br />
+		<asp:Button ID="btnRegister" runat="server" OnClick="btnRegister_Click" Text="Register" />
+	</form>
+</body>
+</html>

@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="3" virtualPath="/DataZone/createuser.aspx" hash="f7212eaba" filehash="cd8b48a299f11b55" flags="110000" assembly="App_Web_ylk9xvwf" type="ASP.createuser_aspx">
+    <filedeps>
+        <filedep name="/DataZone/createuser.aspx" />
+        <filedep name="/DataZone/createuser.aspx.cs" />
+    </filedeps>
+</preserve>

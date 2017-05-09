@@ -1,0 +1,10 @@
+D:\Sandbox\Inzone\Kiosk\1.0.0\KioskApplication\bin\KioskApplication.dll
+D:\Sandbox\Inzone\Kiosk\1.0.0\KioskApplication\bin\KioskApplication.pdb
+D:\Sandbox\Inzone\Kiosk\1.0.0\KioskApplication\bin\AjaxControlToolkit.dll
+D:\Sandbox\Inzone\Kiosk\1.0.0\KioskApplication\bin\CommonLibrary.dll
+D:\Sandbox\Inzone\Kiosk\1.0.0\KioskApplication\bin\Olympic.AutoDataLayer.dll
+D:\Sandbox\Inzone\Kiosk\1.0.0\KioskApplication\bin\CommonLibrary.pdb
+D:\Sandbox\Inzone\Kiosk\1.0.0\KioskApplication\bin\Olympic.AutoDataLayer.xml
+D:\Sandbox\Inzone\Kiosk\1.0.0\KioskApplication\obj\Release\ResolveAssemblyReference.cache
+D:\Sandbox\Inzone\Kiosk\1.0.0\KioskApplication\obj\Release\KioskApplication.dll
+D:\Sandbox\Inzone\Kiosk\1.0.0\KioskApplication\obj\Release\KioskApplication.pdb

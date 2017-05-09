@@ -1,0 +1,6 @@
+D:\KioskDev\InzoneDataSyncService\AdditionalConfig\bin\Release\AdditionalConfig.dll.config
+D:\KioskDev\InzoneDataSyncService\AdditionalConfig\bin\Release\AdditionalConfig.dll
+D:\KioskDev\InzoneDataSyncService\AdditionalConfig\bin\Release\AdditionalConfig.pdb
+D:\KioskDev\InzoneDataSyncService\AdditionalConfig\obj\Release\ResolveAssemblyReference.cache
+D:\KioskDev\InzoneDataSyncService\AdditionalConfig\obj\Release\AdditionalConfig.dll
+D:\KioskDev\InzoneDataSyncService\AdditionalConfig\obj\Release\AdditionalConfig.pdb

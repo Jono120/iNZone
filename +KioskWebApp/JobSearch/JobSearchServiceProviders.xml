@@ -1,0 +1,4 @@
+﻿<JobSearchServiceProviders xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Provider Name="Find a Job" ImageName="findAJob-logo.gif" ImageWidth="230" ImageHeight="78" Url="http://job-bank.workandincome.govt.nz/find-a-job/search.aspx"/>
+  <Provider Name="Seek" ImageName="seek-logo.png" ImageWidth="230" ImageHeight="66" Url="http://www.seek.co.nz/?tracking=jobs:nz:sm:sem_brand:google_nz:ggl:txt_ad:brand_slsearch&amp;gclid=CKH9kczC068CFcyGpAodAhhxfA"/>
+</JobSearchServiceProviders>

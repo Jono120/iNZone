@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 13, 14" name="DataLayer">
+  <DataContextMoniker Name="/InZoneDAL" />
+  <nestedChildShapes>
+    <classShape Id="03d6f518-08db-4841-83dc-4148494c1f92" absoluteBounds="6.75, 7.875, 2, 2.2465844726562514">
+      <DataClassMoniker Name="/InZoneDAL/User" />
+      <nestedChildShapes>
+        <elementListCompartment Id="20b0f376-3f8b-4796-84e8-959efddaee10" absoluteBounds="6.765, 8.335, 1.9700000000000002, 1.68658447265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e46b8bb8-b6da-4362-86e8-ca015bf5ecca" absoluteBounds="9.5, 5.375, 2, 1.2605004882812505">
+      <DataClassMoniker Name="/InZoneDAL/AccessMapping" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d7daae2b-ca6c-4c80-99db-8c0ab9a8c081" absoluteBounds="9.515, 5.835, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="96e3c9b8-14a6-4da4-ba64-7feda7536acd" absoluteBounds="6.75, 5.375, 2, 1.0961531575520827">
+      <DataClassMoniker Name="/InZoneDAL/AccessRight" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c910b014-f141-44fd-97c2-2270587849c8" absoluteBounds="6.765, 5.835, 1.9700000000000002, 0.53615315755208326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9b8e2d32-dd6e-4211-8a4d-751fba858858" absoluteBounds="0.75, 3.875, 2, 1.9178898111979157">
+      <DataClassMoniker Name="/InZoneDAL/Customer" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1dad0a34-30be-482e-8f16-2da24744783f" absoluteBounds="0.765, 4.335, 1.9700000000000002, 1.3578898111979165" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="77e7e284-087e-4d59-bc87-f045e419b895" absoluteBounds="1.5, 12, 2, 1.7535424804687487">
+      <DataClassMoniker Name="/InZoneDAL/Event" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1764b21a-e348-43ce-a2f8-052fcf16a612" absoluteBounds="1.5150000000000001, 12.46, 1.9700000000000002, 1.19354248046875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="dc65c44b-cc41-4fea-88f3-b60af2f41be9" absoluteBounds="3.5, 0.75, 2, 2.0822371419270831">
+      <DataClassMoniker Name="/InZoneDAL/Interaction" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7409d88c-0dbc-4788-beb5-c1af0677e01d" absoluteBounds="3.515, 1.21, 1.9700000000000002, 1.5222371419270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ad0ae254-a6ba-43b6-a3ca-753a133f17b2" absoluteBounds="4.75, 11.25, 2, 1.7535424804687487">
+      <DataClassMoniker Name="/InZoneDAL/InteractionVideo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="98c4f5f5-f263-40d5-a925-e6b0b8f25443" absoluteBounds="4.765, 11.71, 1.9700000000000002, 1.19354248046875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="524cf283-76bf-40f3-a9d5-0bafa26ba4c6" absoluteBounds="9, 2.5, 2, 1.4248478190104166">
+      <DataClassMoniker Name="/InZoneDAL/MailoutException" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5155fe4f-fccd-47fa-9ad6-336dcafcca40" absoluteBounds="9.015, 2.96, 1.9700000000000002, 0.86484781901041674" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3a17943d-5576-44ac-b863-1eba7d6d2119" absoluteBounds="6.25, 2.25, 2, 1.9178898111979166">
+      <DataClassMoniker Name="/InZoneDAL/Mailout" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f3065c0d-959d-4bd4-8717-87be4d38cea1" absoluteBounds="6.265, 2.71, 1.9700000000000002, 1.3578898111979165" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b7a15e5c-4232-483e-8622-c95526e21398" absoluteBounds="0.75, 6.75, 2, 4.21875244140625">
+      <DataClassMoniker Name="/InZoneDAL/Participant" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4b11e54f-e87b-420a-91b9-990fe61870aa" absoluteBounds="0.765, 7.21, 1.9700000000000002, 3.65875244140625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3af97750-6f86-4e07-9225-faef2b51bf3e" absoluteBounds="3.5, 6.625, 2, 1.2605004882812505">
+      <DataClassMoniker Name="/InZoneDAL/Service" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2fbd27c6-2c21-4045-aac0-984ce66d9391" absoluteBounds="3.515, 7.085, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="baec9091-acdc-4851-b2a3-ce74b066cfe7" absoluteBounds="3.5, 3.875, 2, 1.7535424804687505">
+      <DataClassMoniker Name="/InZoneDAL/ServiceSubscription" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c8e83dd4-8056-4205-af73-6b8abcda3f26" absoluteBounds="3.515, 4.335, 1.9700000000000002, 1.19354248046875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f3d1b980-9fa8-40a6-ae2d-7b7465147781" absoluteBounds="9.75, 8.25, 2, 1.4248478190104166">
+      <DataClassMoniker Name="/InZoneDAL/SubscribedLog" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3aed7f5c-547e-4995-b9f7-50db02f854ee" absoluteBounds="9.765, 8.71, 1.9700000000000002, 0.86484781901041674" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3203f416-84a7-4500-b35a-71d2bf3748a4" absoluteBounds="7.75, 11.25, 2, 1.4248478190104166">
+      <DataClassMoniker Name="/InZoneDAL/SyncError" />
+      <nestedChildShapes>
+        <elementListCompartment Id="07acfdb3-726a-49f4-ae8e-627ffb6f1c2e" absoluteBounds="7.765, 11.71, 1.9700000000000002, 0.86484781901041674" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="61daad64-8550-492e-96ab-f9495db2b1e5" absoluteBounds="10.75, 11.25, 2, 1.5891951497395844">
+      <DataClassMoniker Name="/InZoneDAL/SyncLog" />
+      <nestedChildShapes>
+        <elementListCompartment Id="192a6c58-6b8f-4b03-bce0-63ecc47d493d" absoluteBounds="10.765, 11.71, 1.9700000000000002, 1.0291951497395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.75 : 9.92946614583333); (9.59375 : 9.92946614583333); (9.59375 : 6.63550048828125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/InZoneDAL/User/User_AccessMapping" />
+      <nodes>
+        <classShapeMoniker Id="03d6f518-08db-4841-83dc-4148494c1f92" />
+        <classShapeMoniker Id="e46b8bb8-b6da-4362-86e8-ca015bf5ecca" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.75 : 5.92307657877604); (9.5 : 5.92307657877604)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/InZoneDAL/AccessRight/AccessRight_AccessMapping" />
+      <nodes>
+        <classShapeMoniker Id="96e3c9b8-14a6-4da4-ba64-7feda7536acd" />
+        <classShapeMoniker Id="e46b8bb8-b6da-4362-86e8-ca015bf5ecca" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.75 : 3.875); (1.75 : 1.79111857096354); (3.5 : 1.79111857096354)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/InZoneDAL/Customer/Customer_Interaction" />
+      <nodes>
+        <classShapeMoniker Id="9b8e2d32-dd6e-4211-8a4d-751fba858858" />
+        <classShapeMoniker Id="dc65c44b-cc41-4fea-88f3-b60af2f41be9" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 3.21242390950521); (9 : 3.21242390950521)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/InZoneDAL/Mailout/Mailout_MailoutException" />
+      <nodes>
+        <classShapeMoniker Id="3a17943d-5576-44ac-b863-1eba7d6d2119" />
+        <classShapeMoniker Id="524cf283-76bf-40f3-a9d5-0bafa26ba4c6" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.2812525 : 3.875); (2.2812525 : 3.35361607096354); (3.04166666666667 : 3.35361607096354 : JumpStart); (3.20833333333333 : 3.35361607096354 : JumpEnd); (6.25 : 3.35361607096354)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/InZoneDAL/Customer/Customer_Mailout" />
+      <nodes>
+        <classShapeMoniker Id="9b8e2d32-dd6e-4211-8a4d-751fba858858" />
+        <classShapeMoniker Id="3a17943d-5576-44ac-b863-1eba7d6d2119" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 2.54111857096354); (6.25 : 2.54111857096354)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/InZoneDAL/Interaction/Interaction_Mailout" />
+      <nodes>
+        <classShapeMoniker Id="dc65c44b-cc41-4fea-88f3-b60af2f41be9" />
+        <classShapeMoniker Id="3a17943d-5576-44ac-b863-1eba7d6d2119" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 6.75153746153846); (3.125 : 6.37653746153846); (3.125 : 2.34292985644531); (3.5 : 2.34292985644531)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/InZoneDAL/Participant/Participant_Interaction" />
+      <nodes>
+        <classShapeMoniker Id="b7a15e5c-4232-483e-8622-c95526e21398" />
+        <classShapeMoniker Id="dc65c44b-cc41-4fea-88f3-b60af2f41be9" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 10.5764184570313); (6.46875 : 10.5764184570313); (6.46875 : 4.16788981119792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/InZoneDAL/Participant/Participant_Mailout" />
+      <nodes>
+        <classShapeMoniker Id="b7a15e5c-4232-483e-8622-c95526e21398" />
+        <classShapeMoniker Id="3a17943d-5576-44ac-b863-1eba7d6d2119" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.125 : 12); (2.125 : 10.9687524414062)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/InZoneDAL/Event/Event_Participant" />
+      <nodes>
+        <classShapeMoniker Id="77e7e284-087e-4d59-bc87-f045e419b895" />
+        <classShapeMoniker Id="b7a15e5c-4232-483e-8622-c95526e21398" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 7.21875); (6.3281225 : 7.21875); (6.3281225 : 4.16788981119792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/InZoneDAL/Service/Service_Mailout" />
+      <nodes>
+        <classShapeMoniker Id="3af97750-6f86-4e07-9225-faef2b51bf3e" />
+        <classShapeMoniker Id="3a17943d-5576-44ac-b863-1eba7d6d2119" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 4.75177124023438); (3.04166666666667 : 4.75177124023437 : JumpStart); (3.20833333333333 : 4.75177124023438 : JumpEnd); (3.5 : 4.75177124023438)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/InZoneDAL/Customer/Customer_ServiceSubscription" />
+      <nodes>
+        <classShapeMoniker Id="9b8e2d32-dd6e-4211-8a4d-751fba858858" />
+        <classShapeMoniker Id="baec9091-acdc-4851-b2a3-ce74b066cfe7" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.5 : 6.625); (4.5 : 5.62854248046875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/InZoneDAL/Service/Service_ServiceSubscription" />
+      <nodes>
+        <classShapeMoniker Id="3af97750-6f86-4e07-9225-faef2b51bf3e" />
+        <classShapeMoniker Id="baec9091-acdc-4851-b2a3-ce74b066cfe7" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

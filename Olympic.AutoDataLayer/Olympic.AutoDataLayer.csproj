@@ -1,0 +1,313 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectType>local</ProjectType>
+    <ProjectVersion>7.10.3077</ProjectVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F395948D-E9DD-424E-9D34-3EFD28A410B8}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <AssemblyName>Olympic.AutoDataLayer</AssemblyName>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugSymbols>true</DebugSymbols>
+    <NoStdLib>false</NoStdLib>
+    <Optimize>false</Optimize>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DefineConstants>TRACE</DefineConstants>
+    <DebugSymbols>false</DebugSymbols>
+    <NoStdLib>false</NoStdLib>
+    <Optimize>true</Optimize>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.Xml</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Global.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olympic\AutoDataLayer\AfterCreateTableEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olympic\AutoDataLayer\AggregateAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olympic\AutoDataLayer\AggregateFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olympic\AutoDataLayer\AllowNullAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olympic\AutoDataLayer\AutoDataSupport!1.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olympic\AutoDataLayer\AutoDataSupport.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olympic\AutoDataLayer\BeforeCreateTableEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olympic\AutoDataLayer\BuildMode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olympic\AutoDataLayer\BuildSupport\DatabaseFieldDefinition.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olympic\AutoDataLayer\BuildSupport\DatabaseFieldDefinitionCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olympic\AutoDataLayer\BuildSupport\IndexDefinition.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olympic\AutoDataLayer\BuildSupport\IndexDefinitionCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olympic\AutoDataLayer\BuildSupport\IndexFieldDefinition.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olympic\AutoDataLayer\BuildSupport\IndexFieldDefinitionCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olympic\AutoDataLayer\BuildSupport\TableDefinition.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olympic\AutoDataLayer\CacheSupport\Cache!2.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olympic\AutoDataLayer\CacheSupport\Cache.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olympic\AutoDataLayer\CacheSupport\CacheDiagnostics.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olympic\AutoDataLayer\CacheSupport\CacheDiagnosticsRequestHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olympic\AutoDataLayer\CacheSupport\CacheValidator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olympic\AutoDataLayer\CacheSupport\DependencyCacheValidator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olympic\AutoDataLayer\CacheSupport\TimeCacheValidator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olympic\AutoDataLayer\ClassSupport\ClassAttributeInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olympic\AutoDataLayer\ClassSupport\ClassDefinition.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olympic\AutoDataLayer\ClassSupport\ClassFieldAttributeInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olympic\AutoDataLayer\ClassSupport\ClassFieldDefinition.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olympic\AutoDataLayer\ClassSupport\ClassFieldDefinitionCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olympic\AutoDataLayer\ClassSupport\DataSourceType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olympic\AutoDataLayer\ConnectionTarget.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olympic\AutoDataLayer\DatabaseFieldType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olympic\AutoDataLayer\DataSourceAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olympic\AutoDataLayer\Data\BaseTypeNullHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olympic\AutoDataLayer\Data\ClassContext.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olympic\AutoDataLayer\Data\Command.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olympic\AutoDataLayer\Data\CommandBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olympic\AutoDataLayer\Data\ConnectionStringManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olympic\AutoDataLayer\Data\DatabaseAction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olympic\AutoDataLayer\Data\DataSourceManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olympic\AutoDataLayer\Data\DataTableTarget.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olympic\AutoDataLayer\Data\PreExecuteCommandEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olympic\AutoDataLayer\Data\ResolveCurrentUserEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olympic\AutoDataLayer\Data\SpExecuteSqlCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olympic\AutoDataLayer\Data\Sql2000Compatible\Scripting.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olympic\AutoDataLayer\Data\TransactionManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olympic\AutoDataLayer\ExcludeDBAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olympic\AutoDataLayer\FieldValidationAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olympic\AutoDataLayer\IncludeDBAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olympic\AutoDataLayer\IndexAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olympic\AutoDataLayer\LogicalOperator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olympic\AutoDataLayer\OrderByClause.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olympic\AutoDataLayer\OrderByClauseCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olympic\AutoDataLayer\OrderType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olympic\AutoDataLayer\QueryAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olympic\AutoDataLayer\ResolveUserEventHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olympic\AutoDataLayer\SearchFilter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olympic\AutoDataLayer\SearchFilterCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olympic\AutoDataLayer\SearchFilterRelationship.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olympic\AutoDataLayer\SearchOptions.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olympic\AutoDataLayer\SqlTransactionScope.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olympic\AutoDataLayer\StaleDataException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olympic\AutoDataLayer\StringValidationAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olympic\AutoDataLayer\TableAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olympic\AutoDataLayer\Tools\NullableTypeHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olympic\AutoDataLayer\Tools\ResourceAccessor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olympic\AutoDataLayer\UniqueAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Olympic\AutoDataLayer\VersionAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="Olympic.AutoDataLayer.Data.Sql2000Compatible.Scripts.CreateIndex.sql" />
+    <EmbeddedResource Include="Olympic.AutoDataLayer.Data.Sql2000Compatible.Scripts.CreateTableWithoutPrimaryKey.sql" />
+    <EmbeddedResource Include="Olympic.AutoDataLayer.Data.Sql2000Compatible.Scripts.CreateTableWithPrimaryKey.sql" />
+    <EmbeddedResource Include="Olympic.AutoDataLayer.Data.Sql2000Compatible.Scripts.CreateUniqueContraint.sql" />
+    <EmbeddedResource Include="Olympic.AutoDataLayer.Data.Sql2000Compatible.Scripts.CreateVersionHistoryTrigger.sql" />
+    <EmbeddedResource Include="Olympic.AutoDataLayer.Data.Sql2000Compatible.Scripts.DropTable.sql" />
+    <EmbeddedResource Include="Olympic.AutoDataLayer.Data.Sql2000Compatible.Scripts.ListKeyedObjects.sql" />
+    <EmbeddedResource Include="Olympic.AutoDataLayer.Data.Sql2000Compatible.Scripts.ListObjects.sql" />
+    <EmbeddedResource Include="Olympic.AutoDataLayer.Data.Sql2000Compatible.Scripts.ListTableColumns.sql" />
+    <EmbeddedResource Include="Olympic.AutoDataLayer.Data.Sql2000Compatible.Scripts.PreserveTableWithoutPrimaryKey.sql" />
+    <EmbeddedResource Include="Olympic.AutoDataLayer.Data.Sql2000Compatible.Scripts.PreserveTableWithPrimaryKey.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

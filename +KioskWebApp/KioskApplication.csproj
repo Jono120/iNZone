@@ -1,0 +1,430 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B4BD7250-4741-435D-A336-865C14DF6394}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KioskApplication</RootNamespace>
+    <AssemblyName>KioskApplication</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <UseIISExpress>false</UseIISExpress>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=3.0.11119.25533, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libraries\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Olympic.AutoDataLayer, Version=2.10.0.23236, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libraries\Olympic.AutoDataLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Default.aspx" />
+    <Content Include="Images\screensaverVideoPage.jpg" />
+    <Content Include="Images\tab_Agriculture.png" />
+    <Content Include="Images\tab_Agriculture_over.png" />
+    <Content Include="Images\tab_Enterprise.png" />
+    <Content Include="Images\tab_Enterprise_over.png" />
+    <Content Include="Images\tab_healthcareers.png" />
+    <Content Include="Images\tab_healthcareers_over.png" />
+    <Content Include="Images\tab_jobnow.png" />
+    <Content Include="Images\tab_jobnow_over.png" />
+    <Content Include="Images\tab_over.png" />
+    <Content Include="JobSearch.aspx" />
+    <Content Include="JobSearch\JobSearchServiceProviders.xml" />
+    <Content Include="Libraries\AjaxControlToolkit.dll" />
+    <Content Include="Libraries\Olympic.AutoDataLayer.dll" />
+    <Content Include="Libraries\Olympic.AutoDataLayer.xml" />
+    <Content Include="ScreenSaverLanding.aspx" />
+    <Content Include="ScreenSaverNZFilms.aspx" />
+    <Content Include="ScreenSaverVideos.aspx" />
+    <Content Include="ScreenSaverWhaleWatch.aspx" />
+    <Content Include="Videos\CategoriesConfig.xml" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AjaxEngine.aspx.cs">
+      <DependentUpon>AjaxEngine.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AjaxEngine.aspx.designer.cs">
+      <DependentUpon>AjaxEngine.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BadWordFilter.cs" />
+    <Compile Include="JobSearchServiceProviders.cs" />
+    <Compile Include="Default.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FloatingPrompt.ascx.cs">
+      <DependentUpon>FloatingPrompt.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FloatingPrompt.ascx.designer.cs">
+      <DependentUpon>FloatingPrompt.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="FloatingSecurityHelp.ascx.cs">
+      <DependentUpon>FloatingSecurityHelp.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FloatingSecurityHelp.ascx.designer.cs">
+      <DependentUpon>FloatingSecurityHelp.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ForgotPassword.aspx.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForgotPassword.aspx.designer.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.Master.cs">
+      <DependentUpon>Global.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Global.Master.designer.cs">
+      <DependentUpon>Global.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Helper.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JobSearch.aspx.cs">
+      <DependentUpon>JobSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JobSearch.aspx.designer.cs">
+      <DependentUpon>JobSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KioskVideos.cs" />
+    <Compile Include="Landing.aspx.cs">
+      <DependentUpon>Landing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Landing.aspx.designer.cs">
+      <DependentUpon>Landing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.Master.cs">
+      <DependentUpon>Login.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.Master.designer.cs">
+      <DependentUpon>Login.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MyDetails.aspx.cs">
+      <DependentUpon>MyDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MyDetails.aspx.designer.cs">
+      <DependentUpon>MyDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NavigationControl.ascx.cs">
+      <DependentUpon>NavigationControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NavigationControl.ascx.designer.cs">
+      <DependentUpon>NavigationControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Privacy.aspx.cs">
+      <DependentUpon>Privacy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Privacy.aspx.designer.cs">
+      <DependentUpon>Privacy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Registration.aspx.cs">
+      <DependentUpon>Registration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registration.aspx.designer.cs">
+      <DependentUpon>Registration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ScreenSaver.aspx.cs">
+      <DependentUpon>ScreenSaver.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ScreenSaver.aspx.designer.cs">
+      <DependentUpon>ScreenSaver.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ScreenSaverLanding.aspx.cs">
+      <DependentUpon>ScreenSaverLanding.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ScreenSaverLanding.aspx.designer.cs">
+      <DependentUpon>ScreenSaverLanding.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ScreenSaverNZFilm.Master.cs">
+      <DependentUpon>ScreenSaverNZFilm.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ScreenSaverNZFilm.Master.designer.cs">
+      <DependentUpon>ScreenSaverNZFilm.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ScreenSaverNZFilms.aspx.cs">
+      <DependentUpon>ScreenSaverNZFilms.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ScreenSaverNZFilms.aspx.designer.cs">
+      <DependentUpon>ScreenSaverNZFilms.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ScreenSaverVideo.Master.cs">
+      <DependentUpon>ScreenSaverVideo.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ScreenSaverVideo.Master.designer.cs">
+      <DependentUpon>ScreenSaverVideo.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ScreenSaverVideos.aspx.cs">
+      <DependentUpon>ScreenSaverVideos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ScreenSaverVideos.aspx.designer.cs">
+      <DependentUpon>ScreenSaverVideos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ScreenSaverWhaleWatch.aspx.cs">
+      <DependentUpon>ScreenSaverWhaleWatch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ScreenSaverWhaleWatch.aspx.designer.cs">
+      <DependentUpon>ScreenSaverWhaleWatch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
+    <Compile Include="SSWhaleWatch.Master.cs">
+      <DependentUpon>SSWhaleWatch.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SSWhaleWatch.Master.designer.cs">
+      <DependentUpon>SSWhaleWatch.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Video.Master.cs">
+      <DependentUpon>Video.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Video.Master.designer.cs">
+      <DependentUpon>Video.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Videos.aspx.cs">
+      <DependentUpon>Videos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Videos.aspx.designer.cs">
+      <DependentUpon>Videos.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AjaxEngine.aspx" />
+    <Content Include="global.css" />
+    <Content Include="Global.Master" />
+    <Content Include="Images\accept_btn.png" />
+    <Content Include="Images\accept_btn_over.png" />
+    <Content Include="Images\background_image.jpg" />
+    <Content Include="Images\cancel_btn.png" />
+    <Content Include="Images\cancel_btn_over.png" />
+    <Content Include="Images\decline_btn.png" />
+    <Content Include="Images\decline_btn_over.png" />
+    <Content Include="Images\forgot_password_btn.png" />
+    <Content Include="Images\forgot_password_btn_over.png" />
+    <Content Include="Images\home_btn.png" />
+    <Content Include="Images\home_btn_over.png" />
+    <Content Include="Images\inzone_login_hdr.png" />
+    <Content Include="Images\login_btn.png" />
+    <Content Include="Images\login_btn_over.png" />
+    <Content Include="Images\log_out_btn.png" />
+    <Content Include="Images\log_out_btn_over.png" />
+    <Content Include="Images\my_details_btn.png" />
+    <Content Include="Images\my_details_btn_over.png" />
+    <Content Include="Images\my_details_hdr.png" />
+    <Content Include="Images\no_btn.png" />
+    <Content Include="Images\no_btn_over.png" />
+    <Content Include="Images\ok_btn.png" />
+    <Content Include="Images\ok_btn_over.png" />
+    <Content Include="Images\privacy_policy_hdr.png" />
+    <Content Include="Images\red_asterix.png" />
+    <Content Include="Images\register_btn.png" />
+    <Content Include="Images\register_btn_over.png" />
+    <Content Include="Images\registration_hdr.png" />
+    <Content Include="Images\selected_star.png" />
+    <Content Include="Images\shim.gif" />
+    <Content Include="Images\shim_20px.gif" />
+    <Content Include="Images\submit_btn.png" />
+    <Content Include="Images\submit_btn_over.png" />
+    <Content Include="Images\unselected_star.png" />
+    <Content Include="Images\yes_btn.png" />
+    <Content Include="Images\yes_btn_over.png" />
+    <Content Include="Landing.aspx" />
+    <Content Include="Login.aspx" />
+    <Content Include="MyDetails.aspx" />
+    <Content Include="Privacy.aspx" />
+    <Content Include="Registration.aspx" />
+    <Content Include="Videos.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Flash\ScreenSaver.swf" />
+    <Content Include="Flash\SkinUnderPlayVol2.swf" />
+    <Content Include="Flash\VideoSkin.swf" />
+    <Content Include="Flash\VideosNoControlSkin.swf" />
+    <Content Include="FloatingPrompt.ascx" />
+    <Content Include="Images\back_btn.png" />
+    <Content Include="Images\back_btn_over.png" />
+    <Content Include="Images\black_shim.gif" />
+    <Content Include="Images\bottom.png" />
+    <Content Include="Images\bottom_left.png" />
+    <Content Include="Images\bottom_right.png" />
+    <Content Include="Images\details_updated.png" />
+    <Content Include="Images\information_question.png" />
+    <Content Include="Images\inzone_logo.png" />
+    <Content Include="Images\left.png" />
+    <Content Include="Images\privacy_statement_btn.png" />
+    <Content Include="Images\privacy_statement_btn_over.png" />
+    <Content Include="Images\right.png" />
+    <Content Include="Images\selectedtab0.png" />
+    <Content Include="Images\selectedtab1.png" />
+    <Content Include="Images\selectedtab2.png" />
+    <Content Include="Images\selectedtab3.png" />
+    <Content Include="Images\selectedtab4.png" />
+    <Content Include="Images\selected_cell.png" />
+    <Content Include="Images\top.png" />
+    <Content Include="Images\top_right.png" />
+    <Content Include="Images\unselectedtab0.png" />
+    <Content Include="Images\unselectedtab1.png" />
+    <Content Include="Images\unselectedtab2.png" />
+    <Content Include="Images\unselectedtab3.png" />
+    <Content Include="Images\unselectedtab4.png" />
+    <Content Include="Images\unselected_cell.png" />
+    <Content Include="Images\video_page_bg.jpg" />
+    <Content Include="Images\video_selection_frame.png" />
+    <Content Include="Images\video_selection_frame_small.png" />
+    <Content Include="NavigationControl.ascx" />
+    <Content Include="ScreenSaver.aspx" />
+    <Content Include="Video.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CommonLibrary\CommonLibrary.csproj">
+      <Project>{3920AB78-0293-43F3-BCEF-E851F298A471}</Project>
+      <Name>CommonLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Flash\SkinUnderPlayVol2.fla" />
+    <None Include="Flash\VideoSkin.fla" />
+    <None Include="Flash\VideosNoControlSkin.fla" />
+    <Content Include="FloatingSecurityHelp.ascx" />
+    <Content Include="ForgotPassword.aspx" />
+    <Content Include="Images\close_icon.png" />
+    <Content Include="Images\close_icon_over.png" />
+    <Content Include="Images\create_own_btn.png" />
+    <Content Include="Images\create_own_btn_over.png" />
+    <Content Include="Images\first_time_hdr.png" />
+    <Content Include="Images\help_icon.png" />
+    <Content Include="Images\help_icon_over.png" />
+    <Content Include="Images\kiosk_help_hdr.png" />
+    <Content Include="Images\login_bg.jpg" />
+    <Content Include="Images\register_now_btn.png" />
+    <Content Include="Images\register_now_btn_over.png" />
+    <Content Include="Images\returning_hdr.png" />
+    <Content Include="Images\tab_career.png" />
+    <Content Include="Images\tab_career_over.png" />
+    <Content Include="Images\tab_learnandearn.png" />
+    <Content Include="Images\tab_learnandearn_over.png" />
+    <Content Include="Images\tab_motivation.png" />
+    <Content Include="Images\tab_motivation_over.png" />
+    <Content Include="Images\tab_video.png" />
+    <Content Include="Images\tab_video_over.png" />
+    <Content Include="Images\use_question_btn.png" />
+    <Content Include="Images\use_question_btn_over.png" />
+    <Content Include="Login.Master" />
+    <Content Include="ScreenSaverNZFilm.Master" />
+    <Content Include="ScreenSaverVideo.Master" />
+    <Content Include="SSWhaleWatch.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>61724</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/KioskApplication/</IISUrl>
+          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
+          <IISAppRootUrl>http://localhost/KioskApplication</IISAppRootUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

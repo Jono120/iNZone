@@ -1,0 +1,7 @@
+vti_encoding:SR|utf8-nl
+vti_timelastmodified:TR|12 Nov 2009 06:34:50 -0000
+vti_extenderversion:SR|5.0.2.6790
+vti_lineageid:SR|{DE7B42E2-F447-4E02-847F-C9F9F7810DFD}
+vti_cacheddtm:TX|12 Nov 2009 06:34:50 -0000
+vti_filesize:IR|15476
+vti_backlinkinfo:VX|

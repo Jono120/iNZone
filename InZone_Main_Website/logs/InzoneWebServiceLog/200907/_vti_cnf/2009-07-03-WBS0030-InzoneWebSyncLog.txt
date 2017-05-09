@@ -1,0 +1,7 @@
+vti_encoding:SR|utf8-nl
+vti_timelastmodified:TR|03 Jul 2009 11:35:28 -0000
+vti_extenderversion:SR|5.0.2.6790
+vti_lineageid:SR|{CAB15FD8-22F9-469A-A189-970196F8587D}
+vti_cacheddtm:TX|03 Jul 2009 11:35:28 -0000
+vti_filesize:IR|32609
+vti_backlinkinfo:VX|

@@ -1,0 +1,10 @@
+W:\BusinessData\WorkingProjects\InZone\SourceCode\InZoneMailServiceKiosk\bin\Debug\InZoneKioskMailService.exe.config
+W:\BusinessData\WorkingProjects\InZone\SourceCode\InZoneMailServiceKiosk\bin\Debug\InZoneKioskMailService.exe
+W:\BusinessData\WorkingProjects\InZone\SourceCode\InZoneMailServiceKiosk\bin\Debug\InZoneKioskMailService.pdb
+W:\BusinessData\WorkingProjects\InZone\SourceCode\InZoneMailServiceKiosk\obj\Debug\ResolveAssemblyReference.cache
+W:\BusinessData\WorkingProjects\InZone\SourceCode\InZoneMailServiceKiosk\obj\Debug\InZoneKioskMailService.InZoneMailService.resources
+W:\BusinessData\WorkingProjects\InZone\SourceCode\InZoneMailServiceKiosk\obj\Debug\InZoneKioskMailService.ProjectInstaller.resources
+W:\BusinessData\WorkingProjects\InZone\SourceCode\InZoneMailServiceKiosk\obj\Debug\ResGen.read.1.tlog
+W:\BusinessData\WorkingProjects\InZone\SourceCode\InZoneMailServiceKiosk\obj\Debug\ResGen.write.1.tlog
+W:\BusinessData\WorkingProjects\InZone\SourceCode\InZoneMailServiceKiosk\obj\Debug\InZoneKioskMailService.exe
+W:\BusinessData\WorkingProjects\InZone\SourceCode\InZoneMailServiceKiosk\obj\Debug\InZoneKioskMailService.pdb

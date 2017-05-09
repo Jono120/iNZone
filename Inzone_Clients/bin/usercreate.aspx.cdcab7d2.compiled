@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="3" virtualPath="/DataZone/usercreate.aspx" hash="f7212eaba" filehash="a04aef4ad0987af0" flags="110000" assembly="App_Web_t1k-se_c" type="ASP.usercreate_aspx">
+    <filedeps>
+        <filedep name="/DataZone/MasterPage.master" />
+        <filedep name="/DataZone/MasterPage.master.cs" />
+        <filedep name="/DataZone/usercreate.aspx" />
+        <filedep name="/DataZone/usercreate.aspx.cs" />
+    </filedeps>
+</preserve>

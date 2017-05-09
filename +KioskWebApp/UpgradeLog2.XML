@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="KioskApplication">
+</Property><Property Name="Solution File" Value="D:\Sandbox\Inzone\Kiosk\1.0.0\KioskApplication\KioskApplication.sln">
+</Property><Property Name="Date" Value="Thursday, 3 May 2012">
+</Property><Property Name="Time" Value="9:38:33 a.m.">
+</Property><Property Name="Log Number" Value="2">
+</Property></Properties><Event ErrorLevel="0" Project="InzoneKioskWebservice" Source="..\InzoneKioskWebservice\InzoneKioskWebservice.csproj" Description="Project file successfully backed up as D:\Sandbox\Inzone\Kiosk\1.0.0\KioskApplication\Backup\InzoneKioskWebservice.csproj">
+</Event><Event ErrorLevel="0" Project="InzoneKioskWebservice" Source="..\InzoneKioskWebservice\InzoneKioskWebservice.csproj.user" Description="Project user file successfully backed up as D:\Sandbox\Inzone\Kiosk\1.0.0\KioskApplication\Backup\InzoneKioskWebservice.csproj.user">
+</Event><Event ErrorLevel="0" Project="InzoneKioskWebservice" Source="..\InzoneKioskWebservice\EventLog.cs" Description="File successfully backed up as D:\Sandbox\Inzone\Kiosk\1.0.0\KioskApplication\Backup\EventLog.cs">
+</Event><Event ErrorLevel="0" Project="InzoneKioskWebservice" Source="..\InzoneKioskWebservice\InzoneKioskWebService.asmx.cs" Description="File successfully backed up as D:\Sandbox\Inzone\Kiosk\1.0.0\KioskApplication\Backup\InzoneKioskWebService.asmx.cs">
+</Event><Event ErrorLevel="0" Project="InzoneKioskWebservice" Source="..\InzoneKioskWebservice\Properties\Settings.Designer.cs" Description="File successfully backed up as D:\Sandbox\Inzone\Kiosk\1.0.0\KioskApplication\Backup\Properties\Settings.Designer.cs">
+</Event><Event ErrorLevel="0" Project="InzoneKioskWebservice" Source="..\InzoneKioskWebservice\TableAdapter.cs" Description="File successfully backed up as D:\Sandbox\Inzone\Kiosk\1.0.0\KioskApplication\Backup\TableAdapter.cs">
+</Event><Event ErrorLevel="0" Project="InzoneKioskWebservice" Source="..\InzoneKioskWebservice\Properties\AssemblyInfo.cs" Description="File successfully backed up as D:\Sandbox\Inzone\Kiosk\1.0.0\KioskApplication\Backup\Properties\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="InzoneKioskWebservice" Source="..\InzoneKioskWebservice\Properties\Settings.settings" Description="File successfully backed up as D:\Sandbox\Inzone\Kiosk\1.0.0\KioskApplication\Backup\Properties\Settings.settings">
+</Event><Event ErrorLevel="0" Project="InzoneKioskWebservice" Source="..\InzoneKioskWebservice\InzoneKioskWebService.asmx" Description="File successfully backed up as D:\Sandbox\Inzone\Kiosk\1.0.0\KioskApplication\Backup\InzoneKioskWebService.asmx">
+</Event><Event ErrorLevel="0" Project="InzoneKioskWebservice" Source="..\InzoneKioskWebservice\Web.config" Description="File successfully backed up as D:\Sandbox\Inzone\Kiosk\1.0.0\KioskApplication\Backup\Web.config">
+</Event><Event ErrorLevel="0" Project="InzoneKioskWebservice" Source="..\InzoneKioskWebservice\InzoneKioskWebservice.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="InzoneKioskWebservice" Source="..\InzoneKioskWebservice\InzoneKioskWebservice.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="InzoneKioskWebservice" Source="..\InzoneKioskWebservice\InzoneKioskWebservice.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="InzoneKioskWebservice" Source="..\InzoneKioskWebservice\InzoneKioskWebservice.csproj" Description="References to Microsoft.Synchronization.Data were updated to Microsoft.Synchronization.Data 2.0.">
+</Event><Event ErrorLevel="0" Project="InzoneKioskWebservice" Source="..\InzoneKioskWebservice\InzoneKioskWebservice.csproj" Description="References to Microsoft.Synchronization.Data.Server were updated to Microsoft.Synchronization.Data.Server 2.0.">
+</Event><Event ErrorLevel="0" Project="InzoneKioskWebservice" Source="..\InzoneKioskWebservice\InzoneKioskWebservice.csproj" Description="A reference to Microsoft.Synchronization was added.">
+</Event></UpgradeLog>

@@ -1,0 +1,8 @@
+10/05/2009 11:32:08 a.m.:Kiosk: K000200, Password: 203dd6d52b19c0af4a62ff26de960de7
+10/05/2009 11:32:10 a.m.:Kiosk: K000200, Password: 203dd6d52b19c0af4a62ff26de960de7
+10/05/2009 11:32:11 a.m.:Kiosk: K000200, Password: 203dd6d52b19c0af4a62ff26de960de7
+10/05/2009 12:32:16 p.m.:Kiosk: K000200, Password: 203dd6d52b19c0af4a62ff26de960de7
+10/05/2009 12:32:17 p.m.:Kiosk: K000200, Password: 203dd6d52b19c0af4a62ff26de960de7
+10/05/2009 12:32:29 p.m.:Kiosk: K000202, Password: c44c0a6df96b4c48526757cfd7f9c87d
+10/05/2009 12:32:29 p.m.:Kiosk: K000202, Password: c44c0a6df96b4c48526757cfd7f9c87d
+10/05/2009 12:32:29 p.m.:Kiosk: K000202, Password: c44c0a6df96b4c48526757cfd7f9c87d

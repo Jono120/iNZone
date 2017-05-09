@@ -1,0 +1,50 @@
+D:\KioskDev\InzoneDataSyncService\InzoneDataSyncService\bin\Release\InzoneDataSyncService.exe.config
+D:\KioskDev\InzoneDataSyncService\InzoneDataSyncService\bin\Release\InzoneDataSyncService.exe
+D:\KioskDev\InzoneDataSyncService\InzoneDataSyncService\bin\Release\InzoneDataSyncService.XmlSerializers.dll
+D:\KioskDev\InzoneDataSyncService\InzoneDataSyncService\bin\Release\InzoneDataSyncService.pdb
+D:\KioskDev\InzoneDataSyncService\InzoneDataSyncService\bin\Release\SqlExpressClientSyncProvider.dll
+D:\KioskDev\InzoneDataSyncService\InzoneDataSyncService\bin\Release\SqlExpressClientSyncProvider.pdb
+D:\KioskDev\InzoneDataSyncService\InzoneDataSyncService\obj\Release\ResolveAssemblyReference.cache
+D:\KioskDev\InzoneDataSyncService\InzoneDataSyncService\obj\Release\InzoneDataSyncService.ProjectInstaller.resources
+D:\KioskDev\InzoneDataSyncService\InzoneDataSyncService\obj\Release\InzoneDataSyncService.DataSync.resources
+D:\KioskDev\InzoneDataSyncService\InzoneDataSyncService\obj\Release\InzoneDataSyncService.csproj.GenerateResource.Cache
+D:\KioskDev\InzoneDataSyncService\InzoneDataSyncService\obj\Release\InzoneDataSyncService.exe
+D:\KioskDev\InzoneDataSyncService\InzoneDataSyncService\obj\Release\InzoneDataSyncService.pdb
+D:\KioskDev\InzoneDataSyncService\InzoneDataSyncService\obj\Release\InzoneDataSyncService.XmlSerializers.dll
+D:\KioskDev\InzoneDataSyncService_20100406\InzoneDataSyncService\bin\Release\InzoneDataSyncService.exe.config
+D:\KioskDev\InzoneDataSyncService_20100406\InzoneDataSyncService\obj\Release\InzoneDataSyncService.exe
+D:\KioskDev\InzoneDataSyncService_20100406\InzoneDataSyncService\obj\Release\InzoneDataSyncService.pdb
+D:\KioskDev\InzoneDataSyncService_20100406\InzoneDataSyncService\obj\Release\InzoneDataSyncService.XmlSerializers.dll
+D:\KioskDev\InzoneDataSyncService_20100406\InzoneDataSyncService\bin\Release\InzoneDataSyncService.exe
+D:\KioskDev\InzoneDataSyncService_20100406\InzoneDataSyncService\bin\Release\InzoneDataSyncService.XmlSerializers.dll
+D:\KioskDev\InzoneDataSyncService_20100406\InzoneDataSyncService\bin\Release\InzoneDataSyncService.pdb
+D:\KioskDev\InzoneDataSyncService_20100406\InzoneDataSyncService\bin\Release\SqlExpressClientSyncProvider.dll
+D:\KioskDev\InzoneDataSyncService_20100406\InzoneDataSyncService\bin\Release\SqlExpressClientSyncProvider.pdb
+D:\KioskDev\InzoneDataSyncService_20100406\InzoneDataSyncService\obj\Release\ResolveAssemblyReference.cache
+D:\KioskDev\InzoneDataSyncService_20100406\InzoneDataSyncService\obj\Release\InzoneDataSyncService.ProjectInstaller.resources
+D:\KioskDev\InzoneDataSyncService_20100406\InzoneDataSyncService\obj\Release\InzoneDataSyncService.DataSync.resources
+D:\KioskDev\InzoneDataSyncService_20100406\InzoneDataSyncService\obj\Release\InzoneDataSyncService.csproj.GenerateResource.Cache
+D:\KioskDev\InzoneDataSyncService_20100406 - Copy\InzoneDataSyncService\bin\Release\InzoneDataSyncService.exe.config
+D:\KioskDev\InzoneDataSyncService_20100406 - Copy\InzoneDataSyncService\bin\Release\InzoneDataSyncService.exe
+D:\KioskDev\InzoneDataSyncService_20100406 - Copy\InzoneDataSyncService\bin\Release\InzoneDataSyncService.XmlSerializers.dll
+D:\KioskDev\InzoneDataSyncService_20100406 - Copy\InzoneDataSyncService\bin\Release\InzoneDataSyncService.pdb
+D:\KioskDev\InzoneDataSyncService_20100406 - Copy\InzoneDataSyncService\bin\Release\SqlExpressClientSyncProvider.dll
+D:\KioskDev\InzoneDataSyncService_20100406 - Copy\InzoneDataSyncService\bin\Release\SqlExpressClientSyncProvider.pdb
+D:\KioskDev\InzoneDataSyncService_20100406 - Copy\InzoneDataSyncService\obj\Release\ResolveAssemblyReference.cache
+D:\KioskDev\InzoneDataSyncService_20100406 - Copy\InzoneDataSyncService\obj\Release\InzoneDataSyncService.ProjectInstaller.resources
+D:\KioskDev\InzoneDataSyncService_20100406 - Copy\InzoneDataSyncService\obj\Release\InzoneDataSyncService.DataSync.resources
+D:\KioskDev\InzoneDataSyncService_20100406 - Copy\InzoneDataSyncService\obj\Release\InzoneDataSyncService.csproj.GenerateResource.Cache
+D:\KioskDev\InzoneDataSyncService_20100406 - Copy\InzoneDataSyncService\obj\Release\InzoneDataSyncService.exe
+D:\KioskDev\InzoneDataSyncService_20100406 - Copy\InzoneDataSyncService\obj\Release\InzoneDataSyncService.pdb
+D:\KioskDev\InzoneDataSyncService_20100406 - Copy\InzoneDataSyncService\obj\Release\InzoneDataSyncService.XmlSerializers.dll
+D:\KioskDev\InzoneDataSyncServiceV4\InzoneDataSyncService\bin\Release\InzoneDataSyncService.exe.config
+D:\KioskDev\InzoneDataSyncServiceV4\InzoneDataSyncService\bin\Release\InzoneDataSyncService.exe
+D:\KioskDev\InzoneDataSyncServiceV4\InzoneDataSyncService\bin\Release\InzoneDataSyncService.XmlSerializers.dll
+D:\KioskDev\InzoneDataSyncServiceV4\InzoneDataSyncService\bin\Release\SqlExpressClientSyncProvider.dll
+D:\KioskDev\InzoneDataSyncServiceV4\InzoneDataSyncService\bin\Release\SqlExpressClientSyncProvider.pdb
+D:\KioskDev\InzoneDataSyncServiceV4\InzoneDataSyncService\obj\Release\ResolveAssemblyReference.cache
+D:\KioskDev\InzoneDataSyncServiceV4\InzoneDataSyncService\obj\Release\InzoneDataSyncService.ProjectInstaller.resources
+D:\KioskDev\InzoneDataSyncServiceV4\InzoneDataSyncService\obj\Release\InzoneDataSyncService.DataSync.resources
+D:\KioskDev\InzoneDataSyncServiceV4\InzoneDataSyncService\obj\Release\InzoneDataSyncService.csproj.GenerateResource.Cache
+D:\KioskDev\InzoneDataSyncServiceV4\InzoneDataSyncService\obj\Release\InzoneDataSyncService.exe
+D:\KioskDev\InzoneDataSyncServiceV4\InzoneDataSyncService\obj\Release\InzoneDataSyncService.XmlSerializers.dll

@@ -1,0 +1,6 @@
+W:\BusinessData\WorkingProjects\InZone\SourceCode\InzoneDataSyncService\AdditionalConfig\bin\Debug\AdditionalConfig.dll.config
+W:\BusinessData\WorkingProjects\InZone\SourceCode\InzoneDataSyncService\AdditionalConfig\bin\Debug\AdditionalConfig.dll
+W:\BusinessData\WorkingProjects\InZone\SourceCode\InzoneDataSyncService\AdditionalConfig\bin\Debug\AdditionalConfig.pdb
+W:\BusinessData\WorkingProjects\InZone\SourceCode\InzoneDataSyncService\AdditionalConfig\obj\Debug\ResolveAssemblyReference.cache
+W:\BusinessData\WorkingProjects\InZone\SourceCode\InzoneDataSyncService\AdditionalConfig\obj\Debug\AdditionalConfig.dll
+W:\BusinessData\WorkingProjects\InZone\SourceCode\InzoneDataSyncService\AdditionalConfig\obj\Debug\AdditionalConfig.pdb

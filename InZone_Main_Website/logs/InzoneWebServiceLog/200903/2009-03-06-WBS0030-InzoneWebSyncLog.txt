@@ -1,0 +1,11 @@
+6/03/2009 11:00:09 a.m.:Missing authentication information
+6/03/2009 11:25:55 a.m.:Missing authentication information
+6/03/2009 11:27:44 a.m.:Missing authentication information
+6/03/2009 11:28:01 a.m.:Missing authentication information
+6/03/2009 11:33:15 a.m.:Missing authentication information
+6/03/2009 1:50:49 p.m.:Kiosk: K000193, Password: 49b0583dc28a351bd44ae837da7f30ba
+6/03/2009 1:50:55 p.m.:Kiosk: K000193, Password: 49b0583dc28a351bd44ae837da7f30ba
+6/03/2009 1:50:57 p.m.:Kiosk: K000193, Password: 49b0583dc28a351bd44ae837da7f30ba
+6/03/2009 3:04:04 p.m.:Kiosk: K000193, Password: 49b0583dc28a351bd44ae837da7f30ba
+6/03/2009 3:04:08 p.m.:Kiosk: K000193, Password: 49b0583dc28a351bd44ae837da7f30ba
+6/03/2009 3:04:09 p.m.:Kiosk: K000193, Password: 49b0583dc28a351bd44ae837da7f30ba

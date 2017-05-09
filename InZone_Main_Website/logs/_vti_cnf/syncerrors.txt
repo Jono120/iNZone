@@ -1,0 +1,9 @@
+vti_encoding:SR|utf8-nl
+vti_author:SR|WBS0030\\Administrator
+vti_timelastmodified:TR|28 Jun 2010 02:30:01 -0000
+vti_timecreated:TR|09 Dec 2008 06:22:37 -0000
+vti_lineageid:SR|{FD162109-71BB-4CEB-956F-21AC3FB717A9}
+vti_cacheddtm:TX|09 Dec 2008 06:22:37 -0000
+vti_filesize:IR|75
+vti_extenderversion:SR|5.0.2.6790
+vti_backlinkinfo:VX|

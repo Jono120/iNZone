@@ -1,0 +1,15 @@
+[01 May 2008 13:04:40 +1300] 210.54.213.181 IUSR_WBS0035 - [server version] -
+[01 May 2008 13:04:41 +1300] 210.54.213.181 IUSR_WBS0035 / [open service] -
+[01 May 2008 13:04:49 +1300] 210.54.213.181 WBS0030\Administrator / [open service] -
+[01 May 2008 13:04:50 +1300] 210.54.213.181 WBS0030\Administrator / [list documents] -
+[01 May 2008 13:04:51 +1300] 210.54.213.181 WBS0030\Administrator / [mark url-directory executable] 
+[01 May 2008 13:04:52 +1300] 210.54.213.181 WBS0030\Administrator / [mark url-directory executable] 
+[01 May 2008 13:04:54 +1300] 210.54.213.181 WBS0030\Administrator / [list documents] -
+[01 May 2008 13:05:08 +1300] 210.54.213.181 WBS0030\Administrator / [get document] app_offline.htm
+[01 May 2008 13:05:09 +1300] 210.54.213.181 WBS0030\Administrator / [put document] app_offline.htm
+[01 May 2008 13:05:10 +1300] 210.54.213.181 WBS0030\Administrator / [remove documents] _private
+[01 May 2008 13:05:11 +1300] 210.54.213.181 WBS0030\Administrator / [remove documents] images
+[01 May 2008 13:05:12 +1300] 210.54.213.181 WBS0030\Administrator / [create url-directories] -
+[01 May 2008 13:05:20 +1300] 210.54.213.181 WBS0030\Administrator / [put documents] -
+[01 May 2008 13:05:23 +1300] 210.54.213.181 WBS0030\Administrator / [put documents] -
+[01 May 2008 13:05:25 +1300] 210.54.213.181 WBS0030\Administrator / [remove documents] app_offline.htm

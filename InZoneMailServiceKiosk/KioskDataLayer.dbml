@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="KioskMaster" EntityNamespace="InZone" ContextNamespace="InZone" Class="InZoneKioskDAL" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=172.16.30.1;Initial Catalog=KioskMaster;User ID=sa" SettingsObjectName="InZoneKioskMailService.Properties.Settings" SettingsPropertyName="KioskMasterConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.MailoutExceptions" Member="MailoutExceptions">
+    <Type Name="MailoutException">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MailoutID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EmailAddress" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ErrorMessage" Type="System.String" DbType="VarChar(512) NOT NULL" CanBeNull="false" />
+      <Association Name="Mailout_MailoutException" Member="Mailout" ThisKey="MailoutID" OtherKey="ID" Type="Mailout" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Participant" Member="Participants">
+    <Type Name="Participant">
+      <Column Name="ID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="LastName" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DateOfBirth" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="SecurityQuestion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SecurityAnswer" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="UserName" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Address1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Address2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Suburb" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Town" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="PhoneNumber" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="KnowsCareer" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Gender" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="KioskID" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="update_originator_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="update_timestamp" Type="System.Data.Linq.Binary" DbType="rowversion" CanBeNull="true" IsVersion="true" />
+      <Column Name="create_timestamp" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="DateUploaded" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DateModified" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Participant_Interaction" Member="Interactions" ThisKey="ID" OtherKey="ParticipantID" Type="Interaction" />
+      <Association Name="Participant_Mailout" Member="Mailouts" ThisKey="ID" OtherKey="ParticipantID" Type="Mailout" />
+      <Association Name="Participant_Mailout1" Member="Mailouts1" ThisKey="ID" OtherKey="ParticipantID" Type="Mailout" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Interaction" Member="Interactions">
+    <Type Name="Interaction">
+      <Column Name="ID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ParticipantID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="PartnerID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Subscribed" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="update_originator_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="update_timestamp" Type="System.Data.Linq.Binary" DbType="rowversion" CanBeNull="true" IsVersion="true" />
+      <Column Name="create_timestamp" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Association Name="Interaction_Mailout" Member="Mailouts" ThisKey="ID" OtherKey="InteractionUsedID" Type="Mailout" />
+      <Association Name="Participant_Interaction" Member="Participant" ThisKey="ParticipantID" OtherKey="ID" Type="Participant" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="Partner_Interaction" Member="Partner" ThisKey="PartnerID" OtherKey="ID" Type="Partner" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ServiceSubscriptions" Member="ServiceSubscriptions">
+    <Type Name="ServiceSubscription">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PartnerID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ServiceID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DateStart" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="DateEnd" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Parameters" Type="System.Xml.Linq.XElement" DbType="Xml" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="Service_ServiceSubscription" Member="Service" ThisKey="ServiceID" OtherKey="ID" Type="Service" IsForeignKey="true" />
+      <Association Name="Partner_ServiceSubscription" Member="Partner" ThisKey="PartnerID" OtherKey="ID" Type="Partner" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Services" Member="Services">
+    <Type Name="Service">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Association Name="Service_ServiceSubscription" Member="ServiceSubscriptions" ThisKey="ID" OtherKey="ServiceID" Type="ServiceSubscription" />
+      <Association Name="Service_Mailout" Member="Mailouts" ThisKey="ID" OtherKey="ServiceID" Type="Mailout" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Mailouts" Member="Mailouts">
+    <Type Name="Mailout">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ParticipantID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="PartnerID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="InteractionUsedID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="ServiceID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DateSent" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DateResponded" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Mailout_MailoutException" Member="MailoutExceptions" ThisKey="ID" OtherKey="MailoutID" Type="MailoutException" />
+      <Association Name="Interaction_Mailout" Member="Interaction" ThisKey="InteractionUsedID" OtherKey="ID" Type="Interaction" IsForeignKey="true" />
+      <Association Name="Participant_Mailout" Member="Participant" ThisKey="ParticipantID" OtherKey="ID" Type="Participant" IsForeignKey="true" />
+      <Association Name="Participant_Mailout1" Member="Participant1" ThisKey="ParticipantID" OtherKey="ID" Type="Participant" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="Service_Mailout" Member="Service" ThisKey="ServiceID" OtherKey="ID" Type="Service" IsForeignKey="true" />
+      <Association Name="Partner_Mailout" Member="Partner" ThisKey="PartnerID" OtherKey="ID" Type="Partner" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Partner" Member="Partners">
+    <Type Name="Partner">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PartnerName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ShortName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Industry" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DataFileFrequency" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="LastDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="RptGenerated" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DisplayName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LogoURL" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="WebsiteURL" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Association Name="Partner_Interaction" Member="Interactions" ThisKey="ID" OtherKey="PartnerID" Type="Interaction" />
+      <Association Name="Partner_ServiceSubscription" Member="ServiceSubscriptions" ThisKey="ID" OtherKey="PartnerID" Type="ServiceSubscription" />
+      <Association Name="Partner_Mailout" Member="Mailouts" ThisKey="ID" OtherKey="PartnerID" Type="Mailout" />
+    </Type>
+  </Table>
+</Database>

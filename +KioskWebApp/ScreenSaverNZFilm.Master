@@ -1,0 +1,25 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="ScreenSaverNZFilm.Master.cs" Inherits="KioskApplication.ScreenSaverNZFilm" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="global.css" rel="stylesheet" type="text/css" />
+    <meta http-equiv="Page-Enter" 
+      content="blendTrans(duration=0.8)"/>
+    <meta http-equiv="Page-Exit" 
+      content="blendTrans(duration=0.8)"/>
+</head>
+<body class="screensavervideo-body">
+    <form id="form1" runat="server">
+    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>

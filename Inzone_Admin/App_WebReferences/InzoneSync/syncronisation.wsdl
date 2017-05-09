@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="InZone.DataZone" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="InZone.DataZone" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="InZone.DataZone">
+      <s:element name="SyncCustomers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customers">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SyncCustomersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SyncCustomersResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="badIds" type="tns:ArrayOfInt" />
+            <s:element minOccurs="0" maxOccurs="1" name="goodIds" type="tns:ArrayOfInt" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfInt">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="int" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SyncEvents">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="events">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SyncEventsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SyncEventsResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="badIds" type="tns:ArrayOfInt" />
+            <s:element minOccurs="0" maxOccurs="1" name="goodIds" type="tns:ArrayOfInt" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SyncParticipants">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="participants">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SyncParticipantsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SyncParticipantsResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="badIds" type="tns:ArrayOfInt" />
+            <s:element minOccurs="0" maxOccurs="1" name="goodIds" type="tns:ArrayOfInt" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SyncInteractions">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="interactions">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SyncInteractionsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SyncInteractionsResult" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="badIds" type="tns:ArrayOfInt" />
+            <s:element minOccurs="0" maxOccurs="1" name="goodIds" type="tns:ArrayOfInt" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SyncCustomersSoapIn">
+    <wsdl:part name="parameters" element="tns:SyncCustomers" />
+  </wsdl:message>
+  <wsdl:message name="SyncCustomersSoapOut">
+    <wsdl:part name="parameters" element="tns:SyncCustomersResponse" />
+  </wsdl:message>
+  <wsdl:message name="SyncEventsSoapIn">
+    <wsdl:part name="parameters" element="tns:SyncEvents" />
+  </wsdl:message>
+  <wsdl:message name="SyncEventsSoapOut">
+    <wsdl:part name="parameters" element="tns:SyncEventsResponse" />
+  </wsdl:message>
+  <wsdl:message name="SyncParticipantsSoapIn">
+    <wsdl:part name="parameters" element="tns:SyncParticipants" />
+  </wsdl:message>
+  <wsdl:message name="SyncParticipantsSoapOut">
+    <wsdl:part name="parameters" element="tns:SyncParticipantsResponse" />
+  </wsdl:message>
+  <wsdl:message name="SyncInteractionsSoapIn">
+    <wsdl:part name="parameters" element="tns:SyncInteractions" />
+  </wsdl:message>
+  <wsdl:message name="SyncInteractionsSoapOut">
+    <wsdl:part name="parameters" element="tns:SyncInteractionsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SyncronisationSoap">
+    <wsdl:operation name="SyncCustomers">
+      <wsdl:input message="tns:SyncCustomersSoapIn" />
+      <wsdl:output message="tns:SyncCustomersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SyncEvents">
+      <wsdl:input message="tns:SyncEventsSoapIn" />
+      <wsdl:output message="tns:SyncEventsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SyncParticipants">
+      <wsdl:input message="tns:SyncParticipantsSoapIn" />
+      <wsdl:output message="tns:SyncParticipantsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SyncInteractions">
+      <wsdl:input message="tns:SyncInteractionsSoapIn" />
+      <wsdl:output message="tns:SyncInteractionsSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="SyncronisationHttpGet" />
+  <wsdl:portType name="SyncronisationHttpPost" />
+  <wsdl:binding name="SyncronisationSoap" type="tns:SyncronisationSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SyncCustomers">
+      <soap:operation soapAction="InZone.DataZone/SyncCustomers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SyncEvents">
+      <soap:operation soapAction="InZone.DataZone/SyncEvents" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SyncParticipants">
+      <soap:operation soapAction="InZone.DataZone/SyncParticipants" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SyncInteractions">
+      <soap:operation soapAction="InZone.DataZone/SyncInteractions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SyncronisationSoap12" type="tns:SyncronisationSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SyncCustomers">
+      <soap12:operation soapAction="InZone.DataZone/SyncCustomers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SyncEvents">
+      <soap12:operation soapAction="InZone.DataZone/SyncEvents" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SyncParticipants">
+      <soap12:operation soapAction="InZone.DataZone/SyncParticipants" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SyncInteractions">
+      <soap12:operation soapAction="InZone.DataZone/SyncInteractions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SyncronisationHttpGet" type="tns:SyncronisationHttpGet">
+    <http:binding verb="GET" />
+  </wsdl:binding>
+  <wsdl:binding name="SyncronisationHttpPost" type="tns:SyncronisationHttpPost">
+    <http:binding verb="POST" />
+  </wsdl:binding>
+  <wsdl:service name="Syncronisation">
+    <wsdl:port name="SyncronisationSoap" binding="tns:SyncronisationSoap">
+      <soap:address location="http://newadmin.inzone.co.nz/Syncronisation.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SyncronisationSoap12" binding="tns:SyncronisationSoap12">
+      <soap12:address location="http://newadmin.inzone.co.nz/Syncronisation.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SyncronisationHttpGet" binding="tns:SyncronisationHttpGet">
+      <http:address location="http://newadmin.inzone.co.nz/Syncronisation.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SyncronisationHttpPost" binding="tns:SyncronisationHttpPost">
+      <http:address location="http://newadmin.inzone.co.nz/Syncronisation.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

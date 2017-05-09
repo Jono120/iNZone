@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="3" virtualPath="/DataZone/MasterPage.master" hash="f7212eaba" filehash="2b9e2dc40f8522c" flags="110000" assembly="App_Web_ylk9xvwf" type="ASP.masterpage_master">
+    <filedeps>
+        <filedep name="/DataZone/MasterPage.master" />
+        <filedep name="/DataZone/MasterPage.master.cs" />
+    </filedeps>
+</preserve>

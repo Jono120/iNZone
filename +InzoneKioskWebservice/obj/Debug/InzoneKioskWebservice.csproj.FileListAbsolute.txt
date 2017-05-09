@@ -1,0 +1,8 @@
+W:\BusinessData\WorkingProjects\InZone\SourceCode\InzoneKioskWebservice\bin\InzoneKioskWebservice.dll
+W:\BusinessData\WorkingProjects\InZone\SourceCode\InzoneKioskWebservice\bin\InzoneKioskWebservice.pdb
+W:\BusinessData\WorkingProjects\InZone\SourceCode\InzoneKioskWebservice\bin\CommonLibrary.dll
+W:\BusinessData\WorkingProjects\InZone\SourceCode\InzoneKioskWebservice\bin\Olympic.AutoDataLayer.dll
+W:\BusinessData\WorkingProjects\InZone\SourceCode\InzoneKioskWebservice\bin\CommonLibrary.pdb
+W:\BusinessData\WorkingProjects\InZone\SourceCode\InzoneKioskWebservice\obj\Debug\ResolveAssemblyReference.cache
+W:\BusinessData\WorkingProjects\InZone\SourceCode\InzoneKioskWebservice\obj\Debug\InzoneKioskWebservice.dll
+W:\BusinessData\WorkingProjects\InZone\SourceCode\InzoneKioskWebservice\obj\Debug\InzoneKioskWebservice.pdb

@@ -1,0 +1,3437 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Olympic.AutoDataLayer</name>
+    </assembly>
+    <members>
+        <member name="T:Olympic.AutoDataLayer.Data.ConnectionStringManager">
+            <summary>
+            Manages the connection string.  Stores the connection strings
+            for the thread, specific class, and the default connection string.
+            </summary>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.Data.ConnectionStringManager.Get(System.Type)">
+            <summary>
+            Returns the connection string to use for a specific object
+            type.
+            </summary>
+            <param name="objectType">Type of the object to return the 
+            connection string for.</param>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.Data.ConnectionStringManager.SetConnectionString(System.Type,System.String,System.Boolean)">
+            <summary>
+            Set the connection string for a specific object type
+            </summary>
+            <param name="objectType">The type of the object to set the connection string for</param>
+            <param name="connectionString">The connection string</param>
+            <param name="currentThreadOnly">Indicates whether this assignment should apply to the current thread only.</param>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.Data.ConnectionStringManager.SetDefaultConnectionString(System.String,System.Boolean)">
+            <summary>
+            Set the default connection string to use for all objects
+            unless they have specifically set the connection string for their type.
+            </summary>
+            <param name="connectionString">The connection string to assign.</param>
+            <param name="currentThreadOnly">Indicates whether this assignment should apply to the current thread only.</param>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.Data.ConnectionStringManager.InitializeThreadConnectionStringStorage">
+            <summary>
+            This method ensures that the hash table storing the thread scope connection
+            strings has been intitlized.
+            </summary>
+        </member>
+        <member name="P:Olympic.AutoDataLayer.Data.ConnectionStringManager.OverrideThreadConnectionString">
+            <summary>
+            Allows the connection string to be overriden for the
+            current thread.  Setting 
+            this to a connection string forces all database calls
+            to use this connection string.  Setting it to null resets
+            to use the predefined connection strings.
+            </summary>
+        </member>
+        <member name="T:Olympic.AutoDataLayer.Data.BaseTypeNullHelper">
+            -------------------------------------------------------------
+            TODO: Move this class into a generic olympic toolbox library. 
+            -------------------------------------------------------------
+            
+            <summary>
+            Used to emulate null values for base types.<br/>
+            <br/>
+            Base types can not be assigned a value of null.  There are
+            times when we do want to be able to indicate that a base type
+            is null.  eg. Passing base type values (eg int id) to a data
+            layer in a save call.  If an id is null, we want to pass null
+            to the database (this may indicate a new record).<br/>
+            <br/>
+            In order to facilitate this, we select a value for the base type
+            that is not likely to be used, and reserve it as the value to indicate
+            that this is a null value.  Whenever the basetype is set to this value, 
+            we assume that it is null.<br/>
+            <br/>
+            Nullable base types are supported to some extent in Visual Studio 2005. 
+            We will investigate at the time whether it is better to use the new 
+            model for supporting nullable types.<br/>
+            </summary>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.Data.BaseTypeNullHelper.IsNullableBaseType(System.Type)">
+            <summary>
+            Used to check if a base type is a nullable base type
+            </summary>
+            <param name="type">Type of an object to test if it is null</param>
+            <returns>Indication of whether or not this is a nullable type</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.Data.BaseTypeNullHelper.IsNull(System.Object)">
+            <summary>
+            Checks if an object or base type has been set to null.
+            </summary>
+            <param name="value">Value to test.</param>
+            <returns>Indication of a null base type or null object.</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.Data.BaseTypeNullHelper.NullEnum(System.Type)">
+            <summary>
+            Used to assign a pseudo null value to an enum type.
+            </summary>
+            <param name="enumType">Enum type to cast to.</param>
+            <returns>A pseudo null value for the base type Enum cast to
+            the supplied enum type.</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.Data.BaseTypeNullHelper.IsNull(System.Enum)">
+            <summary>
+            Checks if an enum value has been set to a null base type.
+            </summary>
+            <param name="value">Value to test.</param>
+            <returns>Indication of a null base type.</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.Data.BaseTypeNullHelper.IsNull(System.Int32)">
+            <summary>
+            Checks if an integer has been set as a null base type.
+            </summary>
+            <param name="value">Value to test.</param>
+            <returns>Indication of a null base type.</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.Data.BaseTypeNullHelper.IsNull(System.DateTime)">
+            <summary>
+            Checks if a DateTime has been set as a null base type.
+            </summary>
+            <param name="value">Value to test.</param>
+            <returns>Indication of a null base type.</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.Data.BaseTypeNullHelper.IsNull(System.Double)">
+            <summary>
+            Checks if a double has been set as a null base type.
+            </summary>
+            <param name="value">Value to test.</param>
+            <returns>Indication of a null base type.</returns>
+        </member>
+        <member name="P:Olympic.AutoDataLayer.Data.BaseTypeNullHelper.NullInt">
+            <summary>
+            Used to assign a pseudo null value to an integer
+            </summary>
+        </member>
+        <member name="P:Olympic.AutoDataLayer.Data.BaseTypeNullHelper.NullDateTime">
+            <summary>
+            Used to assign a pseudo null value to a DateTime
+            </summary>
+        </member>
+        <member name="P:Olympic.AutoDataLayer.Data.BaseTypeNullHelper.NullDouble">
+            <summary>
+            Used to assign a pseudo null value to a double
+            </summary>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.CacheSupport.AutoDataLayerCache`1.Get(System.Object[])">
+            <summary>
+            Retrieves an item from the cache with the given primary key name and value pairs
+            </summary>
+            <param name="keyValuePairs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.CacheSupport.AutoDataLayerCache`1.Invalidate">
+            <summary>
+            Invalidates the whole cache
+            </summary>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.CacheSupport.AutoDataLayerCache`1.InvalidateItem(`0)">
+            <summary>
+            Invalidates the cache entry for the given item 
+            </summary>
+            <param name="item"></param>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.CacheSupport.AutoDataLayerCache`1.InvalidateItem(System.Object[])">
+            <summary>
+            Invalidates the items given a list of primary key name and value
+            </summary>
+            <param name="keyValuePairs"></param>
+        </member>
+        <member name="P:Olympic.AutoDataLayer.CacheSupport.AutoDataLayerCache`1.Item(System.Object[])">
+            <summary>
+            Retrieves an item from the cache with the given primary key name and value pairs
+            </summary>
+            <param name="keyValuepairs"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Olympic.AutoDataLayer.CacheSupport.AutoDataLayerCache`1.Size">
+            <summary>
+            The maximum size of the cache, by modifying the size the cache is cleared
+            </summary>
+            <param name="cacheSize"></param>
+        </member>
+        <member name="T:Olympic.AutoDataLayer.CacheSupport.GetKey">
+            <summary>
+            Key used in the get cache
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.CacheSupport.GetKey.PrimaryKeys">
+            <summary>
+            Primary keys of the object
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.SearchOptions.Default">
+            <summary>
+            Default search option - no flags set
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.SearchOptions.Distinct">
+            <summary>
+            Only return distinct instances of the rows as objects.  Use this when searching
+            subsets of objects.
+            </summary>
+        </member>
+        <member name="T:Olympic.AutoDataLayer.Data.DataTableTarget">
+            <summary>
+            This enumeration provides information for Auto Data Layer to support Versioning
+            to indicate whether the database table being targetted is the Main table
+            or the Version History table.
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.Data.DataTableTarget.Main">
+            <summary>
+            Indicates the main table that captures the data
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.Data.DataTableTarget.VersionHistory">
+            <summary>
+            A copy of the main table used for saving version history
+            </summary>
+        </member>
+        <member name="T:Olympic.AutoDataLayer.ExcludeDBAttribute">
+            <summary>
+            Indicates that this field should be excluded from the database table.<br />
+            <br />
+            By default, all public read/write properties and fields are
+            included in the saving of a class.  To exclude on of these fields
+            or properties, you need to supply the ExcludeDB attribute.
+            </summary>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.ExcludeDBAttribute.#ctor">
+            <summary>
+            Required for serialization support.
+            </summary>
+        </member>
+        <member name="T:Olympic.AutoDataLayer.OrderType">
+            <summary>
+            Indicates an order direction for sort orders
+            </summary>
+        </member>
+        <member name="T:Olympic.AutoDataLayer.ClassSupport.ClassAttributeInfo">
+            <summary>
+            Returns attribute information about the class attributes
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.ClassSupport.ClassAttributeInfo.DataSourceType">
+            <summary>
+            The type of the data source
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.ClassSupport.ClassAttributeInfo.TableName">
+            <summary>
+            The name of the database table
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.ClassSupport.ClassAttributeInfo.Query">
+            <summary>
+            The query to run to get the data
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.ClassSupport.ClassAttributeInfo.AutoBuild">
+            <summary>
+            Indicates whether the database table should be auto build or not
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.ClassSupport.ClassAttributeInfo.PreserveData">
+            <summary>
+            Indicates whether the auto build process should attempt to preserve the data.
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.ClassSupport.ClassAttributeInfo.VersioningEnabled">
+            <summary>
+            Indicates whether versioning is enabled
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.ClassSupport.ClassAttributeInfo.KeepVersionHistory">
+            <summary>
+            Indicates whether a separate history table should store 
+            history of the objects.
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.ClassSupport.ClassAttributeInfo.VersionHistoryTableName">
+            <summary>
+            The name of the table to save history to.  If this is
+            name, a system generated table name will be created.
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.ClassSupport.ClassAttributeInfo.AutoResolveCurrentUser">
+            <summary>
+            Indicates whether the AutoDataSupport object should fire it's
+            ResolveCurrentUser event to populate the _modifiedBy field
+            value in the Versioned table.  If true, you must add a handler
+            for the ResolveCurrentUser event to return the current 
+            authenticated user.
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.ClassSupport.ClassAttributeInfo.CheckForStaleData">
+            <summary>
+            Indicates whether an exception should be thrown if the version
+            of the object in memory does not match the version of the object
+            in database table.
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.ClassSupport.ClassAttributeInfo.CacheSize">
+            <summary>
+            Indicates the cache size for automated 'get' caching
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.ClassSupport.DataSourceType.Table">
+            <summary>
+            Indicates the that object maps to a table
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.ClassSupport.DataSourceType.Query">
+            <summary>
+            Indicates that the source data comes from a Sql Query
+            </summary>
+        </member>
+        <member name="T:Olympic.AutoDataLayer.CacheSupport.DependencyCacheValidator">
+            <summary>
+            Represents a cache validator that forces a cache to be dependant
+            on the validation of another cache.  Use this to force clearing
+            of a cache when another cache is invalidated.
+            </summary>
+        </member>
+        <member name="T:Olympic.AutoDataLayer.CacheSupport.CacheValidator">
+            <summary>
+            A cache validator is used to invalidate a cache.  This class
+            can not be used directly and must be inherited.<br />
+            <br />
+            When an item is retrieved from a cache, the cache calls the
+            Validate() method on it's assigned Validators, and if a 
+            validator decides a cache is invalid, it fires the Invalid event which
+            causes the cache to clear.
+            </summary>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.CacheSupport.CacheValidator.OnInvalid">
+            <summary>
+            Call this method to fire the Invalid event.
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.CacheSupport.CacheValidator.Cache">
+            <summary>
+            The cache the validator is assigned to.
+            </summary>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.CacheSupport.CacheValidator.SetCache(Olympic.AutoDataLayer.CacheSupport.Cache)">
+            <summary>
+            Used by the cache class to assign the cache.
+            </summary>
+            <param name="cache"></param>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.CacheSupport.CacheValidator.Validate">
+            <summary>
+            Thie method must be overriden.  It is called whenever
+            the cache is accessed.  Use this method to deside if the cache
+            is invalid.  If the cache is invalid, call the OnInvalid method
+            to fire the Invalid event causing the cache to clear.
+            </summary>
+        </member>
+        <member name="E:Olympic.AutoDataLayer.CacheSupport.CacheValidator.Invalid">
+            <summary>
+            Fires when the validator determines that a cache is invalid (eg out of date)
+            </summary>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.CacheSupport.DependencyCacheValidator.#ctor(Olympic.AutoDataLayer.CacheSupport.Cache)">
+            <summary>
+            Create a new cache validator indicating the cache this
+            depends on.
+            </summary>
+            <param name="dependency">The cache that this cache depends on.</param>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.CacheSupport.DependencyCacheValidator.Dependency_Cleared(System.Object,System.EventArgs)">
+            <summary>
+            Called when the dependency is cleared.
+            </summary>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.CacheSupport.DependencyCacheValidator.Validate">
+            <summary>
+            Execute this validator.
+            </summary>
+        </member>
+        <member name="T:Olympic.AutoDataLayer.Data.SpExecuteSqlCommand">
+            <summary>
+            Summary description for SpExecuteSqlCommand.
+            </summary>
+        </member>
+        <member name="T:Olympic.AutoDataLayer.Data.Command">
+            <summary>
+            The Command object is used to make a final, primitive connection 
+            to a specified database with it's three main methods ExecuteNonQuery, 
+            ExecuteDataSet and ExecuteScalar.
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.Data.Command._type">
+            <summary>
+            The command type which defaults to StoredProcedure. The only 
+            way to change this is to override the class as with RemoteDataCommand. 
+            </summary>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.Data.Command.#ctor(System.String,System.String,Olympic.AutoDataLayer.Data.ClassContext)">
+            <summary>
+            Construct a new command object.
+            </summary>
+            <param name="commandText">The SQL command text to run. The format of this depends on the command type.</param>
+            <param name="target">The target database.</param>
+            <param name="reason">The reason for making this database call.</param>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.Data.Command.ExecuteNonQuery">
+            <summary>
+            Executes a command which returns nothing, other than the number of records affected.
+            </summary>
+            <returns>Number indicating how many records were affected cummulatively 
+            by all commands executed</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.Data.Command.ExecuteDataSet">
+            <summary>
+            Executes a command which returns a DataSet.
+            </summary>
+            <returns>DataSet containing the data returned.</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.Data.Command.ExecuteScalar">
+            <summary>
+            Executes a command which returns a single value.
+            </summary>
+            <returns>object containing the data returned.</returns>	
+        </member>
+        <member name="M:Olympic.AutoDataLayer.Data.Command.ThrowException(System.Exception)">
+            <summary>
+            Used to convert an exception raised in a database to an application exception
+            </summary>
+            <param name="exception">The Exception thrown from the database.</param>
+        </member>
+        <member name="P:Olympic.AutoDataLayer.Data.Command.ConnectionString">
+            <summary>
+            Get this command object's connection string. 
+            </summary>
+        </member>
+        <member name="P:Olympic.AutoDataLayer.Data.Command.CommandText">
+            <summary>
+            The SQL command string to be executed.
+            </summary>
+        </member>
+        <member name="P:Olympic.AutoDataLayer.Data.Command.Type">
+            <summary>
+            Gets this command's command type.
+            </summary>
+        </member>
+        <member name="P:Olympic.AutoDataLayer.Data.Command.Parameters">
+            <summary>
+            The hashtable of parameters to be executed with this Command.
+            </summary>
+        </member>
+        <member name="P:Olympic.AutoDataLayer.Data.Command.ValidatedSqlParameters">
+            <summary>
+            Iterates through the parameters in the current _parameters collection
+            </summary>
+        </member>
+        <member name="T:Olympic.AutoDataLayer.Tools.NullableTypeHelper">
+            <summary>
+            Provides support for testing .Net 2.0 nullable type to see if they
+            are nullable and extract the enclosed type from them.
+            </summary>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.Tools.NullableTypeHelper.IsNullableType(System.Type)">
+            <summary>
+            Indicates whether the supplied type is nullable.
+            </summary>
+            <param name="type">The type to test.</param>
+            <returns>Boolean indicating whether the type is a Nullable&lt;&gt; type.</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.Tools.NullableTypeHelper.GetUnderlyingTypeFromNullableType(System.Type)">
+            <summary>
+            Checks to see if the supplied type is a Nullable type and if so
+            extracts the underlying type from the nullable type.
+            </summary>
+            <param name="nullableType">The type to extract the underlying type from.</param>
+            <returns>The underlying type of a nullable type or the type passed in
+            if the type is not nullable.</returns>
+        </member>
+        <member name="T:Olympic.AutoDataLayer.SearchFilterRelationship">
+            <summary>
+            Represents the different relationships that can be tested with a SearchFilter.
+            </summary>
+        </member>
+        <member name="T:Olympic.AutoDataLayer.ConnectionTarget">
+            <summary>
+            Allows you to override the connection string for a period of time.
+            When the class is created, the connection string for the current thread
+            on ALL types is changed to the connection string in the constructor.  When the
+            class is disposed, the connection string returns to normal.  This class
+            may be used in a hierarchy.
+            </summary>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.ConnectionTarget.#ctor(System.String)">
+            <summary>
+            Create a new connection target to the supplied connection string.
+            </summary>
+            <param name="connectionString">Connection string of the database you
+            are connecting to.</param>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.ConnectionTarget.#ctor(System.String,Olympic.AutoDataLayer.DataSourceAttribute)">
+            <summary>
+            Create a new connection target to override the connection string and the datasource
+            </summary>
+            <param name="connectionString">Connection string of the database you
+            are connecting to.</param>
+            <param name="dataSource">The source of the data to execute the query against</param>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.ConnectionTarget.#ctor(Olympic.AutoDataLayer.DataSourceAttribute)">
+            <summary>
+            Create a new connection target to override the datasource
+            </summary>
+            <param name="dataSource">The source of the data to execute the query against</param>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.ConnectionTarget.Dispose">
+            <summary>
+            Restores the overriding connection string to the connection string that
+            was previously overriding.
+            </summary>
+        </member>
+        <member name="T:Olympic.AutoDataLayer.CacheSupport.Cache`2">
+            <summary>
+            Represents a typed cache.  A cache is used to store data that is
+            typically retrieved from the database.  Using a cache prevents
+            retrieving the data each time it is needed.<br />
+            <br />
+            This is a prioritised cache.  A limit can be set on the cache
+            and only the most recently accessed items will be retained within
+            that limit.  When an item is requested that is not yet loaded into
+            the cache, it is retrieved from the database (or cache source) and
+            added to the cache.  If the cache reaches it's size limit, the most 
+            oldest accessed item is removed from the cache.<br />
+            <br />
+            The cache supports objects that have a key as part of the object
+            model.
+            </summary>
+            <typeparam name="TKey">The type of the key for the cache.</typeparam>
+            <typeparam name="TObject">The type of the object to store in the cache.</typeparam>
+        </member>
+        <member name="T:Olympic.AutoDataLayer.CacheSupport.Cache">
+            <summary>
+            Represents a cache object base.  Never implement this class directly,
+            always implement a typed cache.
+            </summary>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.CacheSupport.Cache.InvalidateAll">
+            <summary>
+            Fires the ClearAll event.  Forces all caches to clear.
+            </summary>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.CacheSupport.Cache.OnCleared">
+            <summary>
+            Fires the Cleared event.
+            </summary>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.CacheSupport.Cache.OnCacheItemRemoved(System.Object)">
+            <summary>
+            Fires the CacheItemRemoved event.
+            </summary>
+            <param name="item">The item removed from the cache.</param>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.CacheSupport.Cache.GetCacheItems">
+            <summary>
+            Is overriden by the typed cache class.  Returns an
+            array of the cache items.  Allows the cache elements
+            to be accessed from the validators.
+            </summary>
+            <returns>Array of the cache items.</returns>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.CacheSupport.Cache._validators">
+            <summary>
+            The validators that are assigned to the cache.
+            </summary>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.CacheSupport.Cache.Validate">
+            <summary>
+            Calls each of the validators to validate the cache.  This method
+            is called every time an item is accessed from the cache.
+            </summary>
+        </member>
+        <member name="E:Olympic.AutoDataLayer.CacheSupport.Cache.ClearAll">
+            <summary>
+            The typed cache class hooks into this event.  When
+            this event is fired, all caches clear.
+            </summary>
+        </member>
+        <member name="E:Olympic.AutoDataLayer.CacheSupport.Cache.Cleared">
+            <summary>
+            Fires when a cache is cleared.
+            </summary>
+        </member>
+        <member name="E:Olympic.AutoDataLayer.CacheSupport.Cache.CacheItemRemoved">
+            <summary>
+            Fires when an item is removed from the cache.  The
+            sender parameter is the item removed.
+            </summary>
+        </member>
+        <member name="P:Olympic.AutoDataLayer.CacheSupport.Cache.CachedItemCount">
+            <summary>
+            The number of items currently cached.
+            </summary>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.CacheSupport.Cache`2.#ctor">
+            <summary>
+            Create a cache with no limit to the cache items.
+            </summary>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.CacheSupport.Cache`2.#ctor(System.Int32)">
+            <summary>
+            Create a new cache with a size limit.
+            </summary>
+            <param name="maximumSize">The maximum size of the cache.</param>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.CacheSupport.Cache`2.#ctor(Olympic.AutoDataLayer.CacheSupport.CacheValidator[])">
+            <summary>
+            Create a cache with no size limit, but with validators assigned.
+            </summary>
+            <param name="validators">Validators to use to invalidate the cache.</param>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.CacheSupport.Cache`2.#ctor(System.Int32,Olympic.AutoDataLayer.CacheSupport.CacheValidator[])">
+            <summary>
+            Create a new cache with a size limit and validators assigned.
+            </summary>
+            <param name="maximumSize">The maximum size of the cache.</param>
+            <param name="validators">Validators to use to invalidate the cache.</param>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.CacheSupport.Cache`2.AddValidator(Olympic.AutoDataLayer.CacheSupport.CacheValidator)">
+            <summary>
+            Add a validator to the cache.  A validator is used
+            to expire the cache if the data becomes corrupt or out
+            of date.
+            </summary>
+            <param name="validator">The validator to validate the cache.</param>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.CacheSupport.Cache`2.Cache_ClearAll(System.Object,System.EventArgs)">
+            <summary>
+            Called with the ClearAll() method is call on Cache class.
+            </summary>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.CacheSupport.Cache`2.Validator_Invalid(System.Object,System.EventArgs)">
+            <summary>
+            Called when a validator indicates an invalid cache.  Invalidates
+            the cache causing it to clear.
+            </summary>
+            <param name="sender">CacheValidator object that invlidated the cache.</param>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.CacheSupport.Cache`2.OnInvalidated(Olympic.AutoDataLayer.CacheSupport.CacheValidator)">
+            <summary>
+            Called when the cache is invalidated - clears the cache.  Can be overriden.
+            </summary>
+            <param name="validator"></param>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.CacheSupport.Cache`2.Invalidate">
+            <summary>
+            Invalidate the cache.  Forces the cache to be cleared.
+            </summary>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.CacheSupport.Cache`2.InvalidateItem(`0)">
+            <summary>
+            Invalidate an item in the cache based on it's key
+            </summary>
+            <param name="key"></param>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.CacheSupport.Cache`2.InvalidateItem(`1)">
+            <summary>
+            Invalidate an item in the cache base on the key of
+            the item.
+            </summary>
+            <param name="item">Item to invalidate.</param>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.CacheSupport.Cache`2.Add(`1)">
+            <summary>
+            Add an item to the cache.  If the cache reaches it's size limit
+            discard the oldest accessed item in the cache.
+            </summary>
+            <param name="item">Item to add to the cache.</param>
+            <returns>The linked list node that the cache item resides in.</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.CacheSupport.Cache`2.OnPrepare">
+            <summary>
+            Prepare the cache.  
+            This occurs when the cache is first accessed, either after the app starts up
+            or the cache has been cleared. Use this method to prepopulate the cache if you 
+            do not want a load-cache-item-on-demand style cache.
+            NB. You MUST call this Base method when overriding to prevent this method being called
+            every time an item is retrieved.
+            </summary>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.CacheSupport.Cache`2.Get(`0)">
+            <summary>
+            Retrieve an item from the cache.  If the item can not be found,
+            the cache will attempt to load the item by calling GetItem()
+            </summary>
+            <param name="key">The key of the item to retrieve.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.CacheSupport.Cache`2.GetKeyForItem(`1)">
+            <summary>
+            Must be overriden.  Use this to return the key for the item.
+            </summary>
+            <param name="item">Item to add to the cache.</param>
+            <returns>The key to use to retrieve this item.</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.CacheSupport.Cache`2.GetItem(`0)">
+            <summary>
+            Must be overriden.  Use this to fetch an item for the cache based
+            on a supplied key.
+            </summary>
+            <param name="key">The key of the item to get.</param>
+            <returns>A loaded item (or null if not found)</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.CacheSupport.Cache`2.GetCacheItems">
+            <summary>
+            Returns an array of the currently cached items.  This method is 
+            used by the validators if they need a list of the cache items.
+            </summary>
+            <returns>Array of currently cached items.</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.CacheSupport.Cache`2.ToArray">
+            <summary>
+            Returns an array of the currently cached items.  Items are returned in order of
+            oldest accessed item to most recently accessed item.
+            </summary>
+            <returns>Array of the currently cached items.</returns>
+        </member>
+        <member name="P:Olympic.AutoDataLayer.CacheSupport.Cache`2.Item(`0)">
+            <summary>
+            Retrieve an item from the cache.  If the item is not found 
+            in the cache matching the key, the item is loaded and added 
+            to the cache.
+            </summary>
+            <param name="key">Key of the item to retrieve.</param>
+            <returns>An item from the cache.</returns>
+        </member>
+        <member name="P:Olympic.AutoDataLayer.CacheSupport.Cache`2.CachedItemCount">
+            <summary>
+            The number of items currently cached.
+            </summary>
+        </member>
+        <member name="T:Olympic.AutoDataLayer.BuildSupport.IndexDefinition">
+            <summary>
+            Defines an index.
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.BuildSupport.IndexDefinition.Name">
+            <summary>
+            The name of the index
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.BuildSupport.IndexDefinition.Clustered">
+            <summary>
+            Indicates whether this is a clustered index
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.BuildSupport.IndexDefinition.Unique">
+            <summary>
+            Indicates whether the index should enforce a unique 
+            constraint.
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.BuildSupport.IndexDefinition.Fields">
+            <summary>
+            The fields to include in the index
+            </summary>
+        </member>
+        <member name="T:Olympic.AutoDataLayer.BuildSupport.IndexDefinitionCollection">
+            <summary>
+            Represents a collection of FieldDefinition objects.
+            </summary>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.BuildSupport.IndexDefinitionCollection.LoadFromDatabase(System.String,System.String,Olympic.AutoDataLayer.Data.ClassContext)">
+            <summary>
+            Returns a collection of the database indexes associated with an existing
+            table
+            </summary>
+            <param name="connectionString">Connection to the database</param>
+            <param name="tableName">Name of the table.</param>
+            <returns>Collection of index definitions.</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.BuildSupport.IndexDefinitionCollection.ContainsClusteredIndex">
+            <summary>
+            Indicates whether the collection of index definitions
+            contains an index with a clustered index.
+            </summary>
+            <returns>Bool indicating presence of a clustered index.</returns>
+        </member>
+        <member name="P:Olympic.AutoDataLayer.IndexAttribute.Name">
+            <summary>
+            The name of the index.  Use this to add multiple fields
+            into the same index.
+            </summary>
+        </member>
+        <member name="P:Olympic.AutoDataLayer.IndexAttribute.Clustered">
+            <summary>
+            Indicates that the index should be clustered.
+            </summary>
+        </member>
+        <member name="P:Olympic.AutoDataLayer.IndexAttribute.Unique">
+            <summary>
+            Indicates whether this index should enforce a unique contraint
+            on the field(s).
+            </summary>
+        </member>
+        <member name="P:Olympic.AutoDataLayer.IndexAttribute.SortOrder">
+            <summary>
+            The sort order of the index field. 
+            </summary>
+        </member>
+        <member name="T:Olympic.AutoDataLayer.Data.DatabaseAction">
+            <summary>
+            The actions that can occur on the database
+            </summary>
+        </member>
+        <member name="T:Olympic.AutoDataLayer.CacheSupport.TimeCacheValidator">
+            <summary>
+            Validates a cache using a time interval change.  This validator
+            invalidates the cache when the minute, hour or day part of the cache changes
+            depending on what is selected.
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.CacheSupport.TimeCacheValidator._cacheTime">
+            <summary>
+            The time of the cache or last invalidated time
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.CacheSupport.TimeCacheValidator.Interval">
+            <summary>
+            The interval to validate the cache on.  By default this is 
+            set to day.
+            </summary>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.CacheSupport.TimeCacheValidator.#ctor">
+            <summary>
+            Create a new TimeCacheValidator.
+            </summary>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.CacheSupport.TimeCacheValidator.#ctor(Olympic.AutoDataLayer.CacheSupport.TimeCacheValidator.TimeInterval)">
+            <summary>
+            Create a new TimeCacheValidator for a specific interval.
+            </summary>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.CacheSupport.TimeCacheValidator.Validate">
+            <summary>
+            Execute this validator.  This invalidates the cache
+            whenever the interval part of the time changes.
+            </summary>
+        </member>
+        <member name="T:Olympic.AutoDataLayer.CacheSupport.TimeCacheValidator.TimeInterval">
+            <summary>
+            The interval to valididate on.
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.CacheSupport.TimeCacheValidator.TimeInterval.Minute">
+            <summary>
+            Invalidate the cache when the minute changes
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.CacheSupport.TimeCacheValidator.TimeInterval.Hour">
+            <summary>
+            Invalidate the cache when the hour changes
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.CacheSupport.TimeCacheValidator.TimeInterval.Day">
+            <summary>
+            Invalidate the cache when the day changes
+            </summary>
+        </member>
+        <member name="T:Olympic.AutoDataLayer.BuildSupport.IndexFieldDefinition">
+            <summary>
+            Definies a field in an index and the sort order of the field
+            </summary>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.BuildSupport.IndexFieldDefinition.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.BuildSupport.IndexFieldDefinition.Name">
+            <summary>
+            Name of the field in the index
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.BuildSupport.IndexFieldDefinition.SortOrder">
+            <summary>
+            Sort order of the field in the index
+            </summary>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.BuildSupport.IndexFieldDefinition.ToIndexFieldListString">
+            <summary>
+            Returns the string needed to script this field into an index
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Olympic.AutoDataLayer.BuildSupport.IndexFieldDefinitionCollection">
+            <summary>
+            Represents a collection of FieldDefinition objects.
+            </summary>
+        </member>
+        <member name="T:Olympic.AutoDataLayer.TableAttribute">
+            <summary>
+            Defines the table name and build mode of the auto data class.
+            </summary>
+        </member>
+        <member name="T:Olympic.AutoDataLayer.DataSourceAttribute">
+            <summary>
+            The base for attibutes that indicate the source of the data.  Could
+            be a Table, Subquery.
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.TableAttribute.DefaultAutoBuild">
+            <summary>
+            This is the default action associated with building the database objects.
+            Initially this is set to DebugOnly.
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.TableAttribute.DefaultPreserveData">
+            <summary>
+            This is the default state of the data preservation during a table auto build
+            </summary>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.TableAttribute.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.TableAttribute.#ctor(System.String)">
+            <summary>
+            Create a table attribute indicating the name of the database table
+            </summary>
+            <param name="tableName">Database table name</param>
+        </member>
+        <member name="P:Olympic.AutoDataLayer.TableAttribute.TableName">
+            <summary>
+            Name of the database table
+            </summary>
+        </member>
+        <member name="P:Olympic.AutoDataLayer.TableAttribute.BuildMode">
+            <summary>
+            Indicates whether the table should be built automatically.  If not
+            specified, uses the value in DefaultAutoBuild.
+            </summary>
+        </member>
+        <member name="P:Olympic.AutoDataLayer.TableAttribute.PreserveData">
+            <summary>
+            Indicates whether the creation of a database table should attempt to 
+            preserve the data in the table.  Allow valid if AutoBuild is true.
+            </summary>
+        </member>
+        <member name="P:Olympic.AutoDataLayer.TableAttribute.DatasourceValidationKey">
+            <summary>
+            For Table we need to validate for each distinct table
+            </summary>
+        </member>
+        <member name="T:Olympic.AutoDataLayer.QueryAttribute">
+            <summary>
+            Defines the sub query used to retrieve the data
+            </summary>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.QueryAttribute.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.QueryAttribute.#ctor(System.String)">
+            <summary>
+            Create a sub query attribute indicating the sub query that will
+            identify the data set.
+            </summary>
+            <param name="query">Query used to build the source data set</param>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.QueryAttribute._query">
+            <summary>
+            Query used to build the source data.
+            </summary>
+        </member>
+        <member name="P:Olympic.AutoDataLayer.QueryAttribute.Query">
+            <summary>
+            Query used to build the source data.
+            </summary>
+        </member>
+        <member name="P:Olympic.AutoDataLayer.QueryAttribute.DatasourceValidationKey">
+            <summary>
+            For Query, no validation is needed, therefore we simply return Query.
+            </summary>
+        </member>
+        <member name="T:Olympic.AutoDataLayer.Data.PreExecuteCommandEventArgs">
+            <summary>
+            Used to intercept the database calls immediately before they are executed.
+            </summary>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.Data.PreExecuteCommandEventArgs.#ctor(System.Type,Olympic.AutoDataLayer.Data.DatabaseAction,System.String)">
+            <summary>
+            Create a new instance of the event args populating the class type and
+            the command text
+            </summary>
+            <param name="classType">The type of object the command is targeting</param>
+            <param name="commandText">The Sql command text to be executed.</param>
+        </member>
+        <member name="P:Olympic.AutoDataLayer.Data.PreExecuteCommandEventArgs.ClassType">
+            <summary>
+            Gets the type of the class that is being targeted
+            </summary>
+        </member>
+        <member name="P:Olympic.AutoDataLayer.Data.PreExecuteCommandEventArgs.CommandText">
+            <summary>
+            Gets or sets the actual sql statement about to be run
+            </summary>
+        </member>
+        <member name="T:Olympic.AutoDataLayer.AutoDataSupport">
+            <summary>
+            Provides an auto data layer for a .Net class to a Sql database.
+            </summary>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.AutoDataSupport.#cctor">
+            <summary>
+            We use this constructor to hook into the CreateTable event
+            of the ClassDefinition object so this can be fired from the AutoDataSupport
+            object
+            </summary>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.AutoDataSupport.ClassDefinition_BeforeCreateTable(System.Type)">
+            <summary>
+            Event handler used to fire the BeforeCreateTable event
+            </summary>
+            <param name="type">Type of the class that will have it's table
+            created.</param>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.AutoDataSupport.OnResolveCurrentUser(Olympic.AutoDataLayer.AutoDataSupport)">
+            <summary>
+            Returns the currently logged in user.
+            </summary>
+            <param name="objectToSave"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.AutoDataSupport._loadedKeys">
+            <summary>
+            This is used to store the primary keys for the item
+            when it is loaded.  Using this internal list, we can
+            decide if the object is to be created, or if it is
+            to be updated.
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.AutoDataSupport._version">
+            <summary>
+            The version of the object.  Incremented each time the object is
+            saved.
+            </summary>
+            <remarks>
+            This value is only populated when versioning is enabled.  To enable 
+            versioning add the Version attribute to the class.  You can use the 
+            version attribute to implement versioning and version history.
+            </remarks>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.AutoDataSupport._modifiedDate">
+            <summary>
+            The date the object was last saved to the database.
+            </summary>
+            <remarks>
+            This value is only populated when versioning is enabled.  To enable 
+            versioning add the Version attribute to the class.  You can use the 
+            version attribute to implement versioning and version history.
+            </remarks>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.AutoDataSupport._modifiedBy">
+            <summary>
+            The user that made the last change.  This gets populated 
+            </summary>
+            <remarks>
+            This value is only populated when versioning is enabled.  To enable 
+            versioning add the Version attribute to the class.  You can use the 
+            version attribute to implement versioning and version history.
+            </remarks>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.AutoDataSupport.ClassDefinition_AfterCreateTable(System.Type)">
+            <summary>
+            Event handler used to fire the AfterCreateTable event
+            </summary>
+            <param name="type">Type of the class that has just had it's table
+            created.</param>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.AutoDataSupport.OnAfterGet">
+            <summary>
+            Fires the AfterGet event
+            </summary>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.AutoDataSupport.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.AutoDataSupport.Save">
+            <summary>
+            Save this object to the database
+            </summary>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.AutoDataSupport.Delete(System.Type,System.Object[])">
+            <summary>
+            Delete an object based on it's primary key(s)
+            </summary>
+            <param name="objectType">The type of the object to delete</param>
+            <param name="keyPairs">Name value pairs of the object primary keys</param>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.AutoDataSupport.Delete(System.Type,Olympic.AutoDataLayer.SearchFilterCollection)">
+            <summary>
+            Delete an object(s) based on a search filter
+            </summary>
+            <param name="objectType">The type of the object to delete</param>
+            <param name="filters">Filter to define what objects will be deleted</param>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.AutoDataSupport.Get(System.Type,System.Object[])">
+            <summary>
+            Retrieve an object from the database based on it's primary key(s)
+            </summary>
+            <param name="objectType">The type of the object to delete</param>
+            <param name="keyPairs">Name value pairs of the object primary keys</param>
+            <returns>An object or null if no match is found.</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.AutoDataSupport.GetVersion(System.Type,System.Int32,System.Object[])">
+            <summary>
+            Retrieve a historic version of an object from the database based on it's primary key(s) 
+            and a specific version number.
+            </summary>
+            <param name="objectType">The type of the object to get</param>
+            <param name="versionNumber">The version of the object to get.</param>
+            <param name="keyPairs">Name value pairs of the object primary keys</param>
+            <returns>An object or null if no match is found.</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.AutoDataSupport.GetVersion(System.Type,System.DateTime,System.Object[])">
+            <summary>
+            Retrieve a historic version of an object from the database based on it's primary key(s) 
+            and a specific point in time.
+            </summary>
+            <param name="objectType">The type of the object to get</param>
+            <param name="versionDate">Will return the version of the object at this
+            point in time.</param>
+            <param name="keyPairs">Name value pairs of the object primary keys</param>
+            <returns>An object or null if no match is found.</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.AutoDataSupport.Query(System.Type,System.String)">
+            <summary>
+            Return a list of AutoData supported objects based on a query.  Returns all
+            objects matching the objectType.
+            </summary>
+            <param name="objectType">Type of the object to return.</param>
+            <returns>An array of objects.</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.AutoDataSupport.Query(System.Type,System.String,System.Int32@)">
+            <summary>
+            Return a list of AutoData supported objects based on a Query.
+            </summary>
+            <param name="objectType">Type of the object to return.</param>
+            <param name="query">The query to execute to get the data for the 
+            list of objects.</param>
+            <param name="totalRecordCount">The total number of records that match the search.  This is
+            populated only if there are 2 recordsets, and the secound has a field
+            named Count.</param>
+            <returns>An array of objects.</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.AutoDataSupport.Query(System.String)">
+            <summary>
+            Run a query against the database and return a dataset
+            </summary>
+            <param name="query">The query to execute</param>
+            <returns></returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.AutoDataSupport.Rehydrate``1(System.Data.DataSet,System.Int32)">
+            <summary>
+            Rehydrate list of objects from a dataset table.
+            </summary>
+            <typeparam name="T">The type of object to rehydrate</typeparam>
+            <param name="dataSet">The data set containing the data.</param>
+            <param name="tableIndex">The index of the table within the dataset to rehydrate</param>
+            <returns>A list of objects fo type T based on the table in the dataset.</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.AutoDataSupport.Rehydrate``1(System.Data.DataTable)">
+            <summary>
+            Rehydrate list of objects from a dataset table.
+            </summary>
+            <typeparam name="T">The type of object to rehydrate</typeparam>
+            <param name="dataTable">The datatable containing the data to rehydrate.</param>
+            <returns>A list of objects fo type T based on the table in the dataset.</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.AutoDataSupport.Rehydrate``1(System.Data.DataRow)">
+            <summary>
+            Redydrate an object from a dataRow.  If the object is a value type or string type,
+            the rehydration is considered to be scalar (ie. the first column of the row). 
+            Otherwise the rehydration will attempt to create a rich object
+            based on all the fields in the row.
+            </summary>
+            <typeparam name="T">The type of the object to rehydrate.</typeparam>
+            <param name="dataRow">The data row containing the data to rehydrate.</param>
+            <returns>An object/value of type T based on the data in dataRow.</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.AutoDataSupport.List(System.Type)">
+            <summary>
+            Return a list of AutoData supported objects.  Returns all
+            objects matching the objectType.
+            </summary>
+            <param name="objectType">Type of the object to return.</param>
+            <returns>An array of objects.</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.AutoDataSupport.List(System.Type,Olympic.AutoDataLayer.OrderByClauseCollection)">
+            <summary>
+            Return a list of AutoData supported objects.  Returns all objects
+            matching the objectType.
+            </summary>
+            <param name="objectType">Type of the object to return.</param>
+            <param name="orderBy">Collection of OrderByClauses to order the objects.</param>
+            <returns>An array of objects.</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.AutoDataSupport.List(System.Type,Olympic.AutoDataLayer.SearchFilterCollection,Olympic.AutoDataLayer.OrderByClauseCollection)">
+            <summary>
+            Return a list of AutoData supported objects.
+            </summary>
+            <param name="objectType">Type of the object to return.</param>
+            <param name="filters">Collection of SearchFilters to filter the result set.</param>
+            <param name="orderBy">Collection of OrderByClauses to order the objects.</param>
+            <returns>An array of objects.</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.AutoDataSupport.List(System.Type,Olympic.AutoDataLayer.SearchFilterCollection)">
+            <summary>
+            Return a list of AutoData supported objects.
+            </summary>
+            <param name="objectType">Type of the object to return.</param>
+            <param name="filters">Collection of SearchFilters to filter the result set.</param>
+            <returns>An array of objects.</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.AutoDataSupport.List(System.Type,Olympic.AutoDataLayer.SearchFilterCollection,System.Int32,System.Int32)">
+            <summary>
+            Return a list of AutoData supported objects.
+            </summary>
+            <param name="objectType">Type of the object to return.</param>
+            <param name="filters">Collection of SearchFilters to filter the result set.</param>
+            <param name="pageNo">Page of results to return.</param>
+            <param name="pageSize">Size of the page to return.</param>
+            <returns>An array of objects.</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.AutoDataSupport.List(System.Type,Olympic.AutoDataLayer.SearchFilterCollection,System.Int32,System.Int32,System.Int32@)">
+            <summary>
+            Return a list of AutoData supported objects.
+            </summary>
+            <param name="objectType">Type of the object to return.</param>
+            <param name="filters">Collection of SearchFilters to filter the result set.</param>
+            <param name="pageNo">Page of results to return.</param>
+            <param name="pageSize">Size of the page to return.</param>
+            <param name="totalRecordCount">The total number of records that match the search.</param>
+            <returns>An array of objects.</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.AutoDataSupport.List(System.Type,Olympic.AutoDataLayer.SearchFilterCollection,Olympic.AutoDataLayer.OrderByClauseCollection,System.Int32,System.Int32)">
+            <summary>
+            Return a list of AutoData supported objects.
+            </summary>
+            <param name="objectType">Type of the object to return.</param>
+            <param name="filters">Collection of SearchFilters to filter the result set.</param>
+            <param name="orderBy">Collection of OrderByClauses to order the objects.</param>
+            <param name="pageNo">Page of results to return.</param>
+            <param name="pageSize">Size of the page to return.</param>
+            <returns>An array of objects.</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.AutoDataSupport.List(System.Type,Olympic.AutoDataLayer.SearchFilterCollection,Olympic.AutoDataLayer.OrderByClauseCollection,System.Int32,System.Int32,System.Int32@)">
+            <summary>
+            Return a list of AutoData supported objects.
+            </summary>
+            <param name="objectType">Type of the object to return.</param>
+            <param name="filters">Collection of SearchFilters to filter the result set.</param>
+            <param name="orderBy">Collection of OrderByClauses to order the objects.</param>
+            <param name="pageNo">Page of results to return.</param>
+            <param name="pageSize">Size of the page to return.</param>
+            <param name="totalRecordCount">The total number of records that match the search.</param>
+            <returns>An array of objects.</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.AutoDataSupport.List(System.Type,Olympic.AutoDataLayer.SearchFilterCollection,Olympic.AutoDataLayer.OrderByClauseCollection,Olympic.AutoDataLayer.SearchOptions,System.Int32,System.Int32,System.Int32@)">
+            <summary>
+            Return a list of AutoData supported objects.
+            </summary>
+            <param name="objectType">Type of the object to return.</param>
+            <param name="filters">Collection of SearchFilters to filter the result set.</param>
+            <param name="orderBy">Collection of OrderByClauses to order the objects.</param>
+            <param name="pageNo">Page of results to return.</param>
+            <param name="pageSize">Size of the page to return.</param>
+            <param name="totalRecordCount">The total number of records that match the search.</param>
+            <returns>An array of objects.</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.AutoDataSupport.GetCount(System.Type)">
+            <summary>
+            Used to retrieve the total number of rows in the table for this object.
+            </summary>
+            <param name="objectType">The type of the object to return the count for.</param>
+            <returns>The total number of rows in the table for this object.</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.AutoDataSupport.GetCount(System.Type,Olympic.AutoDataLayer.SearchFilterCollection)">
+            <summary>
+            Returns the count of rows that match the supplied filter.
+            </summary>
+            <param name="objectType">The type of the object to return the count for.</param>
+            <param name="filter">Filter to apply to the table to identify the
+            rows that should be included in the count.</param>
+            <returns>The number of rows in the table matching the filter.</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.AutoDataSupport.Verify(System.Type)">
+            <summary>
+            Validates the table and builds if running
+            in debug mode.
+            </summary>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.AutoDataSupport.SetConnectionString(System.Type,System.String,System.Boolean)">
+            <summary>
+            Assigns a connection string to an object type.
+            </summary>
+            <param name="type">The type of the object to assign the connection string to</param>
+            <param name="connectionString">The connection string to assign</param>
+            <param name="currentThreadOnly">Indicates whether the connection string should only apply to the current thread.</param>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.AutoDataSupport.SetConnectionString(System.Type,System.String)">
+            <summary>
+            Assigns a connection string to an object type.  Connection string will be
+            used for all threads (unless overriden).
+            </summary>
+            <param name="type">The type of the object to assign the connection string to</param>
+            <param name="connectionString">The connection string to assign</param>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.AutoDataSupport.SetDefaultConnectionString(System.String,System.Boolean)">
+            <summary>
+            Set the default connection string to use for all object types.
+            </summary>
+            <param name="connectionString">The connection string to assign</param>
+            <param name="currentThreadOnly">Indicates whether the connection string should only apply to the current thread.</param>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.AutoDataSupport.SetDefaultConnectionString(System.String)">
+            <summary>
+            Set the default connection string to use for all object types.  Connection string will be
+            used for all threads (unless overriden).
+            </summary>
+            <param name="connectionString">The connection string to assign</param>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.AutoDataSupport.DefaultCacheSize">
+            <summary>
+            The deafult size of the cache for objects that extend AutoDataSupport&lt;%gt;
+            </summary>
+        </member>
+        <member name="E:Olympic.AutoDataLayer.AutoDataSupport.BeforeCreateTable">
+            <summary>
+            Fires immediately before an object table is created
+            </summary>
+        </member>
+        <member name="E:Olympic.AutoDataLayer.AutoDataSupport.ResolveCurrentUser">
+            <summary>
+            Add an event handler for this event to return the current logged in user
+            before an object saves to the database.
+            </summary>
+        </member>
+        <member name="E:Olympic.AutoDataLayer.AutoDataSupport.BeforeSave">
+            <summary>
+            Fires immediately before an object is saved to the database
+            </summary>
+        </member>
+        <member name="E:Olympic.AutoDataLayer.AutoDataSupport.AfterSave">
+            <summary>
+            Fires immediately after an object is saved to the database
+            </summary>
+        </member>
+        <member name="E:Olympic.AutoDataLayer.AutoDataSupport.AfterCreateTable">
+            <summary>
+            Fires immediately after an object table is created
+            </summary>
+        </member>
+        <member name="E:Olympic.AutoDataLayer.AutoDataSupport.AfterGet">
+            <summary>
+            Fires after an object is retrieved from the database either by
+            way of a Get or a List.
+            </summary>
+        </member>
+        <member name="P:Olympic.AutoDataLayer.AutoDataSupport.CommandTimeout">
+            <summary>
+            The length of time a database call will allow before it times out.
+            </summary>
+        </member>
+        <member name="T:Olympic.AutoDataLayer.AutoDataSupport`1">
+            <summary>
+            Uses generics to provide a type specific auto data layer for a .Net class to a Sql 
+            database.
+            </summary>
+            <typeparam name="TObject">The type of the auto data object.</typeparam>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.AutoDataSupport`1.Delete(System.Object[])">
+            <summary>
+            Delete an object based on it's primary key(s)
+            </summary>
+            <param name="keyPairs">Name value pairs of the object primary keys</param>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.AutoDataSupport`1.Delete(Olympic.AutoDataLayer.SearchFilterCollection)">
+            <summary>
+            Delete an object(s) based on a search filter
+            </summary>
+            <param name="filters">Filter to define what objects will be deleted</param>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.AutoDataSupport`1.Get(System.Object[])">
+            <summary>
+            Retrieve an object from the database based on it's primary key(s)
+            </summary>
+            <param name="keyPairs">Name value pairs of the object primary keys</param>
+            <returns>An object or null if no match is found.</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.AutoDataSupport`1.GetVersion(System.Int32,System.Object[])">
+            <summary>
+            Retrieve a historic version of an object from the database based on it's primary key(s) 
+            and a specific version number.
+            </summary>
+            <param name="versionNumber">The version of the object to get.</param>
+            <param name="keyPairs">Name value pairs of the object primary keys</param>
+            <returns>An object or null if no match is found.</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.AutoDataSupport`1.GetVersion(System.DateTime,System.Object[])">
+            <summary>
+            Retrieve a historic version of an object from the database based on it's primary key(s) 
+            and a specific point in time.
+            </summary>
+            <param name="versionDate">Will return the version of the object at this
+            point in time.</param>
+            <param name="keyPairs">Name value pairs of the object primary keys</param>
+            <returns>An object or null if no match is found.</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.AutoDataSupport`1.Query(System.String)">
+            <summary>
+            Return a list of AutoData supported objects.  Returns all
+            objects matching the objectType.  This method replaces the Query
+            method on AutoDataSupport that returns a Dataset.
+            </summary>
+            <param name="query">The query to execute to return the objects from the database</param>
+            <returns>An array of objects.</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.AutoDataSupport`1.Query(System.String,System.Int32@)">
+            <summary>
+            Return a list of AutoData supported objects.
+            </summary>
+            <param name="query">The query to execute to return the objects from the database</param>
+            <param name="totalRecordCount">The total number of records that match the search.  To
+            populate the totalRecordCount value, return a second recordset with the column name 'Count'.
+            </param>
+            <returns>An array of objects.</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.AutoDataSupport`1.List">
+            <summary>
+            Return a list of AutoData supported objects.  Returns all
+            objects matching the objectType.
+            </summary>
+            <returns>An array of objects.</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.AutoDataSupport`1.List(Olympic.AutoDataLayer.OrderByClauseCollection)">
+            <summary>
+            Return a list of AutoData supported objects.  Returns all objects
+            matching the objectType.
+            </summary>
+            <param name="orderBy">Collection of OrderByClauses to order the objects.</param>
+            <returns>An array of objects.</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.AutoDataSupport`1.List(Olympic.AutoDataLayer.SearchFilterCollection,Olympic.AutoDataLayer.OrderByClauseCollection)">
+            <summary>
+            Return a list of AutoData supported objects.
+            </summary>
+            <param name="filters">Collection of SearchFilters to filter the result set.</param>
+            <param name="orderBy">Collection of OrderByClauses to order the objects.</param>
+            <returns>An array of objects.</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.AutoDataSupport`1.List(Olympic.AutoDataLayer.SearchFilterCollection)">
+            <summary>
+            Return a list of AutoData supported objects.
+            </summary>
+            <param name="filters">Collection of SearchFilters to filter the result set.</param>
+            <returns>An array of objects.</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.AutoDataSupport`1.List(Olympic.AutoDataLayer.SearchFilterCollection,System.Int32,System.Int32)">
+            <summary>
+            Return a list of AutoData supported objects.
+            </summary>
+            <param name="filters">Collection of SearchFilters to filter the result set.</param>
+            <param name="pageNo">Page of results to return.</param>
+            <param name="pageSize">Size of the page to return.</param>
+            <returns>An array of objects.</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.AutoDataSupport`1.List(Olympic.AutoDataLayer.SearchFilterCollection,System.Int32,System.Int32,System.Int32@)">
+            <summary>
+            Return a list of AutoData supported objects.
+            </summary>
+            <param name="filters">Collection of SearchFilters to filter the result set.</param>
+            <param name="pageNo">Page of results to return.</param>
+            <param name="pageSize">Size of the page to return.</param>
+            <param name="totalRecordCount">The total number of records that match the search.</param>
+            <returns>An array of objects.</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.AutoDataSupport`1.List(Olympic.AutoDataLayer.SearchFilterCollection,Olympic.AutoDataLayer.OrderByClauseCollection,System.Int32,System.Int32)">
+            <summary>
+            Return a list of AutoData supported objects.
+            </summary>
+            <param name="filters">Collection of SearchFilters to filter the result set.</param>
+            <param name="orderBy">Collection of OrderByClauses to order the objects.</param>
+            <param name="pageNo">Page of results to return.</param>
+            <param name="pageSize">Size of the page to return.</param>
+            <returns>An array of objects.</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.AutoDataSupport`1.List(Olympic.AutoDataLayer.SearchFilterCollection,Olympic.AutoDataLayer.OrderByClauseCollection,System.Int32,System.Int32,System.Int32@)">
+            <summary>
+            Return a list of AutoData supported objects.
+            </summary>
+            <param name="filters">Collection of SearchFilters to filter the result set.</param>
+            <param name="orderBy">Collection of OrderByClauses to order the objects.</param>
+            <param name="pageNo">Page of results to return.</param>
+            <param name="pageSize">Size of the page to return.</param>
+            <param name="totalRecordCount">The total number of records that match the search.</param>
+            <returns>An array of objects.</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.AutoDataSupport`1.List(Olympic.AutoDataLayer.SearchFilterCollection,Olympic.AutoDataLayer.OrderByClauseCollection,Olympic.AutoDataLayer.SearchOptions,System.Int32,System.Int32,System.Int32@)">
+            <summary>
+            Return a list of AutoData supported objects.
+            </summary>
+            <param name="filters">Collection of SearchFilters to filter the result set.</param>
+            <param name="orderBy">Collection of OrderByClauses to order the objects.</param>
+            <param name="searchOptions">Indicates behaviour to apply to the search.</param>
+            <param name="pageNo">Page of results to return.</param>
+            <param name="pageSize">Size of the page to return.</param>
+            <param name="totalRecordCount">The total number of records that match the search.</param>
+            <returns>An array of objects.</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.AutoDataSupport`1.GetCount">
+            <summary>
+            Used to retrieve the total number of rows in the table for this object.
+            </summary>
+            <returns>The total number of rows in the table for this object.</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.AutoDataSupport`1.GetCount(Olympic.AutoDataLayer.SearchFilterCollection)">
+            <summary>
+            Returns the count of rows that match the supplied filter.
+            </summary>
+            <param name="filter">Filter to apply to the table to identify the
+            rows that should be included in the count.</param>
+            <returns>The number of rows in the table matching the filter.</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.AutoDataSupport`1.SetConnectionString(System.String,System.Boolean)">
+            <summary>
+            Assigns a connection string to the object type.
+            </summary>
+            <param name="connectionString">The connection string to assign</param>
+            <param name="currentThreadOnly">Indicates whether the connection string should only apply to the current thread.</param>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.AutoDataSupport`1.SetConnectionString(System.String)">
+            <summary>
+            Assigns a connection string to the object type.  Connection string will be
+            used for all threads (unless overriden).
+            </summary>
+            <param name="connectionString">The connection string to assign</param>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.AutoDataSupport`1.Verify">
+            <summary>
+            Validates the table based on the build mode
+            and builds the table if build is enbled.
+            </summary>
+        </member>
+        <member name="T:Olympic.AutoDataLayer.VersionAttribute">
+            <summary>
+            The VersionAttribute provides version support to an AutoDataSupport
+            object.  When an object is versioned, three additional fields
+            are added to the table: _version, _modifiedDate, _modifiedBy.  These
+            are used to manage versioning.
+            </summary>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.VersionAttribute.#ctor">
+            <summary>
+            Creates a default instance of the VersionAttribute.
+            </summary>
+        </member>
+        <member name="P:Olympic.AutoDataLayer.VersionAttribute.KeepVersionHistory">
+            <summary>
+            Indicates whether a separate version history table should store 
+            a copy of the object whenever the version changes.
+            </summary>
+        </member>
+        <member name="P:Olympic.AutoDataLayer.VersionAttribute.VersionHistoryTableName">
+            <summary>
+            The name of the table to save version history information to.  If this is
+            null or empty, a system generated table name will be created.
+            </summary>
+        </member>
+        <member name="P:Olympic.AutoDataLayer.VersionAttribute.AutoResolveCurrentUser">
+            <summary>
+            Indicates whether the AutoDataSupport object should fire it's
+            ResolveCurrentUser event to populate the _modifiedBy field
+            value in the Versioned table.  If true, you must add a handler
+            for the ResolveCurrentUser event to return the current 
+            authenticated user.
+            </summary>
+        </member>
+        <member name="P:Olympic.AutoDataLayer.VersionAttribute.CheckForStaleData">
+            <summary>
+            Indicates whether an exception should be thrown if the version
+            of the object in memory does not match the version of the object
+            in database table.
+            </summary>
+        </member>
+        <member name="T:Olympic.AutoDataLayer.AfterCreateTableEventHandler">
+            <summary>
+            This delegate defines the event handler method for the AfterCreateTable event
+            </summary>
+        </member>
+        <member name="T:Olympic.AutoDataLayer.BeforeCreateTableEventHandler">
+            <summary>
+            This delegate defines the event handler method for the BeforeCreateTable event
+            </summary>
+        </member>
+        <member name="T:Olympic.AutoDataLayer.ResolveUserEventHandler">
+            <summary>
+            This delegate defines the event handler method for the ResolveUser event.
+            </summary>
+            <param name="sender">The object being saved</param>
+            <param name="e">The event args to manipulate</param>
+        </member>
+        <member name="T:Olympic.AutoDataLayer.DatabaseFieldType">
+            <summary>
+            Represents the field type in the database
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.DatabaseFieldType.NVarChar">
+            <summary>
+            Represents a SQL NVarChar field.
+            This field is automatically assigned for string
+            types.
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.DatabaseFieldType.NText">
+            <summary>
+            Represents a SQL NText field.
+            Default field type for string types greater than 4000
+            characters.
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.DatabaseFieldType.Int">
+            <summary>
+            Represents a SQL Int field.
+            Default field type for the Int32 type
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.DatabaseFieldType.BigInt">
+            <summary>
+            Represents a SQL BigInt field.
+            Default field type for the Int64 type
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.DatabaseFieldType.Float">
+            <summary>
+            Represents a SQL Float field.
+            Default field type for double, single and decimal types
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.DatabaseFieldType.DateTime">
+            <summary>
+            Represents a SQL Datetime field.
+            Default field type for dates
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.DatabaseFieldType.Bit">
+            <summary>
+            Represents a SQL Bit field.
+            Default field type for boolean values
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.DatabaseFieldType.Decimal">
+            <summary>
+            Represents a SQL Decimal field.
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.DatabaseFieldType.VarBinary">
+            <summary>
+            Represents a SQL VarBinary field.
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.DatabaseFieldType.Image">
+            <summary>
+            Represents a SQL Image (binary) field.
+            Default field type for byte[].
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.DatabaseFieldType.Char">
+            <summary>
+            Represents a SQL Char field.
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.DatabaseFieldType.Binary">
+            <summary>
+            Represents a SQL Binary field.
+            </summary>		
+        </member>
+        <member name="F:Olympic.AutoDataLayer.DatabaseFieldType.Money">
+            <summary>
+            Represents a SQL Money field.
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.DatabaseFieldType.NChar">
+            <summary>
+            Represents a SQL NChar field.
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.DatabaseFieldType.VarChar">
+            <summary>
+            Represents a SQL VarChar field.
+            </summary>		
+        </member>
+        <member name="F:Olympic.AutoDataLayer.DatabaseFieldType.SmallDateTime">
+            <summary>
+            Represents a SQL SmallDateTime field.
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.DatabaseFieldType.SmallInt">
+            <summary>
+            Represents a SQL SmallInt field.
+            Default field type for Int16 values.
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.DatabaseFieldType.SmallMoney">
+            <summary>
+            Represents a SQL SmallMoney field.
+            </summary>		
+        </member>
+        <member name="F:Olympic.AutoDataLayer.DatabaseFieldType.Text">
+            <summary>
+            Represents a SQL Text field.
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.DatabaseFieldType.TinyInt">
+            <summary>
+            Represents a SQL TinyInt field.
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.DatabaseFieldType.UniqueIdentifier">
+            <summary>
+            Represents a unique identifier (GUID)
+            </summary>
+        </member>
+        <member name="T:Olympic.AutoDataLayer.FieldValidationAttribute">
+            <summary>
+            Used as a base class for validating fields in class.  
+            </summary>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.FieldValidationAttribute.Test(System.String,System.String,System.Object)">
+            <summary>
+            Test the field value to see if it passes the validation
+            </summary>
+            <param name="value">Value to test</param>
+        </member>
+        <member name="T:Olympic.AutoDataLayer.IncludeDBAttribute">
+            <summary>
+            Indicates that a property or a field should be included, and allows
+            modifying the field name and default database type assigned.<br />
+            <br />
+            By default, all public read/write properties and fields are
+            included in the saving of a class.  To include private
+            fields or read only properties, you need to supply the IncludeDB
+            attribute.
+            </summary>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.IncludeDBAttribute.#ctor">
+            <summary>
+            Required for serialization support
+            </summary>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.IncludeDBAttribute.#ctor(System.String)">
+            <summary>
+            Use this constructor to change the field name.
+            </summary>
+            <param name="fieldName"></param>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.IncludeDBAttribute.#ctor(System.String,Olympic.AutoDataLayer.DatabaseFieldType)">
+            <summary>
+            Use this constructor to change the field name and default database type of the field.
+            </summary>
+            <param name="fieldName"></param>
+            <param name="fieldType"></param>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.IncludeDBAttribute.#ctor(System.String,Olympic.AutoDataLayer.DatabaseFieldType,System.Int32)">
+            <summary>
+            Use this constructor to change the field name and default database type of the field
+            where the database type requires a size to be specified.
+            </summary>
+            <param name="fieldName"></param>
+            <param name="fieldType"></param>
+            <param name="fieldSize"></param>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.IncludeDBAttribute.#ctor(System.String,System.Int32,System.Int32)">
+            <summary>
+            Use this constructor to change the name and default database type to a decimal
+            and indicate the precision (total digits, field size) and scale (decimal places).
+            </summary>
+            <param name="fieldName"></param>
+            <param name="fieldSize"></param>
+            <param name="decimalPlaces"></param>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.IncludeDBAttribute.#ctor(Olympic.AutoDataLayer.DatabaseFieldType)">
+            <summary>
+            Use this constructor to change the default database type of the field.
+            </summary>
+            <param name="fieldType"></param>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.IncludeDBAttribute.#ctor(Olympic.AutoDataLayer.DatabaseFieldType,System.Int32)">
+            <summary>
+            Use this constructor to change the default database type of the field
+            where the database type requires a size to be specified.
+            </summary>
+            <param name="fieldType"></param>
+            <param name="fieldSize"></param>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.IncludeDBAttribute.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Use this constructor to change the default database type to a decimal
+            and indicate the precision (total digits, field size) and scale (decimal places).
+            </summary>
+            <param name="fieldSize"></param>
+            <param name="decimalPlaces"></param>
+        </member>
+        <member name="P:Olympic.AutoDataLayer.IncludeDBAttribute.FieldName">
+            <summary>
+            The name of the field in the database
+            </summary>
+        </member>
+        <member name="P:Olympic.AutoDataLayer.IncludeDBAttribute.FieldType">
+            <summary>
+            The database type to map this field to
+            </summary>
+        </member>
+        <member name="P:Olympic.AutoDataLayer.IncludeDBAttribute.FieldSize">
+            <summary>
+            The size of the field.
+            </summary>
+        </member>
+        <member name="P:Olympic.AutoDataLayer.IncludeDBAttribute.DecimalPlaces">
+            <summary>
+            The number of decimal places to allow (for decimal only).
+            </summary>
+        </member>
+        <member name="T:Olympic.AutoDataLayer.BuildMode">
+            <summary>
+            Indicates whether the table should auto build
+            based on the class structure.
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.BuildMode.DebugOnly">
+            <summary>
+            Indicates that the table should build only when the class
+            that defines the table was built in debug mode.
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.BuildMode.AllowBuild">
+            <summary>
+            Auto build the database table based on the class
+            if necessary.
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.BuildMode.DontBuild">
+            <summary>
+            Don't auto build the database table.
+            </summary>
+        </member>
+        <member name="T:Olympic.AutoDataLayer.ClassSupport.ClassDefinition">
+            <summary>
+            Represents an AutoDataLayer class
+            </summary>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.ClassSupport.ClassDefinition.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.ClassSupport.ClassDefinition.#ctor(System.Type,Olympic.AutoDataLayer.DataSourceAttribute)">
+            <summary>
+            Contruct the ClassDefinition for a AutoDataSupport object
+            </summary>
+            <param name="objectType">The type of the object to get the definition for.</param>
+            <param name="dataSource">Allows the default data source associated with the object
+            to be overriden.</param>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.ClassSupport.ClassDefinition._getObjectScript">
+            <summary>
+            Stores the database script needed to retrieve an object
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.ClassSupport.ClassDefinition._getVersionNumberObjectScript">
+            <summary>
+            Stores the database script needed to retrieve an object based on a version number
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.ClassSupport.ClassDefinition._getVersionDateObjectScript">
+            <summary>
+            Stores the database script needed to retrieve an object based on a version at a specific date
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.ClassSupport.ClassDefinition._listObjectScript">
+            <summary>
+            Stores the database script needed to list objects
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.ClassSupport.ClassDefinition._insertObjectScript">
+            <summary>
+            Stores the database script needed to insert an object
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.ClassSupport.ClassDefinition._updateObjectScript">
+            <summary>
+            Stores the database script needed to update an object
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.ClassSupport.ClassDefinition._deleteObjectByKeyScript">
+            <summary>
+            Stores the database script needed to delete an object using the primary key
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.ClassSupport.ClassDefinition._classDefinitions">
+            <summary>
+            Stores an internal cache of the object types.
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.ClassSupport.ClassDefinition._typeValidated">
+            <summary>
+            Stores an internal cache to test is the class has been validated.
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.ClassSupport.ClassDefinition.Type">
+            <summary>
+            The System.Type of the class
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.ClassSupport.ClassDefinition.DataSourceType">
+            <summary>
+            The type of the source data
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.ClassSupport.ClassDefinition.TableName">
+            <summary>
+            The database table name this class will map to
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.ClassSupport.ClassDefinition.Query">
+            <summary>
+            The query to use in the case the Data Source Type is Query.
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.ClassSupport.ClassDefinition.AutoBuild">
+            <summary>
+            Indicates whether this class should auto build the database table.
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.ClassSupport.ClassDefinition.PreserveData">
+            <summary>
+            Indicates whether this class should attempt to preserve the data
+            of any existing table during an auto build.
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.ClassSupport.ClassDefinition.VersioningEnabled">
+            <summary>
+            Indicates whether versioning is enabled
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.ClassSupport.ClassDefinition.KeepVersionHistory">
+            <summary>
+            Indicates whether a separate history table should store 
+            version history of the objects.
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.ClassSupport.ClassDefinition.VersionHistoryTableName">
+            <summary>
+            The name of the table to save history information to.  If this is
+            null or empty, a system generated table name will be created.
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.ClassSupport.ClassDefinition.AutoResolveCurrentUser">
+            <summary>
+            Indicates whether the AutoDataSupport object should fire it's
+            ResolveCurrentUser event to populate the _modifiedBy field
+            value in the Versioned table.  If true, you must add a handler
+            for the ResolveCurrentUser event to return the current 
+            authenticated user.
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.ClassSupport.ClassDefinition.CheckForStaleData">
+            <summary>
+            Indicates whether an exception should be thrown if the version
+            of the object in memory does not match the version of the object
+            in database table.
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.ClassSupport.ClassDefinition.TableDefinition">
+            <summary>
+            The definition of the database table this class maps
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.ClassSupport.ClassDefinition.VersionHistoryTableDefinition">
+            <summary>
+            The definition of the version history database table that is associated with this class.
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.ClassSupport.ClassDefinition.ClassFields">
+            <summary>
+            The definition of the class fields
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.ClassSupport.ClassDefinition.PrimaryKeyFields">
+            <summary>
+            A subset of the ClassFields representing the fields that are primary key
+            fields (unique).
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.ClassSupport.ClassDefinition._loadedKeyCollectionField">
+            <summary>
+            This represents the field that stores the loaded keys
+            in an AutoData object
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.ClassSupport.ClassDefinition._versionField">
+            <summary>
+            This represents the field that stores the version number
+            in an AutoData object
+            </summary>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.ClassSupport.ClassDefinition.RehydrateObject(System.Object,System.Data.DataRow)">
+            <summary>
+            Populates an object with the values from a data row.
+            </summary>
+            <param name="objectToRehydrate">The object to populate.</param>
+            <param name="dataRow">The data row containing the data to populate the object.</param>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.ClassSupport.ClassDefinition.RehydrateObject(System.Object,System.Data.SqlClient.SqlDataReader)">
+            <summary>
+            Populates an object with the values from a data row.
+            </summary>
+            <param name="objectToRehydrate">The object to populate.</param>
+            <param name="dataReader">The data reader containing the data to populate the object.</param>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.ClassSupport.ClassDefinition.RehydrateObject(System.Data.DataRow)">
+            <summary>
+            Creates an instance of the object type this definition is for based
+            on a data row.
+            </summary>
+            <param name="dataRow">The data row containing the data to populate the object.</param>
+            <returns>A rehydrated object</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.ClassSupport.ClassDefinition.ValidateObjectType(System.Type)">
+            <summary>
+            Validate that this object type is a valid auto data support object.
+            </summary>
+            <param name="objectType">The type of the object to test if it is a valid ADL object.</param>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.ClassSupport.ClassDefinition.RehydrateObject(System.Data.SqlClient.SqlDataReader)">
+            <summary>
+            Creates an instance of the object type this definition is for based
+            on a data row.
+            </summary>
+            <param name="dataReader">The data reader containing the data to populate the object.</param>
+            <returns>A rehydrated object</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.ClassSupport.ClassDefinition.Verify(Olympic.AutoDataLayer.Data.DataTableTarget)">
+            <summary>
+            Verify that the TableDefinition matches what is in the database.
+            </summary>
+            <returns>Boolean indicating whether the table in the database
+            matches the table in the class.</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.ClassSupport.ClassDefinition.DropDatabaseTable(Olympic.AutoDataLayer.Data.DataTableTarget)">
+            <summary>
+            Drops the database table associated with this object
+            </summary>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.ClassSupport.ClassDefinition.OnBeforeCreateTable">
+            <summary>
+            Used to fire the BeforeCreateTable event
+            </summary>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.ClassSupport.ClassDefinition.OnAfterCreateTable">
+            <summary>
+            Used to fire the AfterCreateTable event
+            </summary>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.ClassSupport.ClassDefinition.CreateDatabaseTable(Olympic.AutoDataLayer.Data.DataTableTarget)">
+            <summary>
+            Creates the database table associated with this object
+            </summary>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.ClassSupport.ClassDefinition.GetClassDefinition(System.Type)">
+            <summary>
+            Gets a class definition object for the supplied type
+            </summary>
+            <param name="objectType">Type to return a definition for.</param>
+            <returns>Class definition of the type.</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.ClassSupport.ClassDefinition.QueryObjects(System.String,System.Int32@)">
+            <summary>
+            Returns results based on the query.
+            </summary>
+            <param name="query"></param>
+            <param name="totalRecordCount"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.ClassSupport.ClassDefinition.QueryDataSet(System.String)">
+            <summary>
+            Executes a query and returns a dataset
+            </summary>
+            <param name="query">The query to run</param>
+            <returns></returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.ClassSupport.ClassDefinition.ListObjects(Olympic.AutoDataLayer.SearchFilterCollection,Olympic.AutoDataLayer.OrderByClauseCollection,Olympic.AutoDataLayer.SearchOptions,System.Int32,System.Int32,System.Int32@)">
+            <summary>
+            Returns a page of results from an ordered list of objects matching the search filter.
+            </summary>
+            <param name="filters">The filter to apply to the search</param>
+            <param name="orderBy">The order to sort the results</param>
+            <param name="pageNumber">The page to return</param>
+            <param name="pageSize">The size of the page</param>
+            <param name="totalRecordCount">The total record count in the search result.</param>
+            <returns>An array of objects matching the search.</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.ClassSupport.ClassDefinition.TranslateOrderByClauseCollection(Olympic.AutoDataLayer.OrderByClauseCollection)">
+            <summary>
+            Translates an order by collection using object field names
+            to a database order by colleciton using database field names
+            </summary>
+            <returns>Translated order by collection</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.ClassSupport.ClassDefinition.ExtractHavingFilters(Olympic.AutoDataLayer.SearchFilterCollection@)">
+            <summary>
+            Divides the search filters into two new filters.  One for the WHERE clause and one for the HAVING clause.
+            </summary>
+            <param name="searchFilters"></param>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.ClassSupport.ClassDefinition.IsAggregateFilter(Olympic.AutoDataLayer.SearchFilter)">
+            <summary>
+            Indicates whether this search field is an aggregate field
+            </summary>
+            <param name="filter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.ClassSupport.ClassDefinition.TranslateSearchFilterCollection(Olympic.AutoDataLayer.SearchFilterCollection)">
+            <summary>
+            Translates a search filter collection using object field names
+            to a database search filter colleciton using database field names
+            </summary>
+            <returns>Translated search filter collection</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.ClassSupport.ClassDefinition.GetObjectCount">
+            <summary>
+            Return the count of all objects.
+            </summary>
+            <returns>The total number of this type of object.</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.ClassSupport.ClassDefinition.GetObjectCount(Olympic.AutoDataLayer.SearchFilterCollection)">
+            <summary>
+            Retrieves the number of records matching the supplied filter.
+            </summary>
+            <param name="filter">The filter to apply.</param>
+            <returns>The count of objects matching the supplied filter.</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.ClassSupport.ClassDefinition.DeleteObject(Olympic.AutoDataLayer.SearchFilterCollection)">
+            <summary>
+            Deletes objects of this type based on the search filter supplied
+            </summary>
+            <param name="filters">Search filter to identify rows to delete.</param>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.ClassSupport.ClassDefinition.DeleteObject(System.Object[])">
+            <summary>
+            Deletes an object of this type based on the name value pairs
+            supplied.
+            </summary>
+            <param name="nameValuePairs">Name value pairs matching the
+            primary keys</param>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.ClassSupport.ClassDefinition.GetObject(System.Nullable{System.Int32},System.Nullable{System.DateTime},System.Object[])">
+            <summary>
+            Returns an object of this type based on the name value pairs
+            supplied.
+            </summary>
+            <param name="versionNumber">If versioning is enabled, the specific historic version number of the object
+            to get.  Setting both versionNumber and versionDate to null retreives the 
+            current row or non-versioned row.  If you want to get a historic version
+            of an object you should specify the version number OR the version date.</param>
+            <param name="versionDate">If versioning is enabled, the specific date used to determine
+            the version of the object to get.  Setting both versionNumber and versionDate to null retreives the 
+            current row or non-versioned row.  If you want to get a historic version
+            of an object you should specify the version number OR the version date.</param>
+            <param name="nameValuePairs">Name value pairs matching the
+            primary keys</param>
+            <returns>A rehydrated object or null if the object was not found.</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.ClassSupport.ClassDefinition.SaveObject(System.Object)">
+            <summary>
+            Saves an object to the database.  Returns the object
+            with any modifications that may have occurred in the
+            database during the save. eg. Assigning an auto number value
+            </summary>
+            <param name="objectToSave">The object to save to the database.</param>
+            <returns>The saved object</returns>
+        </member>
+        <member name="P:Olympic.AutoDataLayer.ClassSupport.ClassDefinition.IsAggregated">
+            <summary>
+            Indicates if this class contains aggregated data
+            </summary>
+        </member>
+        <member name="E:Olympic.AutoDataLayer.ClassSupport.ClassDefinition.BeforeCreateTable">
+            <summary>
+            Fires immediately before an object table is created
+            </summary>
+        </member>
+        <member name="E:Olympic.AutoDataLayer.ClassSupport.ClassDefinition.AfterCreateTable">
+            <summary>
+            Fires immediately after an object table is created
+            </summary>
+        </member>
+        <member name="T:Olympic.AutoDataLayer.CacheSupport.CacheElement`2">
+            <summary>
+            The element that is cached in a simple cache.
+            </summary>
+            <typeparam name="TKey"></typeparam>
+            <typeparam name="TValue"></typeparam>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.CacheSupport.CacheElement`2.Key">
+            <summary>
+            Key of the cache element
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.CacheSupport.CacheElement`2.Value">
+            <summary>
+            Value of the cache element
+            </summary>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.CacheSupport.CacheElement`2.#ctor(`0,`1)">
+            <summary>
+            Create a cache element with a key and value.
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+        </member>
+        <member name="T:Olympic.AutoDataLayer.CacheSupport.SimpleCache`2">
+            <summary>
+            Provides a simple cache that takes a method that will be used to resolve
+            a key to a value. The cached element will also store the original key to
+            prefrom the item to key conversion.
+            </summary>
+            <typeparam name="TKey"></typeparam>
+            <typeparam name="TValue"></typeparam>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.CacheSupport.SimpleCache`2.#ctor(System.Converter{`0,`1})">
+            <summary>
+            Create a cache with unlimited size
+            </summary>
+            <param name="retrivalMethod">method used to retrieve items given a key</param>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.CacheSupport.SimpleCache`2.#ctor(System.Int32,System.Converter{`0,`1})">
+            <summary>
+            Create a LRU cache with the given size
+            </summary>
+            <param name="cacheSize">maximum size of the cache</param>
+            <param name="retrivalMethod">method to use when retrieving items from keys</param>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.CacheSupport.SimpleCache`2.Get(`0)">
+            <summary>
+            Gets the value given the key
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Olympic.AutoDataLayer.CacheSupport.SimpleCache`2.Item(`0)">
+            <summary>
+            Gets the value given the key
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Olympic.AutoDataLayer.StringValidationAttribute">
+            <summary>
+            Used to validate string items on the object.  Currently only supports
+            MaxLength, but we could use it to add regular expression support etc.
+            </summary>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.StringValidationAttribute.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.StringValidationAttribute.#ctor(System.Int32)">
+            <summary>
+            Create a new string validation attribute and assign
+            the max length
+            </summary>
+            <param name="maxLength"></param>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.StringValidationAttribute.Test(System.String,System.String,System.Object)">
+            <summary>
+            Test the field value to see whether if is valid
+            </summary>
+            <param name="className">Used in case of error</param>
+            <param name="classFieldName">Used in case of error</param>
+            <param name="value">The value to test</param>
+        </member>
+        <member name="P:Olympic.AutoDataLayer.StringValidationAttribute.MaxLength">
+            <summary>
+            The maximum length of the string
+            </summary>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.SqlTransactionScope.#ctor">
+            <summary>
+            Create a new transaction scope for ADL objects to operate in.
+            </summary>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.SqlTransactionScope.GetTransaction(System.String)">
+            <summary>
+            Returns a transaction object for the given connection string
+            with the current application scope.
+            </summary>
+            <param name="connectionString">The connection string to identify the
+            which transaction to return.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.SqlTransactionScope.Complete">
+            <summary>
+            Commits the current transaction(s).
+            </summary>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.SqlTransactionScope.Rollback">
+            <summary>
+            Rolls back the current transaction(s).
+            </summary>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.SqlTransactionScope.Dispose">
+            <summary>
+            Restores the overriding connection string to the connection string that
+            was previously overriding.
+            </summary>
+        </member>
+        <member name="P:Olympic.AutoDataLayer.SqlTransactionScope.IsolationLevel">
+            <summary>
+            Transaction IsolationLevel property to allow ADL users to customise this for their
+            transactions.
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:Olympic.AutoDataLayer.SqlTransactionScope.SqlTransactionElements" -->
+        <member name="P:Olympic.AutoDataLayer.SqlTransactionScope.SqlTransactionElements.Transaction">
+            <summary>
+            Reference to the transaction
+            </summary>
+        </member>
+        <member name="P:Olympic.AutoDataLayer.SqlTransactionScope.SqlTransactionElements.Connection">
+            <summary>
+            Reference to the connection.  This is the important one.  The bug in ADO.NET means
+            that very occasionally (under load usually) the Connection property of the SqlTransaction 
+            object is null.<br />
+            <br />
+            [From the article:]<br />
+            In ADO.Net 2.0, the SqlTransaction was modified so that it has two references to the 
+            SqlConnection used to create it.  The first is the publicly exposed Connection property.  
+            The second in a private connection property.  The private connection has a weak reference 
+            to the public connection.<br />
+            </summary>
+        </member>
+        <member name="T:Olympic.AutoDataLayer.SearchFilter">
+            <summary>
+            Represents a name, value pair that is used to filter results
+            from 'List' methods.  Supports wild cards used in LIKE comparisons.
+            </summary>
+            <remarks>
+            Because this class is effectively building dynamic SQL from it's criteria, 
+            special care must be taken to ensure that none of the criteria objects
+            return values from their ToString() implementations that might allow 
+            a SQL injection attack.
+            <p/>
+            TODO: Suggested approach is to check the input criteria for possible SQL
+            injection sequences and filter them out.  However one needs to differentiate 
+            between deliberate attacks, and accidentally dangerous characters (such as 
+            imbedded SQL string quotes).  It would be good to raise an event when the 
+            suspected deliberate attacks are detected, so that they can be responded to
+            i.e. by sending an alert email etc.
+            </remarks>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.SearchFilter.#ctor">
+            <summary>
+            Required for serialization support
+            </summary>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.SearchFilter.#ctor(System.String,System.Object)">
+            <summary>
+            Creates a search criteria checking for Equal.
+            </summary>
+            <param name="fieldName"></param>
+            <param name="criteriaValue"></param>
+            <exception cref="T:System.ArgumentNullException">Thrown if either fieldName or criteriaValue are null.</exception>
+            <exception cref="T:System.ArgumentException">Thrown if fieldName is not a valid SQL syntax for a fieldName.</exception>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.SearchFilter.#ctor(System.String,Olympic.AutoDataLayer.SearchFilterRelationship,System.Object[])">
+            <summary>
+            Creates a search criteria checking for the specified relationship between the value of the field 
+            and the criteriaValues.
+            </summary>
+            <param name="fieldName"></param>
+            <param name="relationship"></param>
+            <param name="criteriaValues"></param>
+            <exception cref="T:System.ArgumentNullException">Thrown if either fieldName or criteriaValue are null.</exception>
+            <exception cref="T:System.ArgumentException">Thrown if fieldName is not a valid SQL syntax for a fieldName.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">Thrown if relationship is neither of Between or In, or if relationship is Between but more or fewer than 2 criteria values are specified.</exception>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.SearchFilter.IsValidSQLFieldName(System.String)">
+            <summary>
+            Validates that field name is a correctly formatted SQL2000 field name.
+            </summary>
+            <param name="fieldName">field name ot be tested.</param>
+            <returns>true if the fieldName is a valid SQL formatted field name, otherwise false.</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.SearchFilter.GetFormattedCriteria">
+            <summary>
+            Returns just the criteria part formatted for inclusion 
+            in a SQL WHERE clause.
+            </summary>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.SearchFilter.ToSQLWhereClause">
+            <summary>
+            Returns a SQL WHERE clause representing this SearchFilter.
+            </summary>
+            <returns>A Valid SQL2000 syntax where clause that applies 
+            this search filter.</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.SearchFilter.MakeSafeSQLString(System.Object)">
+            <summary>
+            Formats a criteria value into a safe SQL string value.
+            </summary>
+            <param name="criteriaValue">value to be formatted.</param>
+            <returns>Sanitised version of the criteria value.</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.SearchFilter.FormatContainsQuery(System.Object)">
+            <summary>
+            Formats a criteria value into a safe SQL string value
+            to be used as a CONTAINS query.
+            </summary>
+            <param name="criteriaValue">value to be formatted.</param>
+            <returns>Sanitised version of the criteria value.</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.SearchFilter.FormatContainsSearchCondition(System.String)">
+            <summary>
+            Formats a SQL CONTAINS search condition, replacing our working operators
+            with SQL ones, and filling in missing operators with the default one.
+            </summary>
+            <param name="sqlCONTAINSSearchCondition">search condition to be formatted.</param>
+            <returns>Formatted version ofhte original search condition.</returns>
+        </member>
+        <member name="P:Olympic.AutoDataLayer.SearchFilter.FieldName">
+            <summary>Name of the field to apply the filter criteria to.</summary>
+        </member>
+        <member name="P:Olympic.AutoDataLayer.SearchFilter.Relationship">
+            <summary>Relationship between the criteria and the value being filtered.</summary>
+        </member>
+        <member name="P:Olympic.AutoDataLayer.SearchFilter.Criteria">
+            <summary>Criteria values.</summary>
+            <remarks>
+            These values have different significance depending on the relationship type.
+            See the following table for a description of how the criteria are interpreted 
+            for each of the CriteriaRelationship.
+            </remarks>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.SearchFilterCollection.#ctor">
+            <summary>
+            Constructor which creates an empty SearchFilterCollection
+            </summary>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.SearchFilterCollection.#ctor(Olympic.AutoDataLayer.SearchFilter[])">
+            <summary>
+            Create a new search filter collection from an array of SearchFilters
+            </summary>
+            <param name="filter"></param>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.SearchFilterCollection.ContainsOr">
+            <summary>
+            Indicates whether the search filter collection contains an 'Or'
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.SearchFilterCollection.GetAllAncesters">
+            <summary>
+            Returns an array of all the search filters in the search filter tree.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.SearchFilterCollection.Add(Olympic.AutoDataLayer.SearchFilter)">
+            <summary>
+            Adds the specified SearchFilter to the SearchFilters collection
+            </summary>
+            <param name="value">The SearchFilter to add</param>
+            <returns>The number of items in the SearchFilters collection after the addition</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.SearchFilterCollection.Add(System.String,System.Object)">
+            <summary>
+            Uses the supplied parameters to create a new SearchFilter, which is then added to the SearchFilters collection
+            </summary>
+            <param name="fieldName">the field being used in the search expression</param>
+            <param name="criteriaValue">the criteria used in the search expression</param>
+            <returns>The number of items in the SearchFilters collection after the addition</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.SearchFilterCollection.Add(System.String,Olympic.AutoDataLayer.SearchFilterRelationship)">
+            <summary>
+            Uses the supplied parameters to create a new SearchFilter, which is then added to the SearchFilters collection
+            </summary>
+            <param name="fieldName">The field being used in the search expression</param>
+            <param name="relationship"></param>
+            <returns>The number of items in the SearchFilters collection after the addition</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.SearchFilterCollection.Add(System.String,Olympic.AutoDataLayer.SearchFilterRelationship,System.Object)">
+            <summary>
+            Uses the supplied parameters to create a new SearchFilter, which is then added to the SearchFilters collection
+            </summary>
+            <param name="fieldName">The field being used in the search expression</param>
+            <param name="relationship"></param>
+            <param name="criteriaValue"></param>
+            <returns>The number of items in the SearchFilters collection after the addition</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.SearchFilterCollection.Add(System.String,Olympic.AutoDataLayer.SearchFilterRelationship,System.Object[])">
+            <summary>
+            Uses the supplied parameters to create a new SearchFilter, which is then added to the SearchFilters collection
+            </summary>
+            <param name="fieldName">The field being used in the search expression</param>
+            <param name="relationship"></param>
+            <param name="criteriaValues"></param>
+            <returns>The number of items in the SearchFilters collection after the addition</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.SearchFilterCollection.AddRange(Olympic.AutoDataLayer.SearchFilter[])">
+            <summary>
+            Adds the supplied array of SearchFilters to the SearchFilterCollection
+            </summary>
+            <param name="filters">The array of SearchFilters to add</param>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.SearchFilterCollection.IndexOf(Olympic.AutoDataLayer.SearchFilter)">
+            <summary>
+            Returns the index of the specified SearchFilter
+            </summary>
+            <param name="value">The SearchFilter to look for</param>
+            <returns>The index of the specified SearchFilter</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.SearchFilterCollection.Insert(System.Int32,Olympic.AutoDataLayer.SearchFilter)">
+            <summary>
+            Inserts the SearchFilter at the specified location
+            </summary>
+            <param name="index">The position to insert at</param>
+            <param name="value">The SearchFilter to insert</param>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.SearchFilterCollection.Remove(Olympic.AutoDataLayer.SearchFilter)">
+            <summary>
+            Recusively search all SearchFilters and any SearchFilterCollections for the
+            specified SearchFilter, and removes it if it was found
+            </summary>
+            <param name="value">The SearchFilter to search for</param>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.SearchFilterCollection.RemoveAt(System.Int32)">
+            <summary>
+            Removes the SearchFilter at the specified location
+            </summary>
+            <param name="Index">The ordinal position of the SearchFilter to remove</param>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.SearchFilterCollection.Contains(Olympic.AutoDataLayer.SearchFilter)">
+            <summary>
+            Recusively search all SearchFilters and any SearchFilterCollections for the
+            specified SearchFilter, and returns a boolean indicating if it was found
+            </summary>
+            <param name="value">The SearchFilter to search for</param>
+            <returns>a boolean indicating if the specified SearchFilter was found</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.SearchFilterCollection.Contains(System.String)">
+            <summary>
+            Recusively search all SearchFilters and any SearchFilterCollections for the
+            specified FieldName, and returns an array of references to the SearchFilters if found
+            </summary>
+            <param name="FieldName">The name of the field to search for</param>
+            <returns>An array of matching SearchFilters for the specified field name if found, or null if not found</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.SearchFilterCollection.ToSQLWhereClause">
+            <summary>
+            Produces the SQL WHERE clause for the search filter collection
+            </summary>
+            <returns>the SQL WHERE clause for the search filter collection</returns>
+        </member>
+        <member name="P:Olympic.AutoDataLayer.SearchFilterCollection.SearchFilters">
+            <summary>
+            Returns all of the SearchFilter objects in this SearchFilterCollection in an array of SearchFilters
+            </summary>
+        </member>
+        <member name="P:Olympic.AutoDataLayer.SearchFilterCollection.Item(System.Int32)">
+            <summary>
+            Indexer
+            </summary>
+        </member>
+        <member name="T:Olympic.AutoDataLayer.BuildSupport.TableDefinition">
+            <summary>
+            Represents a table in the database, either based
+            on an existing table, or based on a class.
+            </summary>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.BuildSupport.TableDefinition.#ctor(Olympic.AutoDataLayer.ClassSupport.ClassDefinition,Olympic.AutoDataLayer.Data.DataTableTarget)">
+            <summary>
+            Create the TableDefinition that maps to the class definition
+            </summary>
+            <param name="classDefinition"></param>
+            <param name="dataTableTarget"></param>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.BuildSupport.TableDefinition.TableName">
+            <summary>
+            The database name of the table
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.BuildSupport.TableDefinition.Fields">
+            <summary>
+            A collection of the database fields in the table
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.BuildSupport.TableDefinition.AggregateFields">
+            <summary>
+            A collection of aggregate fields that are included in the select queries.
+            These are not fields in the table.
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.BuildSupport.TableDefinition.Indexes">
+            <summary>
+            A collection of the indexes in the table
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.BuildSupport.TableDefinition.VersionHistoryTable">
+            <summary>
+            Indicates whether an version history trigger has been defined on the table.  If null, then 
+            there is no version history table.
+            </summary>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.BuildSupport.TableDefinition.LoadFromDatabase(System.String,System.String,Olympic.AutoDataLayer.Data.ClassContext)">
+            <summary>
+            Returns a table definition based on an existing table in the database.
+            </summary>
+            <param name="connectionString">Connection string to the database</param>
+            <param name="table">Table to retrieve the definition of.</param>
+            <returns>Definition of the table or null if the table doesn't exist.</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.BuildSupport.TableDefinition.Verify(Olympic.AutoDataLayer.BuildSupport.TableDefinition,Olympic.AutoDataLayer.Data.DataTableTarget)">
+            <summary>
+            Verifies that the tableDefinition passed in matches this table definition
+            </summary>
+            <returns>Indication that the table matches.</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.BuildSupport.TableDefinition.DropTable(System.String,Olympic.AutoDataLayer.Data.ClassContext)">
+            <summary>
+            Drops the table associated with the definition
+            in the database specified by the connection string
+            </summary>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.BuildSupport.TableDefinition.CreateTable(System.String,System.Boolean,Olympic.AutoDataLayer.Data.ClassContext)">
+            <summary>
+            Creates the table associated with this definition
+            in the database specified by the connection string
+            </summary>
+            <param name="connectionString">Connection string to the database where the table is to be created</param>
+            <param name="preserveData">Indicates whether we should attempt to preserve the data in the table if it already exists.</param>
+        </member>
+        <member name="T:Olympic.AutoDataLayer.Data.CommandBuilder">
+            <summary>
+            Used to build up command objects to execute against the database
+            </summary>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.Data.CommandBuilder.GetListTableColumnsCommand(System.String,System.String,Olympic.AutoDataLayer.Data.ClassContext)">
+            <summary>
+            Returns a command object that can be used to query a table
+            for it's column information.
+            </summary>
+            <param name="connectionString">The connection string of the database</param>
+            <param name="tableName">The name of the table to query</param>
+            <returns>The command object needed to query the table.</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.Data.CommandBuilder.GetListContraintsCommand(System.String,System.String,Olympic.AutoDataLayer.Data.ClassContext)">
+            <summary>
+            Returns a command object that can by used to query a table
+            for it's contraint information (used to find primary keys)
+            </summary>
+            <param name="connectionString">The connection string of the database</param>
+            <param name="tableName">The name of the table to query</param>
+            <returns>The command object needed to query the table.</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.Data.CommandBuilder.GetListIndexesCommand(System.String,System.String,Olympic.AutoDataLayer.Data.ClassContext)">
+            <summary>
+            Returns a command object that can by used to query a table
+            for it's index information
+            </summary>
+            <param name="connectionString">The connection string of the database</param>
+            <param name="tableName">The name of the table to query</param>
+            <returns>The command object needed to query the table.</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.Data.CommandBuilder.GetDropTableCommand(System.String,System.String,Olympic.AutoDataLayer.Data.ClassContext)">
+            <summary>
+            Returns a command object that can be used to drop a table.
+            </summary>
+            <param name="connectionString">The connection string of the database</param>
+            <param name="tableName">The name of the table to drop</param>
+            <returns>The command object needed to drop the table.</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.Data.CommandBuilder.GetCreateTableCommand(System.String,Olympic.AutoDataLayer.BuildSupport.TableDefinition,System.Boolean,Olympic.AutoDataLayer.Data.ClassContext)">
+            <summary>
+            Returns a command object that can be used to create a table.
+            </summary>
+            <param name="connectionString">The connection string of the database</param>
+            <param name="tableDefinition">The definition of the table to create</param>
+            <param name="preserveData">Indicates whether we should try to preserve the table.</param>
+            <returns>The command object needed to create the table.</returns>
+        </member>
+        <member name="T:Olympic.AutoDataLayer.OrderByClause">
+            <summary>
+            Defines an order by clause for a Sql statement.
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.OrderByClause.FieldName">
+            <summary>
+            The field to order by
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.OrderByClause.OrderType">
+            <summary>
+            The order direction of the field
+            </summary>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.OrderByClause.#ctor(System.String,Olympic.AutoDataLayer.OrderType)">
+            <summary>
+            Construct an OrderByClause
+            </summary>
+            <param name="fieldName">Name of the field</param>
+            <param name="orderType">Direction of sorting</param>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.OrderByClause.#ctor(System.String)">
+            <summary>
+            Construct an OrderByClause
+            </summary>
+            <param name="fieldName">Name of the field</param>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.OrderByClause.ToSQLOrderByString">
+            <summary>
+            Returns the SQL string (without ORDER BY) that 
+            can be used as the Order By clause for a Sql Statement.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.OrderByClause.op_Implicit(Olympic.AutoDataLayer.OrderByClause)~Olympic.AutoDataLayer.OrderByClauseCollection">
+            <summary>
+            Casts an OrderByClause to an OrderByClauseCollection as a shortcut
+            to creating a collection of one OrderByClause.
+            </summary>
+            <param name="orderByClause"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Olympic.AutoDataLayer.OrderByClauseCollection">
+            <summary>
+            Represents a colleciton of <see cref="T:Olympic.AutoDataLayer.SearchFilter"/> objects.
+            </summary>
+        </member>
+        <member name="T:Olympic.AutoDataLayer.Tools.ResourceAccessor">
+            <summary>
+            Summary description for ResourceAccessor.
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.Tools.ResourceAccessor._resources">
+            <summary>
+            Stores a list of the available resources
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.Tools.ResourceAccessor._resourceNameLookup">
+            <summary>
+            Lookup table used to speed up the retrieval of the resources.
+            Maps the resource names to the full resource name.
+            </summary>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.Tools.ResourceAccessor.ResolveResourceName(System.String)">
+            <summary>
+            Get the full resource name based on the name supplied
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.Tools.ResourceAccessor.GetText(System.String)">
+            <summary>
+            Reads a text resource
+            </summary>
+            <param name="resourceName">Name (or partial) name of the
+            resource to retrieve.  If the name is partial, then
+            the name must match the end of a full resource name.
+            eg. Readme.txt matches Olympic.MyApp.Readme.txt</param>
+            <returns>The content of the resource</returns>
+        </member>
+        <member name="T:Olympic.AutoDataLayer.Data.DataSourceManager">
+            <summary>
+            Manages the overriding of the data source (ie Table, Query)
+            </summary>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.Data.DataSourceManager.Get">
+            <summary>
+            Simply returns the overriden data source
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Olympic.AutoDataLayer.Data.DataSourceManager.OverrideThreadDataSource">
+            <summary>
+            Allows the data source to be overriden for the
+            current thread.  Setting 
+            this to a data source forces all database calls
+            to use this data source.  Setting it to null resets
+            to use the predefined data sources.
+            </summary>
+        </member>
+        <member name="T:Olympic.AutoDataLayer.ClassSupport.ClassFieldAttributeInfo">
+            <summary>
+            Represents a summary of the attributes of a field
+            </summary>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.ClassSupport.ClassFieldAttributeInfo.#ctor(System.Reflection.MemberInfo)">
+            <summary>
+            Constructs a new ClassFieldAttributeInfo object based on a property or field
+            in a class.
+            </summary>
+            <param name="memberInfo">The property or field to retrieve the attribute
+            information for</param>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.ClassSupport.ClassFieldAttributeInfo.Unique">
+            <summary>
+            Indicates whether the unique attribute has been supplied
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.ClassSupport.ClassFieldAttributeInfo.AutoNumber">
+            <summary>
+            Indicates whether the unique field is an auto number field
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.ClassSupport.ClassFieldAttributeInfo.Include">
+            <summary>
+            Indicates whether the field should be inclued in the table
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.ClassSupport.ClassFieldAttributeInfo.AllowNull">
+            <summary>
+            Indicates whether the field should allow nulls
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.ClassSupport.ClassFieldAttributeInfo.ReadOnly">
+            <summary>
+            Indicates whether this property is Read only.  Read only properties
+            are not included by default.  You need to use the IncludeDB attribute
+            to include them.
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.ClassSupport.ClassFieldAttributeInfo.Type">
+            <summary>
+            Indicates the system type of the field
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.ClassSupport.ClassFieldAttributeInfo.DatabaseFieldName">
+            <summary>
+            Indicates the name of the field
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.ClassSupport.ClassFieldAttributeInfo.FieldType">
+            <summary>
+            Indicates the type to assign to the field
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.ClassSupport.ClassFieldAttributeInfo.MaxLength">
+            <summary>
+            Indicates the maximum length of the field - used for string types, of for indicating
+            the precision of a decimal type
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.ClassSupport.ClassFieldAttributeInfo.DecimalPlaces">
+            <summary>
+            Indicates the number of decimal places to support for the decimal type
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.ClassSupport.ClassFieldAttributeInfo.IsAggregate">
+            <summary>
+            Indicates whether this field is an aggregate field.
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.ClassSupport.ClassFieldAttributeInfo.AggregateFunction">
+            <summary>
+            If this is an aggregate field, indicates the aggregate function to use.
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.ClassSupport.ClassFieldAttributeInfo.AggregateFieldName">
+            <summary>
+            The name of the field to aggregate.
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.ClassSupport.ClassFieldAttributeInfo.AggregateDistinct">
+            <summary>
+            If this is an aggregate field, indicates if the aggregate function should
+            aggregate distinct values only.
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.ClassSupport.ClassFieldAttributeInfo.Validators">
+            <summary>
+            Array of validation attributes that can be applied to validate the 
+            value of the field.
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.ClassSupport.ClassFieldAttributeInfo.Indexes">
+            <summary>
+            Array of index attributes assigned to the field
+            </summary>
+        </member>
+        <member name="T:Olympic.AutoDataLayer.BuildSupport.DatabaseFieldDefinition">
+            <summary>
+            Represents the definition of a field in a database table.
+            </summary>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.BuildSupport.DatabaseFieldDefinition.#ctor(Olympic.AutoDataLayer.ClassSupport.ClassFieldDefinition)">
+            <summary>
+            Creates a database field definition based on a class field definition
+            </summary>
+            <param name="classFieldDefinition">The class field to convert into
+            a database definition.</param>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.BuildSupport.DatabaseFieldDefinition.#ctor(System.Data.DataRow,System.Boolean)">
+            <summary>
+            Creates a database field definition based on a column data row.
+            </summary>
+            <param name="columnRow">The data row to base the definition on.</param>
+            <param name="primaryKey">Is this field a primary key?</param>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.BuildSupport.DatabaseFieldDefinition.FieldName">
+            <summary>
+            The name of the field
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.BuildSupport.DatabaseFieldDefinition.FieldType">
+            <summary>
+            The type of the field
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.BuildSupport.DatabaseFieldDefinition.FieldSize">
+            <summary>
+            The size of the field, or the precision
+            for the decimal data type.
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.BuildSupport.DatabaseFieldDefinition.DecimalPlaces">
+            <summary>
+            Indicates the number of digits to the right
+            of the decimal place that are allowed for the
+            decimal data type.  (0 for all other types)
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.BuildSupport.DatabaseFieldDefinition.PrimaryKey">
+            <summary>
+            Indicates whether this field is part of a primary key
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.BuildSupport.DatabaseFieldDefinition.AutoNumber">
+            <summary>
+            Indicates whether this is an auto number field (for fields that are of type
+            int and are primary keys)
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.BuildSupport.DatabaseFieldDefinition.AllowNull">
+            <summary>
+            Indicates whether this field allows nulls.
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.BuildSupport.DatabaseFieldDefinition.IsAggregate">
+            <summary>
+            Indicates whether this field is an aggregate field.
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.BuildSupport.DatabaseFieldDefinition.AggregateFunction">
+            <summary>
+            The SQL used to evaluate the aggregate function.
+            </summary>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.BuildSupport.DatabaseFieldDefinition.GetDatabaseFieldType(System.Type,System.Int32)">
+            <summary>
+            Returns the database field type that matches a system type. 
+            </summary>
+            <remarks>The maxLength parameter decides if string types
+            should be treated as NVarChar or NText.</remarks>
+            <param name="systemType">The system type</param>
+            <param name="maxLength">The max length of the string</param>
+            <returns>The mapped database field type.</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.BuildSupport.DatabaseFieldDefinition.ToTableDeclarationScript(System.Boolean)">
+            <summary>
+            Returns this field as a declaration that would appear within
+            a create table script
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.BuildSupport.DatabaseFieldDefinition.ToTypeDeclarationScript">
+            <summary>
+            Returns this field as a declaration that would appear within
+            a create table script
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.BuildSupport.DatabaseFieldDefinition.ToQuotedSqlObjectString">
+            <summary>
+            Returns the field name with surrounding object
+            quotes (square brackets)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Olympic.AutoDataLayer.BuildSupport.DatabaseFieldDefinitionCollection">
+            <summary>
+            Represents a collection of FieldDefinition objects.
+            </summary>
+        </member>
+        <member name="T:Olympic.AutoDataLayer.ClassSupport.ClassFieldDefinition">
+            <summary>
+            Represents the definition of a field in a class.
+            </summary>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.ClassSupport.ClassFieldDefinition.Get(System.Reflection.MemberInfo)">
+            <summary>
+            Return a ClassFieldDefinition for a class member.
+            </summary>
+            <param name="memberInfo">The class member</param>
+            <returns>The definition or null if the field is non includable.</returns>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.ClassSupport.ClassFieldDefinition.Name">
+            <summary>
+            The name of the class member
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.ClassSupport.ClassFieldDefinition.DatabaseFieldName">
+            <summary>
+            The database name of the class member
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.ClassSupport.ClassFieldDefinition.SystemType">
+            <summary>
+            The system type of the class member
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.ClassSupport.ClassFieldDefinition.Unique">
+            <summary>
+            Indicates whether this field is a primary key
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.ClassSupport.ClassFieldDefinition.AutoNumber">
+            <summary>
+            Indicates whether this field is an auto numbering field
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.ClassSupport.ClassFieldDefinition.AllowNull">
+            <summary>
+            Indicates whether this field allows nulls
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.ClassSupport.ClassFieldDefinition.ForceFieldType">
+            <summary>
+            If populated, forces the database field type
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.ClassSupport.ClassFieldDefinition.MaxLength">
+            <summary>
+            Indicates the maximum length of the field (for a string)
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.ClassSupport.ClassFieldDefinition.DecimalPlaces">
+            <summary>
+            Populated for Decimal types.
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.ClassSupport.ClassFieldDefinition.ReadOnly">
+            <summary>
+            Indicates whether this member is readonly.  If so, the data can be
+            written to the database, but won't be populated back.  To include
+            a ReadOnly property, you must have the IncludeDB attribute set
+            for the property.
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.ClassSupport.ClassFieldDefinition.IsAggregate">
+            <summary>
+            Indicates whether this member is an aggregate field.
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.ClassSupport.ClassFieldDefinition.AggregateFunction">
+            <summary>
+            If this is an aggregate field, indicates the aggregate function to use.
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.ClassSupport.ClassFieldDefinition.AggregateFieldName">
+            <summary>
+            If this is an aggregate field, indicates the aggregate function to use.
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.ClassSupport.ClassFieldDefinition.AggregateDistinct">
+            <summary>
+            If this is an aggregate field, indicates if the aggregate function should
+            aggregate distinct values only.
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.ClassSupport.ClassFieldDefinition.IsVersionNumberField">
+            <summary>
+            Indicates whether this is the version number field
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.ClassSupport.ClassFieldDefinition.IsModifiedDateField">
+            <summary>
+            Indicates whether this is the modified date
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.ClassSupport.ClassFieldDefinition.IsModifiedByField">
+            <summary>
+            Indicates whether this is the modified by field
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.ClassSupport.ClassFieldDefinition.Indexes">
+            <summary>
+            List of the names of the indexes that this field is included in.
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.ClassSupport.ClassFieldDefinition.Validators">
+            <summary>
+            Array of validation attributes that can be applied to validate the 
+            value of the field.
+            </summary>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.ClassSupport.ClassFieldDefinition.Validate(System.Object)">
+            <summary>
+            Validate the object value for this class field based on the validation attributes
+            </summary>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.ClassSupport.ClassFieldDefinition.SetValue(System.Object,System.Object)">
+            <summary>
+            Assign a value to the propery or field of an object that this class defines.  Used to rehydrate
+            an object.
+            </summary>
+            <param name="targetObject">The object to assign the value to.</param>
+            <param name="valueToAssign">The value to assign to the property/field.</param>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.ClassSupport.ClassFieldDefinition.GetValue(System.Object)">
+            <summary>
+            Retrieve the value of the propery or field of an object that this class defines.  Used to dehydrate
+            an object.
+            </summary>
+            <param name="targetObject">The object to retrieve the value from.</param>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.ClassSupport.ClassFieldDefinition.GetPreparedValue(System.Object,Olympic.AutoDataLayer.DatabaseFieldType)">
+            <summary>
+            Retrieve the value of the propery or field prepared for inserting
+            into the database.  This method makes any necessary alterations to the
+            value so that it will be represented in the database correctly.
+            </summary>
+            <param name="sourceObject">The object to retrieve the value from.</param>
+            <param name="targetType">The database field type that the value will be written to.</param>
+            <returns></returns>
+        </member>
+        <member name="P:Olympic.AutoDataLayer.ClassSupport.ClassFieldDefinition.MemberInfo">
+            <summary>
+            Returns the member info used to build this class
+            </summary>
+        </member>
+        <member name="T:Olympic.AutoDataLayer.ClassSupport.ClassFieldDefinitionCollection">
+            <summary>
+            Represents a collection of FieldDefinition objects.
+            </summary>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.ClassSupport.ClassFieldDefinitionCollection.ToString(System.String,System.String,System.Boolean,System.Boolean)">
+            <summary>
+            Iterates through the string joining each of the items
+            in the collection based on the templateString.
+            </summary>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.ClassSupport.ClassFieldDefinitionCollection.ToString(System.String,System.String,System.Boolean,System.Boolean,System.String,System.String)">
+            <summary>
+            Iterates through the string joining each of the items
+            in the collection based on the templateString.
+            </summary>
+            <param name="templateString"></param>
+            <param name="separator"></param>
+            <param name="includeAutoNumberFields"></param>
+            <param name="primaryKeysOnly"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Olympic.AutoDataLayer.AllowNullAttribute">
+            <summary>
+            This attribute can appear above a class field to indicate whether the
+            field in the database should allow nulls.
+            </summary>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.AllowNullAttribute.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.AllowNullAttribute.#ctor(System.Boolean)">
+            <summary>
+            Create a new instance of the AllowNullAttribute and set the AllowNull
+            value.
+            </summary>
+            <param name="allowNull"></param>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.AllowNullAttribute.Test(System.String,System.String,System.Object)">
+            <summary>
+            Test the field value to see whether if is valid
+            </summary>
+            <param name="value">The value to test</param>
+        </member>
+        <member name="P:Olympic.AutoDataLayer.AllowNullAttribute.AllowNull">
+            <summary>
+            Indicates whether this field should allow nulls
+            </summary>
+        </member>
+        <member name="T:Olympic.AutoDataLayer.AggregateAttribute">
+            <summary>
+            Indicates that the field or property should be populated using an aggregate function.<br />
+            <br />
+            When an aggregate function is used, the remaining (non-aggregate) fields and properties of the
+            class are grouped in order to calculate the aggregate.
+            </summary>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.AggregateAttribute.#ctor(Olympic.AutoDataLayer.AggregateFunction,System.String)">
+            <summary>
+            Creates a new AggregateAttribute and indicates the function and the field to apply the function to.
+            Aggregates all values by default.
+            </summary>
+            <param name="aggregateFunction"></param>
+            <param name="fieldName"></param>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.AggregateAttribute.#ctor(Olympic.AutoDataLayer.AggregateFunction,System.String,System.Boolean)">
+            <summary>
+            Creates a new AggregateAttribute and indicates the function, the field to apply the function to 
+            and whether or not the aggregation should be distinct.
+            </summary>
+            <param name="aggregateFunction">The aggregate function to apply to the field.</param>
+            <param name="fieldName">The field to apply the function to.  Indicate the name of the
+            field or property of the class.  (Use can indicate the database field name directly 
+            instead by surrounding in square brackets).</param>
+            <param name="distinct">Indicates whether the aggregation should aggregate only distinct
+            values (Count, Sum and Average only).</param>
+        </member>
+        <member name="P:Olympic.AutoDataLayer.AggregateAttribute.AggregateFunction">
+            <summary>
+            The function to use to aggregate the data.
+            </summary>
+        </member>
+        <member name="P:Olympic.AutoDataLayer.AggregateAttribute.FieldName">
+            <summary>
+            The name of the field to apply the aggregate to
+            </summary>
+        </member>
+        <member name="P:Olympic.AutoDataLayer.AggregateAttribute.Distinct">
+            <summary>
+            Indicates whether the aggregation should aggregate all values in the field, or just
+            the distinct values (relevant for Sum, Average and Count functions only).
+            </summary>
+        </member>
+        <member name="T:Olympic.AutoDataLayer.AggregateFunction">
+            <summary>
+            Indicates the function to be used to aggregate the data.
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.AggregateFunction.Count">
+            <summary>
+            Number of values in the field.  FieldName can be a specific field or star (*).
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.AggregateFunction.Average">
+            <summary>
+            Average of the values in the field.
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.AggregateFunction.Sum">
+            <summary>
+            Total of the values in the field.
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.AggregateFunction.Minimum">
+            <summary>
+            Lowest value in the field.
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.AggregateFunction.Maximum">
+            <summary>
+            Highest value in the field.
+            </summary>
+        </member>
+        <member name="T:Olympic.AutoDataLayer.StaleDataException">
+            <summary>
+            A StaleDataException exception is thrown when versioning is enabled
+            on an AutoDataLayer object and the version of the data in the database row
+            does not match the version of the object loaded in memory.<br />
+            <br />
+            To prevent a StateDataException from being thrown when using versioning,
+            set the CheckForStaleData property of the VersionAttribute attribute
+            to false.
+            </summary>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.StaleDataException.#ctor">
+            <summary>
+            Create a default instance of the stale data exception.
+            </summary>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.StaleDataException.#ctor(System.String)">
+            <summary>
+            Create an instance of the stale data exception with a specific message
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.StaleDataException.#ctor(System.Type,System.Int32)">
+            <summary>
+            Create an instance of the stale data exception with a message indicating
+            the type of the object.
+            </summary>
+            <param name="dataType">The type of the object being saved.</param>
+            <param name="version">The version currently loaded in the object.</param>
+        </member>
+        <member name="T:Olympic.AutoDataLayer.Data.Sql2000Compatible.Scripting">
+            <summary>
+            Used to generate the database scripts.
+            </summary>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.Data.Sql2000Compatible.Scripting.GetListTableColumnsScript(System.String)">
+            <summary>
+            Returns a database script that can be used to list the columns
+            of a table.
+            </summary>
+            <param name="tableName">The name of the table to query.</param>
+            <returns>A database script.</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.Data.Sql2000Compatible.Scripting.GetDropTableScript(System.String)">
+            <summary>
+            Returns a database script that can be used to drop a table.
+            </summary>
+            <param name="tableName">The name of the table to drop.</param>
+            <returns>A database script.</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.Data.Sql2000Compatible.Scripting.GetCreateVersionHistoryTriggerScript(Olympic.AutoDataLayer.BuildSupport.TableDefinition)">
+            <summary>
+            Returns a database script that can be used to create an version history trigger.
+            </summary>
+            <param name="tableDefinition">Definition to create an version history trigger script based on.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.Data.Sql2000Compatible.Scripting.GetCreateIndexScript(System.String,Olympic.AutoDataLayer.BuildSupport.IndexDefinition)">
+            <summary>
+            Returns a database script that can be used to create an index.
+            </summary>
+            <param name="tableName">Name of the table to create the index for.</param>
+            <param name="indexDefinition">Definition of the index to create.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.Data.Sql2000Compatible.Scripting.GetCreateTableScript(Olympic.AutoDataLayer.BuildSupport.TableDefinition)">
+            <summary>
+            Returns a database script that can be used to create a table.
+            </summary>
+            <param name="tableDefinition">Table definition to base the table on</param>
+            <returns>Script that can be used to create a table.</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.Data.Sql2000Compatible.Scripting.GetCreateTableScript(Olympic.AutoDataLayer.BuildSupport.TableDefinition,Olympic.AutoDataLayer.BuildSupport.TableDefinition)">
+            <summary>
+            Returns a database script that can be used to create a table.
+            </summary>
+            <param name="tableDefinition">Table definition to base the table on</param>
+            <param name="tableToPreserve">Table definition to the current table if preservation support is required.</param>
+            <returns>Script that can be used to create a table.</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.Data.Sql2000Compatible.Scripting.GetObjectDeleteByKeyScript(Olympic.AutoDataLayer.ClassSupport.ClassDefinition)">
+            <summary>
+            Generates a script that can be used to delete an object
+            matching the class definition.
+            </summary>
+            <param name="classDefinition">Definition to create a delete script based on.</param>
+            <returns>A script that can delete an object.</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.Data.Sql2000Compatible.Scripting.GetObjectListScript(Olympic.AutoDataLayer.ClassSupport.ClassDefinition)">
+            <summary>
+            Generates a script that can be used to retrieve a list of objects
+            matching the class definition.
+            </summary>
+            <param name="classDefinition">Definition to create a list script based on.</param>
+            <returns>A script that can retrieve a list of objects.</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.Data.Sql2000Compatible.Scripting.GetObjectGetScript(Olympic.AutoDataLayer.ClassSupport.ClassDefinition,Olympic.AutoDataLayer.Data.Sql2000Compatible.Scripting.VersionTarget)">
+            <summary>
+            Generates a script that can be used to retrieve an object
+            matching the class definition.
+            </summary>
+            <param name="classDefinition">Definition to create a get script based on.</param>
+            <returns>A script that can retrieve an object.</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.Data.Sql2000Compatible.Scripting.GetObjectUpdateScript(Olympic.AutoDataLayer.ClassSupport.ClassDefinition)">
+            <summary>
+            Generates a script that can be used to update an object.
+            The script also 'Gets' the object after the save.
+            </summary>
+            <param name="classDefinition">Definition to create a update script based on.</param>
+            <returns>A script that can update an object.</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.Data.Sql2000Compatible.Scripting.GetObjectInsertScript(Olympic.AutoDataLayer.ClassSupport.ClassDefinition)">
+            <summary>
+            Generates a script that can be used to insert an object.
+            The script also 'Gets' the object after the save.
+            </summary>
+            <param name="classDefinition">Definition to create an insert script based on.</param>
+            <returns>A script that can insert an object.</returns>
+        </member>
+        <member name="M:Olympic.AutoDataLayer.Data.Sql2000Compatible.Scripting.GetPrimaryKeyFilterScript(Olympic.AutoDataLayer.ClassSupport.ClassFieldDefinitionCollection)">
+            <summary>
+            Generates a script that acts as the primary key filter.  Can
+            be used for Gets and Updates.
+            </summary>
+            <param name="primaryKeys"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Olympic.AutoDataLayer.Data.Sql2000Compatible.Scripting.VersionTarget">
+            <summary>
+            Used to indicate the type of script that should be generated when versioning
+            is used to get objects.
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.Data.Sql2000Compatible.Scripting.VersionTarget.None">
+            <summary>
+            No version target - use the core table
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.Data.Sql2000Compatible.Scripting.VersionTarget.Number">
+            <summary>
+            Target the version history table and use the version number as the parameter
+            </summary>
+        </member>
+        <member name="F:Olympic.AutoDataLayer.Data.Sql2000Compatible.Scripting.VersionTarget.Date">
+            <summary>
+            Target the version history table and use the version date as the parameter
+            </summary>
+        </member>
+        <member name="T:Olympic.AutoDataLayer.Data.ResolveCurrentUserEventArgs">
+            <summary>
+            Used for object versioning to get the current user that
+            is modifying the object.
+            </summary>
+        </member>
+        <member name="P:Olympic.AutoDataLayer.Data.ResolveCurrentUserEventArgs.User">
+            <summary>
+            The current User context.  This string has a max length
+            of 256 characters.
+            </summary>
+        </member>
+    </members>
+</doc>

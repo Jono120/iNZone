@@ -1,0 +1,160 @@
+8/02/2010 2:31:55 p.m.: This statement caused an exception: SET IDENTITY_INSERT Participants ON INSERT INTO Participants ([ID], [Firstname], [Lastname], [Email], [Address1], [Address2], [Suburb], [Town], [Association], [Age], [DOB], [Gender], [ContactPhone], [RegistrationCode], [LoggedIn], [KnowsCareer], [LastCustomerID], [Info], [EventID], Sync, LastSync) VALUES (65777, 'Scott', 'Trow', 'duck_huntingkid@hotmail.com', '1 hartley court', '', '', 'cromwell', NULL, NULL, '5-Sep-1993 12:00:00', 'male', '', 'RV6884', 0, 0, NULL, NULL, 395, 1, {fn NOW()})
+Exception message: Violation of PRIMARY KEY constraint 'PK_Participants'. Cannot insert duplicate key in object 'dbo.Participants'.
+The statement has been terminated.
+
+8/02/2010 2:31:55 p.m.: This statement caused an exception: SET IDENTITY_INSERT Participants ON INSERT INTO Participants ([ID], [Firstname], [Lastname], [Email], [Address1], [Address2], [Suburb], [Town], [Association], [Age], [DOB], [Gender], [ContactPhone], [RegistrationCode], [LoggedIn], [KnowsCareer], [LastCustomerID], [Info], [EventID], Sync, LastSync) VALUES (65778, 'Dylan', 'Rockhouse', 'dylanrockhouse@hotmail.com', '140 waenga drive', '', '', 'cromwell', NULL, NULL, '12-Jan-1994 12:00:00', 'male', '', 'WN8544', 0, 0, NULL, NULL, 395, 1, {fn NOW()})
+Exception message: Violation of PRIMARY KEY constraint 'PK_Participants'. Cannot insert duplicate key in object 'dbo.Participants'.
+The statement has been terminated.
+
+8/02/2010 2:31:55 p.m.: This statement caused an exception: SET IDENTITY_INSERT Participants ON INSERT INTO Participants ([ID], [Firstname], [Lastname], [Email], [Address1], [Address2], [Suburb], [Town], [Association], [Age], [DOB], [Gender], [ContactPhone], [RegistrationCode], [LoggedIn], [KnowsCareer], [LastCustomerID], [Info], [EventID], Sync, LastSync) VALUES (65779, 'Chris', 'Abercrombie', 'chrisabercrombienz@gmail.com', '28', 'Antimony Cres', '', 'Cromwell', NULL, NULL, '17-Mar-1983 12:00:00', 'male', '', 'IC3145', 0, 1, NULL, NULL, 395, 1, {fn NOW()})
+Exception message: Violation of PRIMARY KEY constraint 'PK_Participants'. Cannot insert duplicate key in object 'dbo.Participants'.
+The statement has been terminated.
+
+8/02/2010 2:31:55 p.m.: This statement caused an exception: SET IDENTITY_INSERT Participants ON INSERT INTO Participants ([ID], [Firstname], [Lastname], [Email], [Address1], [Address2], [Suburb], [Town], [Association], [Age], [DOB], [Gender], [ContactPhone], [RegistrationCode], [LoggedIn], [KnowsCareer], [LastCustomerID], [Info], [EventID], Sync, LastSync) VALUES (65780, 'Ella', 'Borrie', 'ellabooray@gmail.com', '7 Boyne Place', '', '', 'Cromwell', NULL, NULL, '3-Dec-1993 12:00:00', 'female', '', 'FK2426', 0, 0, NULL, NULL, 395, 1, {fn NOW()})
+Exception message: Violation of PRIMARY KEY constraint 'PK_Participants'. Cannot insert duplicate key in object 'dbo.Participants'.
+The statement has been terminated.
+
+8/02/2010 2:31:55 p.m.: This statement caused an exception: SET IDENTITY_INSERT Participants ON INSERT INTO Participants ([ID], [Firstname], [Lastname], [Email], [Address1], [Address2], [Suburb], [Town], [Association], [Age], [DOB], [Gender], [ContactPhone], [RegistrationCode], [LoggedIn], [KnowsCareer], [LastCustomerID], [Info], [EventID], Sync, LastSync) VALUES (65781, 'Joel', 'Neilson', 'gattyguy@hotmail.com', '86 Felton Road RD2 Cromwell', '', '', 'Cromwell', NULL, NULL, '19-Jun-1994 12:00:00', 'male', '034450330', 'IR3607', 0, 0, NULL, NULL, 395, 1, {fn NOW()})
+Exception message: Violation of PRIMARY KEY constraint 'PK_Participants'. Cannot insert duplicate key in object 'dbo.Participants'.
+The statement has been terminated.
+
+8/02/2010 2:31:55 p.m.: This statement caused an exception: SET IDENTITY_INSERT Participants ON INSERT INTO Participants ([ID], [Firstname], [Lastname], [Email], [Address1], [Address2], [Suburb], [Town], [Association], [Age], [DOB], [Gender], [ContactPhone], [RegistrationCode], [LoggedIn], [KnowsCareer], [LastCustomerID], [Info], [EventID], Sync, LastSync) VALUES (65782, 'Louis', 'Bright', 'louis_b-right@hotmail.com', 'mt pisa stn', '', '', 'cromwell', NULL, NULL, '29-Dec-1994 12:00:00', 'male', '', 'VN8544', 0, 0, NULL, NULL, 395, 1, {fn NOW()})
+Exception message: Violation of PRIMARY KEY constraint 'PK_Participants'. Cannot insert duplicate key in object 'dbo.Participants'.
+The statement has been terminated.
+
+8/02/2010 2:31:55 p.m.: This statement caused an exception: SET IDENTITY_INSERT Participants ON INSERT INTO Participants ([ID], [Firstname], [Lastname], [Email], [Address1], [Address2], [Suburb], [Town], [Association], [Age], [DOB], [Gender], [ContactPhone], [RegistrationCode], [LoggedIn], [KnowsCareer], [LastCustomerID], [Info], [EventID], Sync, LastSync) VALUES (65783, 'Tyla', ' McDonald', 'tylamcdick@hotmail.com', '11 lawrence street RD2 Cromwell', '', '', 'Cromwell', NULL, NULL, '27-Nov-1994 12:00:00', 'female', '0272367173', 'HQ2676', 0, 0, NULL, NULL, 395, 1, {fn NOW()})
+Exception message: Violation of PRIMARY KEY constraint 'PK_Participants'. Cannot insert duplicate key in object 'dbo.Participants'.
+The statement has been terminated.
+
+8/02/2010 2:31:55 p.m.: This statement caused an exception: SET IDENTITY_INSERT Participants ON INSERT INTO Participants ([ID], [Firstname], [Lastname], [Email], [Address1], [Address2], [Suburb], [Town], [Association], [Age], [DOB], [Gender], [ContactPhone], [RegistrationCode], [LoggedIn], [KnowsCareer], [LastCustomerID], [Info], [EventID], Sync, LastSync) VALUES (65784, 'Morgan', 'Bathgate', '', '15 Monaghan Street', '', '', 'Cromell', NULL, NULL, '18-Feb-1995 12:00:00', 'male', '', 'YE9118', 0, 0, NULL, NULL, 395, 1, {fn NOW()})
+Exception message: Violation of PRIMARY KEY constraint 'PK_Participants'. Cannot insert duplicate key in object 'dbo.Participants'.
+The statement has been terminated.
+
+8/02/2010 2:31:55 p.m.: This statement caused an exception: SET IDENTITY_INSERT Participants ON INSERT INTO Participants ([ID], [Firstname], [Lastname], [Email], [Address1], [Address2], [Suburb], [Town], [Association], [Age], [DOB], [Gender], [ContactPhone], [RegistrationCode], [LoggedIn], [KnowsCareer], [LastCustomerID], [Info], [EventID], Sync, LastSync) VALUES (65785, 'Chantal', 'Green', 'Only_theBeginning@hotmail.com', '26 Sunhaven Cove', '', '', 'Cromwell', NULL, NULL, '22-Dec-1994 12:00:00', 'female', '0210579706', 'WZ8976', 0, 1, NULL, NULL, 395, 1, {fn NOW()})
+Exception message: Violation of PRIMARY KEY constraint 'PK_Participants'. Cannot insert duplicate key in object 'dbo.Participants'.
+The statement has been terminated.
+
+8/02/2010 2:31:55 p.m.: This statement caused an exception: SET IDENTITY_INSERT Participants ON INSERT INTO Participants ([ID], [Firstname], [Lastname], [Email], [Address1], [Address2], [Suburb], [Town], [Association], [Age], [DOB], [Gender], [ContactPhone], [RegistrationCode], [LoggedIn], [KnowsCareer], [LastCustomerID], [Info], [EventID], Sync, LastSync) VALUES (65786, 'Logan', 'Middlemass', 'middlemasslogan35@gmail.com', '3 gilling place', '', 'cromwell', 'cromwell', NULL, NULL, '8-Oct-1994 12:00:00', 'male', '0273747624', 'OX5870', 0, 1, NULL, NULL, 395, 1, {fn NOW()})
+Exception message: Violation of PRIMARY KEY constraint 'PK_Participants'. Cannot insert duplicate key in object 'dbo.Participants'.
+The statement has been terminated.
+
+8/02/2010 2:31:55 p.m.: This statement caused an exception: SET IDENTITY_INSERT Participants ON INSERT INTO Participants ([ID], [Firstname], [Lastname], [Email], [Address1], [Address2], [Suburb], [Town], [Association], [Age], [DOB], [Gender], [ContactPhone], [RegistrationCode], [LoggedIn], [KnowsCareer], [LastCustomerID], [Info], [EventID], Sync, LastSync) VALUES (65787, 'Ruby', 'Crichton', 'ruby_loves_rebecca@hotmail.com', '24 ortive st', '', '', 'cromwell', NULL, NULL, '11-Jun-1994 12:00:00', 'female', '', 'QK6414', 0, 1, NULL, NULL, 395, 1, {fn NOW()})
+Exception message: Violation of PRIMARY KEY constraint 'PK_Participants'. Cannot insert duplicate key in object 'dbo.Participants'.
+The statement has been terminated.
+
+8/02/2010 2:31:55 p.m.: This statement caused an exception: SET IDENTITY_INSERT Participants ON INSERT INTO Participants ([ID], [Firstname], [Lastname], [Email], [Address1], [Address2], [Suburb], [Town], [Association], [Age], [DOB], [Gender], [ContactPhone], [RegistrationCode], [LoggedIn], [KnowsCareer], [LastCustomerID], [Info], [EventID], Sync, LastSync) VALUES (65788, 'Jess', 'Larsen', 'jess.d14@hotmail.com', '216 ripponvale road RD2 cromwell', '', '', 'cromwell', NULL, NULL, '27-Jun-1994 12:00:00', 'female', '0272675655', 'FQ2618', 0, 1, NULL, NULL, 395, 1, {fn NOW()})
+Exception message: Violation of PRIMARY KEY constraint 'PK_Participants'. Cannot insert duplicate key in object 'dbo.Participants'.
+The statement has been terminated.
+
+8/02/2010 2:31:55 p.m.: This statement caused an exception: SET IDENTITY_INSERT Participants ON INSERT INTO Participants ([ID], [Firstname], [Lastname], [Email], [Address1], [Address2], [Suburb], [Town], [Association], [Age], [DOB], [Gender], [ContactPhone], [RegistrationCode], [LoggedIn], [KnowsCareer], [LastCustomerID], [Info], [EventID], Sync, LastSync) VALUES (65789, 'Maitland', 'Preston', '', 'cromwell ', '', '', 'cromwell', NULL, NULL, '19-Apr-1994 12:00:00', 'male', '', 'VR8673', 0, 0, NULL, NULL, 395, 1, {fn NOW()})
+Exception message: Violation of PRIMARY KEY constraint 'PK_Participants'. Cannot insert duplicate key in object 'dbo.Participants'.
+The statement has been terminated.
+
+8/02/2010 2:31:55 p.m.: This statement caused an exception: SET IDENTITY_INSERT Participants ON INSERT INTO Participants ([ID], [Firstname], [Lastname], [Email], [Address1], [Address2], [Suburb], [Town], [Association], [Age], [DOB], [Gender], [ContactPhone], [RegistrationCode], [LoggedIn], [KnowsCareer], [LastCustomerID], [Info], [EventID], Sync, LastSync) VALUES (65790, 'Kelsi', 'Higginbotham', 'thats-not-lyk-meh@hotmail.com', '12 cairnmuir crescent ', '', '', 'cromwell', NULL, NULL, '30-May-1995 12:00:00', 'female', '', 'WN8510', 0, 0, NULL, NULL, 395, 1, {fn NOW()})
+Exception message: Violation of PRIMARY KEY constraint 'PK_Participants'. Cannot insert duplicate key in object 'dbo.Participants'.
+The statement has been terminated.
+
+8/02/2010 2:31:55 p.m.: This statement caused an exception: SET IDENTITY_INSERT Participants ON INSERT INTO Participants ([ID], [Firstname], [Lastname], [Email], [Address1], [Address2], [Suburb], [Town], [Association], [Age], [DOB], [Gender], [ContactPhone], [RegistrationCode], [LoggedIn], [KnowsCareer], [LastCustomerID], [Info], [EventID], Sync, LastSync) VALUES (65791, 'Travis', 'Mitchell', 'otagovending@xtra.co.nz', '17 fenwick crescent cromwell', '', '', 'cromwell', NULL, NULL, '17-Apr-1995 12:00:00', 'male', '0272442852', 'KK4467', 0, 0, NULL, NULL, 395, 1, {fn NOW()})
+Exception message: Violation of PRIMARY KEY constraint 'PK_Participants'. Cannot insert duplicate key in object 'dbo.Participants'.
+The statement has been terminated.
+
+8/02/2010 2:31:55 p.m.: This statement caused an exception: SET IDENTITY_INSERT Participants ON INSERT INTO Participants ([ID], [Firstname], [Lastname], [Email], [Address1], [Address2], [Suburb], [Town], [Association], [Age], [DOB], [Gender], [ContactPhone], [RegistrationCode], [LoggedIn], [KnowsCareer], [LastCustomerID], [Info], [EventID], Sync, LastSync) VALUES (65792, 'Dillon', 'Adam', 'dillonadam@cromwell.school.nz', '31 Horace street', '', '', 'Cromwell', NULL, NULL, '22-May-1995 12:00:00', 'male', '', 'QL6489', 0, 0, NULL, NULL, 395, 1, {fn NOW()})
+Exception message: Violation of PRIMARY KEY constraint 'PK_Participants'. Cannot insert duplicate key in object 'dbo.Participants'.
+The statement has been terminated.
+
+8/02/2010 2:31:55 p.m.: This statement caused an exception: SET IDENTITY_INSERT Participants ON INSERT INTO Participants ([ID], [Firstname], [Lastname], [Email], [Address1], [Address2], [Suburb], [Town], [Association], [Age], [DOB], [Gender], [ContactPhone], [RegistrationCode], [LoggedIn], [KnowsCareer], [LastCustomerID], [Info], [EventID], Sync, LastSync) VALUES (65793, 'Cody', 'Tuwhangai', 'beg.mercy@hotmail.com', '8 hassing place', '', '', 'cromwell', NULL, NULL, '14-Nov-1994 12:00:00', 'male', '', 'WP8636', 0, 0, NULL, NULL, 395, 1, {fn NOW()})
+Exception message: Violation of PRIMARY KEY constraint 'PK_Participants'. Cannot insert duplicate key in object 'dbo.Participants'.
+The statement has been terminated.
+
+8/02/2010 2:31:55 p.m.: This statement caused an exception: SET IDENTITY_INSERT Participants ON INSERT INTO Participants ([ID], [Firstname], [Lastname], [Email], [Address1], [Address2], [Suburb], [Town], [Association], [Age], [DOB], [Gender], [ContactPhone], [RegistrationCode], [LoggedIn], [KnowsCareer], [LastCustomerID], [Info], [EventID], Sync, LastSync) VALUES (65794, 'Braedon', 'Roberts', 'mtv_rockz@hotmail.com', '51 achill street ', '', '', 'cromwell', NULL, NULL, '4-Jan-1995 12:00:00', 'male', '', 'KV3859', 0, 0, NULL, NULL, 395, 1, {fn NOW()})
+Exception message: Violation of PRIMARY KEY constraint 'PK_Participants'. Cannot insert duplicate key in object 'dbo.Participants'.
+The statement has been terminated.
+
+8/02/2010 2:31:55 p.m.: This statement caused an exception: SET IDENTITY_INSERT Participants ON INSERT INTO Participants ([ID], [Firstname], [Lastname], [Email], [Address1], [Address2], [Suburb], [Town], [Association], [Age], [DOB], [Gender], [ContactPhone], [RegistrationCode], [LoggedIn], [KnowsCareer], [LastCustomerID], [Info], [EventID], Sync, LastSync) VALUES (65795, 'Jackson', 'Clark', '', '19gilling place', 'gilling', '', 'cromwell', NULL, NULL, '27-Feb-1995 12:00:00', 'male', '', 'GT2798', 0, 0, NULL, NULL, 395, 1, {fn NOW()})
+Exception message: Violation of PRIMARY KEY constraint 'PK_Participants'. Cannot insert duplicate key in object 'dbo.Participants'.
+The statement has been terminated.
+
+8/02/2010 2:31:55 p.m.: This statement caused an exception: SET IDENTITY_INSERT Participants ON INSERT INTO Participants ([ID], [Firstname], [Lastname], [Email], [Address1], [Address2], [Suburb], [Town], [Association], [Age], [DOB], [Gender], [ContactPhone], [RegistrationCode], [LoggedIn], [KnowsCareer], [LastCustomerID], [Info], [EventID], Sync, LastSync) VALUES (65796, 'Danny', 'Shaw', 'danielshaw@cromwell.school.nz', '3 wishart cresent', '', '', 'cromwell', NULL, NULL, '6-Mar-1995 12:00:00', 'male', '', 'QU6797', 0, 1, NULL, NULL, 395, 1, {fn NOW()})
+Exception message: Violation of PRIMARY KEY constraint 'PK_Participants'. Cannot insert duplicate key in object 'dbo.Participants'.
+The statement has been terminated.
+
+8/02/2010 2:35:14 p.m.: This statement caused an exception: SET IDENTITY_INSERT Interactions ON INSERT INTO Interactions ([ID], [ParticipantID], [EventID], [CustomerID], [Subscribed], [DateTime], Sync, LastSync) VALUES (255386, 65737, 395, 16, 0, '8-Feb-2010 08:47:39', 1, {fn NOW()})
+Exception message: Violation of PRIMARY KEY constraint 'PK_Interactions'. Cannot insert duplicate key in object 'dbo.Interactions'.
+The statement has been terminated.
+
+8/02/2010 2:35:14 p.m.: This statement caused an exception: SET IDENTITY_INSERT Interactions ON INSERT INTO Interactions ([ID], [ParticipantID], [EventID], [CustomerID], [Subscribed], [DateTime], Sync, LastSync) VALUES (255387, 65737, 395, 55, 0, '8-Feb-2010 08:54:43', 1, {fn NOW()})
+Exception message: Violation of PRIMARY KEY constraint 'PK_Interactions'. Cannot insert duplicate key in object 'dbo.Interactions'.
+The statement has been terminated.
+
+8/02/2010 2:35:14 p.m.: This statement caused an exception: SET IDENTITY_INSERT Interactions ON INSERT INTO Interactions ([ID], [ParticipantID], [EventID], [CustomerID], [Subscribed], [DateTime], Sync, LastSync) VALUES (255388, 65738, 395, 55, 0, '8-Feb-2010 08:58:53', 1, {fn NOW()})
+Exception message: Violation of PRIMARY KEY constraint 'PK_Interactions'. Cannot insert duplicate key in object 'dbo.Interactions'.
+The statement has been terminated.
+
+8/02/2010 2:35:14 p.m.: This statement caused an exception: SET IDENTITY_INSERT Interactions ON INSERT INTO Interactions ([ID], [ParticipantID], [EventID], [CustomerID], [Subscribed], [DateTime], Sync, LastSync) VALUES (255389, 65737, 395, 18, 0, '8-Feb-2010 08:57:42', 1, {fn NOW()})
+Exception message: Violation of PRIMARY KEY constraint 'PK_Interactions'. Cannot insert duplicate key in object 'dbo.Interactions'.
+The statement has been terminated.
+
+8/02/2010 2:35:14 p.m.: This statement caused an exception: SET IDENTITY_INSERT Interactions ON INSERT INTO Interactions ([ID], [ParticipantID], [EventID], [CustomerID], [Subscribed], [DateTime], Sync, LastSync) VALUES (255390, 65740, 395, 1, 0, '8-Feb-2010 09:13:02', 1, {fn NOW()})
+Exception message: Violation of PRIMARY KEY constraint 'PK_Interactions'. Cannot insert duplicate key in object 'dbo.Interactions'.
+The statement has been terminated.
+
+8/02/2010 2:35:14 p.m.: This statement caused an exception: SET IDENTITY_INSERT Interactions ON INSERT INTO Interactions ([ID], [ParticipantID], [EventID], [CustomerID], [Subscribed], [DateTime], Sync, LastSync) VALUES (255391, 65740, 395, 1, 0, '8-Feb-2010 09:13:04', 1, {fn NOW()})
+Exception message: Violation of PRIMARY KEY constraint 'PK_Interactions'. Cannot insert duplicate key in object 'dbo.Interactions'.
+The statement has been terminated.
+
+8/02/2010 2:35:14 p.m.: This statement caused an exception: SET IDENTITY_INSERT Interactions ON INSERT INTO Interactions ([ID], [ParticipantID], [EventID], [CustomerID], [Subscribed], [DateTime], Sync, LastSync) VALUES (255392, 65741, 395, 15, 0, '8-Feb-2010 09:13:10', 1, {fn NOW()})
+Exception message: Violation of PRIMARY KEY constraint 'PK_Interactions'. Cannot insert duplicate key in object 'dbo.Interactions'.
+The statement has been terminated.
+
+8/02/2010 2:35:14 p.m.: This statement caused an exception: SET IDENTITY_INSERT Interactions ON INSERT INTO Interactions ([ID], [ParticipantID], [EventID], [CustomerID], [Subscribed], [DateTime], Sync, LastSync) VALUES (255393, 65745, 395, 13, 0, '8-Feb-2010 09:13:25', 1, {fn NOW()})
+Exception message: Violation of PRIMARY KEY constraint 'PK_Interactions'. Cannot insert duplicate key in object 'dbo.Interactions'.
+The statement has been terminated.
+
+8/02/2010 2:35:14 p.m.: This statement caused an exception: SET IDENTITY_INSERT Interactions ON INSERT INTO Interactions ([ID], [ParticipantID], [EventID], [CustomerID], [Subscribed], [DateTime], Sync, LastSync) VALUES (255394, 65743, 395, 3, 1, '8-Feb-2010 09:13:25', 1, {fn NOW()})
+Exception message: Violation of PRIMARY KEY constraint 'PK_Interactions'. Cannot insert duplicate key in object 'dbo.Interactions'.
+The statement has been terminated.
+
+8/02/2010 2:35:14 p.m.: This statement caused an exception: SET IDENTITY_INSERT Interactions ON INSERT INTO Interactions ([ID], [ParticipantID], [EventID], [CustomerID], [Subscribed], [DateTime], Sync, LastSync) VALUES (255395, 65748, 395, 4, 0, '8-Feb-2010 09:12:20', 1, {fn NOW()})
+Exception message: Violation of PRIMARY KEY constraint 'PK_Interactions'. Cannot insert duplicate key in object 'dbo.Interactions'.
+The statement has been terminated.
+
+8/02/2010 2:35:14 p.m.: This statement caused an exception: SET IDENTITY_INSERT Interactions ON INSERT INTO Interactions ([ID], [ParticipantID], [EventID], [CustomerID], [Subscribed], [DateTime], Sync, LastSync) VALUES (255396, 65751, 395, 2, 1, '8-Feb-2010 09:12:04', 1, {fn NOW()})
+Exception message: Violation of PRIMARY KEY constraint 'PK_Interactions'. Cannot insert duplicate key in object 'dbo.Interactions'.
+The statement has been terminated.
+
+8/02/2010 2:35:14 p.m.: This statement caused an exception: SET IDENTITY_INSERT Interactions ON INSERT INTO Interactions ([ID], [ParticipantID], [EventID], [CustomerID], [Subscribed], [DateTime], Sync, LastSync) VALUES (255397, 65747, 395, 40, 0, '8-Feb-2010 09:13:49', 1, {fn NOW()})
+Exception message: Violation of PRIMARY KEY constraint 'PK_Interactions'. Cannot insert duplicate key in object 'dbo.Interactions'.
+The statement has been terminated.
+
+8/02/2010 2:35:14 p.m.: This statement caused an exception: SET IDENTITY_INSERT Interactions ON INSERT INTO Interactions ([ID], [ParticipantID], [EventID], [CustomerID], [Subscribed], [DateTime], Sync, LastSync) VALUES (255398, 65742, 395, 54, 0, '8-Feb-2010 09:13:50', 1, {fn NOW()})
+Exception message: Violation of PRIMARY KEY constraint 'PK_Interactions'. Cannot insert duplicate key in object 'dbo.Interactions'.
+The statement has been terminated.
+
+8/02/2010 2:35:14 p.m.: This statement caused an exception: SET IDENTITY_INSERT Interactions ON INSERT INTO Interactions ([ID], [ParticipantID], [EventID], [CustomerID], [Subscribed], [DateTime], Sync, LastSync) VALUES (255399, 65754, 395, 41, 0, '8-Feb-2010 09:13:53', 1, {fn NOW()})
+Exception message: Violation of PRIMARY KEY constraint 'PK_Interactions'. Cannot insert duplicate key in object 'dbo.Interactions'.
+The statement has been terminated.
+
+8/02/2010 2:35:14 p.m.: This statement caused an exception: SET IDENTITY_INSERT Interactions ON INSERT INTO Interactions ([ID], [ParticipantID], [EventID], [CustomerID], [Subscribed], [DateTime], Sync, LastSync) VALUES (255400, 65744, 395, 43, 0, '8-Feb-2010 09:13:52', 1, {fn NOW()})
+Exception message: Violation of PRIMARY KEY constraint 'PK_Interactions'. Cannot insert duplicate key in object 'dbo.Interactions'.
+The statement has been terminated.
+
+8/02/2010 2:35:14 p.m.: This statement caused an exception: SET IDENTITY_INSERT Interactions ON INSERT INTO Interactions ([ID], [ParticipantID], [EventID], [CustomerID], [Subscribed], [DateTime], Sync, LastSync) VALUES (255401, 65755, 395, 12, 0, '8-Feb-2010 09:11:57', 1, {fn NOW()})
+Exception message: Violation of PRIMARY KEY constraint 'PK_Interactions'. Cannot insert duplicate key in object 'dbo.Interactions'.
+The statement has been terminated.
+
+8/02/2010 2:35:14 p.m.: This statement caused an exception: SET IDENTITY_INSERT Interactions ON INSERT INTO Interactions ([ID], [ParticipantID], [EventID], [CustomerID], [Subscribed], [DateTime], Sync, LastSync) VALUES (255402, 65752, 395, 9, 0, '8-Feb-2010 09:13:54', 1, {fn NOW()})
+Exception message: Violation of PRIMARY KEY constraint 'PK_Interactions'. Cannot insert duplicate key in object 'dbo.Interactions'.
+The statement has been terminated.
+
+8/02/2010 2:35:14 p.m.: This statement caused an exception: SET IDENTITY_INSERT Interactions ON INSERT INTO Interactions ([ID], [ParticipantID], [EventID], [CustomerID], [Subscribed], [DateTime], Sync, LastSync) VALUES (255403, 65753, 395, 14, 0, '8-Feb-2010 09:13:46', 1, {fn NOW()})
+Exception message: Violation of PRIMARY KEY constraint 'PK_Interactions'. Cannot insert duplicate key in object 'dbo.Interactions'.
+The statement has been terminated.
+
+8/02/2010 2:35:14 p.m.: This statement caused an exception: SET IDENTITY_INSERT Interactions ON INSERT INTO Interactions ([ID], [ParticipantID], [EventID], [CustomerID], [Subscribed], [DateTime], Sync, LastSync) VALUES (255404, 65752, 395, 9, 0, '8-Feb-2010 09:14:02', 1, {fn NOW()})
+Exception message: Violation of PRIMARY KEY constraint 'PK_Interactions'. Cannot insert duplicate key in object 'dbo.Interactions'.
+The statement has been terminated.
+
+8/02/2010 2:35:14 p.m.: This statement caused an exception: SET IDENTITY_INSERT Interactions ON INSERT INTO Interactions ([ID], [ParticipantID], [EventID], [CustomerID], [Subscribed], [DateTime], Sync, LastSync) VALUES (255405, 65752, 395, 9, 1, '8-Feb-2010 09:14:06', 1, {fn NOW()})
+Exception message: Violation of PRIMARY KEY constraint 'PK_Interactions'. Cannot insert duplicate key in object 'dbo.Interactions'.
+The statement has been terminated.
+

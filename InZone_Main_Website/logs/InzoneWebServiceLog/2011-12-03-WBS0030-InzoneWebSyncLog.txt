@@ -1,0 +1,12 @@
+3/12/2011 4:32:43 a.m.:Kiosk: K000258, Password: cf2335a8c3acf9d501b72da56576bbe2
+3/12/2011 4:32:45 a.m.:Kiosk: K000258, Password: cf2335a8c3acf9d501b72da56576bbe2
+3/12/2011 4:33:01 a.m.:Kiosk: K000257, Password: 8a52b6057fd82b4d8b5618a8e0472e36
+3/12/2011 4:33:02 a.m.:Kiosk: K000257, Password: 8a52b6057fd82b4d8b5618a8e0472e36
+3/12/2011 4:33:31 a.m.:Kiosk: K000236, Password: dfd2af066309fa48c165f11669801349
+3/12/2011 4:33:36 a.m.:Kiosk: K000232, Password: a76514757e54e910a29fcfd7bfcf0cf9
+3/12/2011 4:33:47 a.m.:Kiosk: K000228, Password: 854bd35a7dd439162cdf4cd575362783
+3/12/2011 4:33:49 a.m.:Kiosk: K000228, Password: 854bd35a7dd439162cdf4cd575362783
+3/12/2011 4:33:51 a.m.:Kiosk: K000226, Password: 20325da03c80d7bc1a71a3cd23fac2ed
+3/12/2011 4:33:52 a.m.:Kiosk: K000226, Password: 20325da03c80d7bc1a71a3cd23fac2ed
+3/12/2011 4:33:53 a.m.:Kiosk: K000205, Password: 7d1cf0f158c55ae3703c9f1ac3d8cd62
+3/12/2011 4:34:00 a.m.:Kiosk: K000205, Password: 7d1cf0f158c55ae3703c9f1ac3d8cd62

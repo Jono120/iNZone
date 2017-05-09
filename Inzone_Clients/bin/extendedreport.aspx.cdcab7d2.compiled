@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="3" virtualPath="/DataZone/extendedreport.aspx" hash="f7212eaba" filehash="a1fc3e2baa044458" flags="110000" assembly="App_Web_t1k-se_c" type="ASP.extendedreport_aspx">
+    <filedeps>
+        <filedep name="/DataZone/extendedreport.aspx" />
+        <filedep name="/DataZone/extendedreport.aspx.cs" />
+        <filedep name="/DataZone/MasterPage.master" />
+        <filedep name="/DataZone/MasterPage.master.cs" />
+    </filedeps>
+</preserve>

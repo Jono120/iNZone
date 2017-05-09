@@ -1,0 +1,6 @@
+D:\Development\KioskClientApp\Olympic.AutoDataLayer\WorkingSet\obj\Debug\ResolveAssemblyReference.cache
+W:\BusinessData\WorkingProjects\InZone\SourceCode\Olympic.AutoDataLayer\obj\Debug\ResolveAssemblyReference.cache
+W:\BusinessData\WorkingProjects\InZone\SourceCode\Olympic.AutoDataLayer\bin\Debug\Olympic.AutoDataLayer.dll
+W:\BusinessData\WorkingProjects\InZone\SourceCode\Olympic.AutoDataLayer\bin\Debug\Olympic.AutoDataLayer.pdb
+W:\BusinessData\WorkingProjects\InZone\SourceCode\Olympic.AutoDataLayer\obj\Debug\Olympic.AutoDataLayer.dll
+W:\BusinessData\WorkingProjects\InZone\SourceCode\Olympic.AutoDataLayer\obj\Debug\Olympic.AutoDataLayer.pdb

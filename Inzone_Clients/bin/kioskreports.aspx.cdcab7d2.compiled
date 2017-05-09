@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="3" virtualPath="/DataZone/kioskreports.aspx" hash="f7212eaba" filehash="397338e4afa77479" flags="110000" assembly="App_Web_t1k-se_c" type="ASP.kioskreports_aspx">
+    <filedeps>
+        <filedep name="/DataZone/kioskreports.aspx" />
+        <filedep name="/DataZone/kioskreports.aspx.cs" />
+        <filedep name="/DataZone/MasterPage.master" />
+        <filedep name="/DataZone/MasterPage.master.cs" />
+    </filedeps>
+</preserve>

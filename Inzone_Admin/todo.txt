@@ -1,0 +1,17 @@
+﻿1.
+	a) Rename and change stored procedure Interaction_SetInfoBit to:
+		CREATE PROCEDURE dbo.Interaction_Subscribe
+			(
+				@ParticipantID				int,
+				@CustomerID					int,
+				@Subscribed					bit
+			)
+		AS
+			UPDATE    Interactions
+			SET              Subscribed = @Subscribed
+			WHERE     (ParticipantID = @ParticipantID) AND (CustomerID = @CustomerID)
+	
+	This just tidys everything up a bit and makes sure that all code is
+	correct.
+
+2.

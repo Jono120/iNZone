@@ -1,0 +1,6 @@
+D:\Development\KioskClientApp\Inzone\Kiosk\1.0.0\CommonLibrary\bin\Release\CommonLibrary.dll
+D:\Development\KioskClientApp\Inzone\Kiosk\1.0.0\CommonLibrary\bin\Release\CommonLibrary.pdb
+D:\Development\KioskClientApp\Inzone\Kiosk\1.0.0\CommonLibrary\bin\Release\Olympic.AutoDataLayer.dll
+D:\Development\KioskClientApp\Inzone\Kiosk\1.0.0\CommonLibrary\obj\Release\ResolveAssemblyReference.cache
+D:\Development\KioskClientApp\Inzone\Kiosk\1.0.0\CommonLibrary\obj\Release\CommonLibrary.dll
+D:\Development\KioskClientApp\Inzone\Kiosk\1.0.0\CommonLibrary\obj\Release\CommonLibrary.pdb

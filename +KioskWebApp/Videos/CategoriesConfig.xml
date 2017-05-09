@@ -1,0 +1,28 @@
+﻿<KioskVideos xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Category Name="Agriculture" UnselectedTabImageName="tab_Agriculture.png" SelectedTabImageName="tab_Agriculture_over.png">
+    <Partner>
+      <Name>Partner1</Name>
+    </Partner>
+    <Partner>
+      <Name>Partner2</Name>
+    </Partner>
+    <Partner>
+      <Name>Partner3</Name>
+    </Partner>
+    <Partner>
+      <Name>Partner4</Name>
+    </Partner>
+  </Category>
+  <Category Name="Enterprise" UnselectedTabImageName="tab_Enterprise.png" SelectedTabImageName="tab_Enterprise_over.png">
+    <Partner>
+      <Name>PartnerA</Name>
+    </Partner>
+    <Partner>
+      <Name>PartnerB</Name>
+    </Partner>
+    <Partner>
+      <Name>PartnerC</Name>
+    </Partner>
+
+  </Category>
+</KioskVideos>

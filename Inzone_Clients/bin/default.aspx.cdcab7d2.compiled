@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="3" virtualPath="/DataZone/default.aspx" hash="f7212eaba" filehash="1c6d5433f0871102" flags="110000" assembly="App_Web_ylk9xvwf" type="ASP.default_aspx">
+    <filedeps>
+        <filedep name="/DataZone/default.aspx" />
+        <filedep name="/DataZone/default.aspx.cs" />
+    </filedeps>
+</preserve>

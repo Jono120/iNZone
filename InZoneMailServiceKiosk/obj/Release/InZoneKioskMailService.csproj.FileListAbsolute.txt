@@ -1,0 +1,9 @@
+D:\Development\InZoneMailServiceKiosk\InZoneMailService\obj\Release\ResolveAssemblyReference.cache
+D:\Development\InZoneMailServiceKiosk\InZoneMailService\obj\Release\InZoneKioskMailService.csproj.GenerateResource.Cache
+D:\Development\InZoneMailServiceKiosk\InZoneMailService\obj\Release\InZoneKioskMailService.exe
+D:\Development\InZoneMailServiceKiosk\InZoneMailService\bin\Release\InZoneKioskMailService.exe.config
+D:\Development\InZoneMailServiceKiosk\InZoneMailService\bin\Release\InZoneKioskMailService.exe
+D:\Development\InZoneMailServiceKiosk\InZoneMailService\bin\Release\InZoneKioskMailService.pdb
+D:\Development\InZoneMailServiceKiosk\InZoneMailService\obj\Release\InZoneKioskMailService.InZoneMailService.resources
+D:\Development\InZoneMailServiceKiosk\InZoneMailService\obj\Release\InZoneKioskMailService.ProjectInstaller.resources
+D:\Development\InZoneMailServiceKiosk\InZoneMailService\obj\Release\InZoneKioskMailService.pdb
