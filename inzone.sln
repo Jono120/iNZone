@@ -1,0 +1,118 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "inzone.co.nz", "http://localhost/inzone.co.nz", "{EA4A8116-0949-4827-9BD9-B298BF565BBA}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "false"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv3.5"
+		Debug.AspNetCompiler.VirtualPath = "/inzone.co.nz"
+		Debug.AspNetCompiler.PhysicalPath = "InZone_Main_Website\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\inzone.co.nz\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/inzone.co.nz"
+		Release.AspNetCompiler.PhysicalPath = "InZone_Main_Website\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\inzone.co.nz\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "W:\BusinessData\WorkingProjects\InZone\SourceCode\InZone_Main_Website\"
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "admin.inzone.co.nz", "http://localhost/admin.inzone.co.nz", "{E35FE465-507E-4C97-9A9D-1EE91435B1BD}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "false"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv2.0"
+		Debug.AspNetCompiler.VirtualPath = "/admin.inzone.co.nz"
+		Debug.AspNetCompiler.PhysicalPath = "Inzone_Admin\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\admin.inzone.co.nz\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/admin.inzone.co.nz"
+		Release.AspNetCompiler.PhysicalPath = "Inzone_Admin\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\admin.inzone.co.nz\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "Inzone_Admin\"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KioskApplication", "KioskWebApp\KioskApplication.csproj", "{B4BD7250-4741-435D-A336-865C14DF6394}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonLibrary", "CommonLibrary\CommonLibrary.csproj", "{3920AB78-0293-43F3-BCEF-E851F298A471}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InzoneKioskWebservice", "InzoneKioskWebservice\InzoneKioskWebservice.csproj", "{2D9EE756-392C-411E-A98B-3FEA6A1C359D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Olympic.AutoDataLayer", "Olympic.AutoDataLayer\Olympic.AutoDataLayer.csproj", "{F395948D-E9DD-424E-9D34-3EFD28A410B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InZoneKioskMailService", "InZoneMailServiceKiosk\InZoneKioskMailService.csproj", "{932F36ED-4F91-4F2F-A833-B46A49DB6BD3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InZoneMailService", "InZoneMailService\InZoneMailService.csproj", "{31A9B6F5-AAD9-4267-96D3-3987AF4F05F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdditionalConfig", "InzoneDataSyncService\AdditionalConfig\AdditionalConfig.csproj", "{51F87D54-BF04-45D3-8095-F463BD5FF44F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InzoneDataSyncService", "InzoneDataSyncService\InzoneDataSyncService\InzoneDataSyncService.csproj", "{0440984E-7BD8-46E9-9E7F-1B7CA57ECDCB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqlExpressClientSyncProvider", "InzoneDataSyncService\SqlExpressClientSyncProvider\SqlExpressClientSyncProvider.csproj", "{DAFABCFC-E8A8-44FA-ACC1-D19641D447C5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EA4A8116-0949-4827-9BD9-B298BF565BBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA4A8116-0949-4827-9BD9-B298BF565BBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA4A8116-0949-4827-9BD9-B298BF565BBA}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA4A8116-0949-4827-9BD9-B298BF565BBA}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{E35FE465-507E-4C97-9A9D-1EE91435B1BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E35FE465-507E-4C97-9A9D-1EE91435B1BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E35FE465-507E-4C97-9A9D-1EE91435B1BD}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{E35FE465-507E-4C97-9A9D-1EE91435B1BD}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{B4BD7250-4741-435D-A336-865C14DF6394}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4BD7250-4741-435D-A336-865C14DF6394}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4BD7250-4741-435D-A336-865C14DF6394}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4BD7250-4741-435D-A336-865C14DF6394}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3920AB78-0293-43F3-BCEF-E851F298A471}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3920AB78-0293-43F3-BCEF-E851F298A471}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3920AB78-0293-43F3-BCEF-E851F298A471}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3920AB78-0293-43F3-BCEF-E851F298A471}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D9EE756-392C-411E-A98B-3FEA6A1C359D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D9EE756-392C-411E-A98B-3FEA6A1C359D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D9EE756-392C-411E-A98B-3FEA6A1C359D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D9EE756-392C-411E-A98B-3FEA6A1C359D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F395948D-E9DD-424E-9D34-3EFD28A410B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F395948D-E9DD-424E-9D34-3EFD28A410B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F395948D-E9DD-424E-9D34-3EFD28A410B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F395948D-E9DD-424E-9D34-3EFD28A410B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{932F36ED-4F91-4F2F-A833-B46A49DB6BD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{932F36ED-4F91-4F2F-A833-B46A49DB6BD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{932F36ED-4F91-4F2F-A833-B46A49DB6BD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{932F36ED-4F91-4F2F-A833-B46A49DB6BD3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31A9B6F5-AAD9-4267-96D3-3987AF4F05F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31A9B6F5-AAD9-4267-96D3-3987AF4F05F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31A9B6F5-AAD9-4267-96D3-3987AF4F05F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31A9B6F5-AAD9-4267-96D3-3987AF4F05F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51F87D54-BF04-45D3-8095-F463BD5FF44F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51F87D54-BF04-45D3-8095-F463BD5FF44F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51F87D54-BF04-45D3-8095-F463BD5FF44F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51F87D54-BF04-45D3-8095-F463BD5FF44F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0440984E-7BD8-46E9-9E7F-1B7CA57ECDCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0440984E-7BD8-46E9-9E7F-1B7CA57ECDCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0440984E-7BD8-46E9-9E7F-1B7CA57ECDCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0440984E-7BD8-46E9-9E7F-1B7CA57ECDCB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAFABCFC-E8A8-44FA-ACC1-D19641D447C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAFABCFC-E8A8-44FA-ACC1-D19641D447C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAFABCFC-E8A8-44FA-ACC1-D19641D447C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAFABCFC-E8A8-44FA-ACC1-D19641D447C5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
